@@ -1,0 +1,42 @@
+.ending-section {
+    margin: 0 auto;
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+
+    &__image {
+        max-width: 370px;
+        width: 100vw;
+        border-radius: var(--border-radius-big);
+    }
+
+    &__text-content {
+        display: flex;
+        flex-direction: column;
+        max-width: 371px;
+
+        row-gap: 20px;
+    }
+
+    &__title {
+        width: 100%;
+
+        color: var(--color-black);
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 1.22;
+        letter-spacing: 0;
+    }
+
+    &__description {
+        color: var(--color-gray-300);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.42;
+        letter-spacing: 0;
+    }
+
+    &__email {
+        color: var(--color-black);
+    }
+}

@@ -1,0 +1,11 @@
+.photos {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    &__row {
+        display: flex;
+        column-gap: 30px;
+        align-items: center;
+    }
+}

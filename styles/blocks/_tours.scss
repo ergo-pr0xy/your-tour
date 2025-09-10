@@ -1,0 +1,18 @@
+.tours {
+
+    @media (max-width: 1024px) {
+        padding-inline: 53px;
+    }
+
+   &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+
+        
+        @media (max-width: 1024px) {
+            gap: 18px;
+        }
+   }
+}

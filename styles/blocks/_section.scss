@@ -1,0 +1,108 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    // &--margin-top {
+    //     margin-top: 135px;
+    // }
+
+    @media (max-width: 360px) {
+        margin-block: 76px;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 59px;
+        line-height: 1.24;
+        letter-spacing: 0;
+        color: var(--color-black);
+        text-align: center;
+
+        &--narrow {
+        max-width: 530px;
+        width: 100%;
+        }
+
+        @media (max-width: 360px) {
+            font-size: 34px;
+            line-height: 1.12;
+            letter-spacing: 0.02em; 
+        }
+    }
+
+    &__menu {
+        margin-top: 35px;
+        margin-bottom: 106px;
+        max-width: 700px;
+        width: 100%;
+
+         @media (max-width: 360px) {
+            margin-bottom: 49px; 
+            margin-top: 30px;
+        }
+    }
+
+    &__menu-list {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 122%;
+        letter-spacing: 0;
+
+        @media (max-width: 360px) {
+            padding-inline: 30.5px;
+            gap: 10px; 
+            font-size: 16px;
+            line-height: 142%;
+        }
+    }
+
+    &__menu-button {
+        color: var(--color-black);
+        background-color: inherit;
+        
+        @media (hover:hover) {
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 10px;
+                text-decoration-thickness: 2px;
+            }
+        }
+    }
+
+    &__menu-button--is-active {
+        color: var(--color-orange-200);
+        text-decoration: underline;
+        text-underline-offset: 10px;
+        text-decoration-thickness: 2px;
+
+        @media (max-width: 360px) {
+            text-underline-offset: 4px;
+        }
+    }
+
+    &__description {
+        max-width: 400px;
+        margin-top: 30px;
+        margin-bottom: 99px;
+
+        color: var(--color-gray-300);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 142%;
+        letter-spacing: 0;
+        text-align: center;
+    }
+}

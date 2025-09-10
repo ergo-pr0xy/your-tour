@@ -1,0 +1,74 @@
+.tour-creation {
+    padding: 70px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-big);
+
+    &__form {
+        max-width: 1030px;
+    }
+
+    &__fields {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 33px;
+        column-gap: 30px;
+        justify-content: center;
+        padding-bottom: 33px;
+    }
+
+    &__inner {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 33px;
+    }
+
+    &__agreement-confirmation-link {
+        color: var(--color-black);
+    }
+    
+    &__buttons {
+        display: flex;
+        column-gap: 30px;
+    }
+
+    &__button {
+        width: 235px;
+        height: 58px;
+
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 142%;
+        letter-spacing: 0;
+    }
+
+    &__button--deep-green {
+        background-color: var(--color-green-400);
+        color: var(--color-white); 
+
+        @media (hover:hover) {
+            &:hover {
+                background-color: var(--color-green-300);
+            }
+            &:active {
+                background-color: var(--color-green-200);
+            }
+        }
+    }
+
+    &__button--light-green {
+        background-color: var(--color-green-100);
+        color: var(--color-green-400); 
+
+        @media (hover:hover) {
+            &:hover {
+                background-color: var(--color-gray-100);
+            }
+            &:active {
+                background-color: var(--color-gray-200);
+            }
+        }
+    }
+
+}

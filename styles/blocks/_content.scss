@@ -1,0 +1,10 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 135px;
+
+    &--margin {
+        margin-top: 135px;
+        margin-bottom: 135px;
+    }
+}

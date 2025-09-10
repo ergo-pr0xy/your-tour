@@ -1,0 +1,112 @@
+.story {
+    display: flex;
+    flex-direction: column;
+    max-height: 567px;
+    max-width: 1170px;
+    width: 100vw;
+    height: 100vw;
+    padding: 60px;
+    flex: 1;
+
+    background-image: var(--story-bg-desktop);
+    background-repeat: no-repeat;
+    border-radius: var(--border-radius-big);
+    background-size: 100%;
+    background-position: center;
+    justify-content: space-between;
+    
+    transition: background-size 0.3s ease-in-out;
+    cursor: pointer;
+
+    @media (hover:hover) {
+        &:hover {
+            background-size: 120%;
+
+            .story__link::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: 37px;
+    }
+
+    &__title {
+        font-size: 35px;
+        font-weight: 500;
+        line-height: 122%;
+        letter-spacing: 0;
+    }
+
+    &__text-content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 27px;
+    }
+
+    &__description {
+        display: block;
+        max-width: 555px;
+        width: 100%;
+
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 142%;
+        letter-spacing: 0;
+    }
+
+    &__description-list {
+        padding-left: 30px;
+
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 142%;
+        letter-spacing: 0;
+    }
+
+    &__description-list-marker {
+        line-height: 1.4;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: var(--color-white);
+            left: -17px;
+            top: 12px;
+
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: -1px;
+    }
+
+    &__footer-links {
+        display: flex;
+        padding-right: 1px;
+        column-gap: 35px;
+        text-align: center;
+    }
+
+    &__footer-link {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 142%;
+        letter-spacing: 0;
+
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+    }
+
+}

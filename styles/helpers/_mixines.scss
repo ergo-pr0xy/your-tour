@@ -1,0 +1,24 @@
+@mixin reset-button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+@mixin flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin hover {
+    @media (hover:hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @media (hover:none) {
+         &:active {
+            @content;
+        }
+    }
+}

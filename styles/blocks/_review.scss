@@ -1,0 +1,54 @@
+.review {
+    max-width: 570px;
+    min-height: 673px;
+    padding: 40px;
+    background-color: var(--color-beige-200);
+    border-radius: var(--border-radius-big);
+
+    &__body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__text {
+        color: var(--color-black);
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 1.22;
+        letter-spacing: 0;
+    }
+
+    &__author-info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__author-name {
+        color: var(--color-black);
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 1.22;
+        letter-spacing: 0;
+    }
+
+    &__tour-name{
+        color: var(--color-gray-300);
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.42;
+        letter-spacing: -0.01em;
+    }
+
+    &__author-photo {
+        flex-shrink: 0;
+        border-radius: 50%;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;;
+    }
+}

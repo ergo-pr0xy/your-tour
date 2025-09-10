@@ -1,0 +1,22 @@
+.footer {
+    display: flex;
+    padding: 30px 0;
+
+    justify-content: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.42;
+    letter-spacing: 0;
+
+    background-color: var(--color-beige-200);
+
+    &__socials {
+        display: flex;
+        column-gap: 538px;
+    }
+
+    &__text {
+        color: var(--color-gray-300);
+    }
+
+}

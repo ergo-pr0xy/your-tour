@@ -1,0 +1,114 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 8px;
+    max-width: 500px;
+    width: 100%;
+
+    &--wide {
+        max-width: 1030px;
+    }
+
+    &__label {
+        max-height: 28px;
+        color: var(--color-black);
+        font-size: 20px;
+        line-height: 142%;
+        letter-spacing: 0;
+    }
+
+    &__input {
+        width: 100%;
+        max-height: 68px;
+
+        font: var(--font-family-base);
+        padding: 20px;
+        padding-left: 19px;
+        background-color: var(--color-beige-100);
+        border: 1px solid var(--color-beige-200);
+        border-radius: var(--border-radius-small);
+        cursor: pointer;
+
+        color: var(--color-black);
+        font-size: 20px;
+        line-height: 142%;
+        letter-spacing: 0;
+
+        &:focus {
+            border-color: var(--color-gray-300);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: var(--color-gray-300);
+        }
+
+        &--textarea {
+            width: 100%;
+            max-height: none;
+            height: 152px;
+            resize: none;
+        }
+
+        &--date {
+            position: relative;
+            text-transform: uppercase;
+            
+            &:invalid {
+                color: var(--color-gray-300); //спросить, насколько жизнеспособен такой вариант плейсхолдера для input date
+            }
+            
+            &::-webkit-calendar-picker-indicator {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                margin: -1px;
+                border: 0;
+                padding: 0;
+                white-space: nowrap;
+                clip-path: inset(100%);
+                clip: rect(0 0 0 0);
+                overflow: hidden;
+            }
+        }
+    }
+
+    &__select {
+        position: relative;
+        appearance: none;
+        outline: none;
+
+        width: 100%;
+        max-height: 68px;
+        padding-block: 19px 20px;
+        padding-left: 19px;
+
+        background-image: url("../../images/icons/dropdown-arrow.svg");
+        background-repeat: no-repeat;
+        background-position: right 23px top 29px;
+        background-color: var(--color-beige-100);
+        border: 1px solid var(--color-beige-200);
+        border-radius: var(--border-radius-small);
+      
+        cursor: pointer;
+
+        font-size: 20px;
+        line-height: 142%;
+        letter-spacing: 0;
+
+
+        &:focus {
+            border-color: var(--color-gray-300);
+            outline: none;
+        }
+
+        &:invalid {
+            color: var(--color-gray-300); //спросить, насколько жизнеспособен такой вариант плейсхолдера для селекта
+        }
+    }
+
+    &__select-option {
+        color: var(--color-black);
+    }
+}

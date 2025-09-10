@@ -1,0 +1,42 @@
+.card-link {
+    position: relative;
+    padding-bottom: 1px;
+    max-width: 159px;
+    display: inline-flex;
+    align-items: center;
+    z-index: 10; 
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -7px;
+        left: -20px;
+        right: -21px;
+        bottom: -7px;
+
+        background-color: var(--color-green-400);
+        border-radius: var(--border-radius-big);
+        opacity: 0; 
+        z-index: -1; 
+    }
+
+    &__text {
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 1.22;
+        margin-right: 16px;
+        
+
+        @media (max-width: 360px) {
+            margin-right: 17px;
+            font-size: 16px;
+            line-height: 1.42;
+        }
+    }
+
+    &__icon {
+         @media (max-width: 360px) {
+           margin-bottom: 2px;
+        }
+    }
+}

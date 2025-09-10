@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+    height: 5000px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    background-color: var(--color-beige-100);
+    color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+svg {
+  display: block;
+}

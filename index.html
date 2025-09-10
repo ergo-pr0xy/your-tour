@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum scale=1.0">
+    <title>Your Tour</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+    <section class="hero-section">
+        <header class="hero-section__header header">
+            <div class="header__inner container">
+                <a href="/" class="header__logo logo">
+                    <img src="./images/icons/logo.svg" alt="Your Tour logo" class="logo__image">
+                </a>
+                <nav class="header__menu">
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a href="" class="header__menu-link">Туры</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="" class="header__menu-link">Создать тур</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="" class="header__menu-link">Отзывы</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="" class="header__menu-link">Истории</a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="header__phonenumber">+7 999 999 99 99</p>
+            </div>
+        </header>
+        <div class="hero-section__content container">
+            <h1 class="hero-section__title">
+                Идеальные путешествия существуют
+            </h1>
+            <p class="hero-section__description description">
+                Идейные соображения высшего порядка, а также рамки и место обучения кадров
+            </p>
+            <button class="hero-section__button button" type="button">Найти тур</button>
+        </div>
+    </section>
+    <main class="content content--margin">
+        <section class="section container">
+            <header class="section__header">
+                <h2 class="section__title">
+                    Выбери свой тур
+                </h2>
+                <nav class="section__menu">
+                    <ul class="section__menu-list">
+                        <li class="section__menu-item">
+                            <button class="section__menu-button section__menu-button--is-active">
+                                Популярные
+                            </button>
+                        </li>
+                        <li class="section__menu-item">
+                            <button class="section__menu-button">
+                                Авторские
+                            </button>
+                        </li>
+                        <li class="section__menu-item">
+                            <button class="section__menu-button">
+                                Походы
+                            </button>
+                        </li>
+                        <li class="section__menu-item">
+                            <button class="section__menu-button">
+                                Сплавы
+                            </button>
+                        </li>
+                        <li class="section__menu-item">
+                            <button class="section__menu-button">
+                                Велопрогулки
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="section__body">
+                <div class="tours">
+                    <ul class="tours__list">
+                        <li class="tours__item">
+                            <div style="--card-bg-desktop: url(../images/tours-card-desktop-1.png);
+                                        --card-bg-tablet: url(../images/tours-card-tablet-1.png);
+                                        --card-bg-mobile: url(../images/tours-card-mobile-1.png);"  
+                                        class="tour-card">
+                                <div class="tour-card__inner">
+                                    <h3 class="tour-card__header">Путешествие в горы</h3>
+                                    <p class="tour-card__price">от 80 000 руб</p>
+                                </div>
+                                <a href="" class="tour-card__link card-link">
+                                    <p class="card-link__text">Подробнее</p>
+                                    <div class="card-link__icon">
+                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="tours__item">
+                            <div style="--card-bg-desktop: url(../images/tours-card-desktop-2.png);
+                                        --card-bg-tablet: url(../images/tours-card-tablet-2.png);
+                                        --card-bg-mobile: url(../images/tours-card-mobile-2.png);"  
+                                        class="tour-card">
+                                <div class="tour-card__inner">
+                                    <h3 class="tour-card__header">Путешествие в горы</h3>
+                                    <p class="tour-card__price">от 80 000 руб</p>
+                                </div>
+                                <a href="" class="tour-card__link card-link">
+                                    <p class="card-link__text">Подробнее</p>
+                                    <div class="card-link__icon">
+                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="tours__item">
+                            <div style="--card-bg-desktop: url(../images/tours-card-desktop-3.png);
+                                        --card-bg-tablet: url(../images/tours-card-tablet-3.png);
+                                        --card-bg-mobile: url(../images/tours-card-mobile-3.png);"  
+                                        class="tour-card">
+                                <div class="tour-card__inner">
+                                    <h3 class="tour-card__header">Путешествие в горы</h3>
+                                    <p class="tour-card__price">от 80 000 руб</p>
+                                </div>
+                                <a href="" class="tour-card__link card-link">
+                                    <p class="card-link__text">Подробнее</p>
+                                    <div class="card-link__icon">
+                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="tours__item">
+                            <div style="--card-bg-desktop: url(../images/tours-card-desktop-4.png);
+                                        --card-bg-tablet: url(../images/tours-card-tablet-4.png);
+                                        --card-bg-mobile: url(../images/tours-card-mobile-4.png);"  
+                                        class="tour-card">
+                                <div class="tour-card__inner">
+                                    <h3 class="tour-card__header">Путешествие в горы</h3>
+                                    <p class="tour-card__price">от 80 000 руб</p>
+                                </div>
+                                <a href="" class="tour-card__link card-link">
+                                    <p class="card-link__text">Подробнее</p>
+                                    <div class="card-link__icon">
+                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="tours__item">
+                            <div style="--card-bg-desktop: url(../images/tours-card-desktop-5.png);
+                                        --card-bg-tablet: url(../images/tours-card-tablet-5.png);
+                                        --card-bg-mobile: url(../images/tours-card-mobile-5.png);"  
+                                        class="tour-card">
+                                <div class="tour-card__inner">
+                                    <h3 class="tour-card__header">Путешествие в горы</h3>
+                                    <p class="tour-card__price">от 80 000 руб</p>
+                                </div>
+                                <a href="" class="tour-card__link card-link">
+                                    <p class="card-link__text">Подробнее</p>
+                                    <div class="card-link__icon">
+                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="tours__item">
+                            <div style="--card-bg-desktop: url(../images/tours-card-desktop-6.png);
+                                        --card-bg-tablet: url(../images/tours-card-tablet-6.png);
+                                        --card-bg-mobile: url(../images/tours-card-mobile-6.png);"  
+                                        class="tour-card">
+                                <div class="tour-card__inner">
+                                    <h3 class="tour-card__header">Путешествие в горы</h3>
+                                    <p class="tour-card__price">от 80 000 руб</p>
+                                </div>
+                                <a href="" class="tour-card__link card-link">
+                                    <p class="card-link__text">Подробнее</p>
+                                    <div class="card-link__icon">
+                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="section container">
+             <header class="section__header">
+                <h2 class="section__title">
+                    Собери свой тур
+                </h2>
+                <p class="section__description">
+                    Идейные соображения высшего порядка, а также рамки и место обучения кадров
+                </p>
+             </header>
+             <div class="section-body">
+                <div class="tour-creation">
+                    <form action="" class="tour-creation__form">
+                        <div class="tour-creation__fields">
+                            <div class="tour-creation__field field">
+                                <label for="name" class="field__label">Имя</label>
+                                <input type="text" class="field__input" id="name" name="name" placeholder="Введите Ваше имя">
+                            </div>
+                            <div class="tour-creation__field field">
+                                <label for="direction" class="field__label">Направление</label>
+                                <select name="direction" id="direction" class="field__select" required>
+                                    <option value="" class="field__select-option" disabled selected hidden>Куда хотите ехать</option>
+                                    <option value="" class="field__select-option">Север</option>
+                                    <option value="" class="field__select-option">Юг</option>
+                                    <option value="" class="field__select-option">Запад</option>
+                                    <option value="" class="field__select-option">Восток</option>
+                                </select>
+                            </div>
+                            <div class="tour-creation__field field">
+                                <label for="email" class="field__label">Email</label>
+                                <input type="text" class="field__input" id="email" name="email" type="email" placeholder="example@mail.com">
+                            </div>
+                            <div class="tour-creation__field field">
+                                <label for="phonenumber" class="field__label">Телефон</label>
+                                <input 
+                                    type="tel" 
+                                    class="field__input" 
+                                    id="phonenumber" 
+                                    name="phonenumber" 
+                                    placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _"
+                                    onfocus="this.value = `+ 7 ` ">
+                            </div>
+                            <div class="tour-creation__field field">
+                                <label for="date-from" class="field__label">Дата от</label>
+                                <input 
+                                    type="date" 
+                                    onfocus="this.showPicker()" 
+                                    class="field__input field__input--date" 
+                                    id="date-from" 
+                                    name="date-from" 
+                                    required>
+                            </div>
+                            <div class="tour-creation__field field">
+                                <label for="date-to" class="field__label">Дата до</label>
+                                <input type="date" onfocus="this.showPicker()" class="field__input field__input--date" id="date-to" name="date-to" required>
+                            </div>
+                            <div class="tour-creation__field field field--wide">
+                                <label for="comment" class="field__label">Комментарий</label>
+                                <textarea class="field__input field__input--textarea" id="comment" name="comment"></textarea>
+                            </div>
+                        </div>
+                        <div class="tour-creation__inner">
+                            <fieldset class="tour-creaction__age-confirmation radio">
+                                <legend class="radio__title">Вам есть 18 лет?</legend>
+                                <label class="radio__label">
+                                    <input type="radio" class="radio__input visually-hidden" id="age-confirmation-yes" name="age-confirmation" value="yes" checked>
+                                    <span class="radio__emulator"></span>
+                                    <span class="radio__label-emulator">Да</span>
+                                </label>
+                                <label class="radio__label">
+                                    <input type="radio" class="radio__input visually-hidden" id="age-confirmation-no" name="age-confirmation" value="no">
+                                    <span class="radio__emulator"></span>
+                                    <span class="radio__label-emulator">Нет</span>
+                                </label>
+                            </fieldset>
+                            <div class="tour-creation__agreement-confirmation checkbox">
+                                <label class="checkbox__label">
+                                    <input type="checkbox" class="checkbox__input visually-hidden" name="agreement-confirmation">
+                                    <span class="checkbox__emulator"></span>
+                                    <p class="checkbox__label-emulator">Нажимая кнопку, я принимаю условия <a href="" class="tour-creation__agreement-confirmation-link">Лицензионного договора</a></span>
+                                </label>
+                            </div>
+                            <div class="tour-creation__buttons">
+                                <button class="tour-creation__button tour-creation__button--deep-green button" type="button">Найти тур</button>
+                                <button class="tour-creation__button tour-creation__button--light-green button" type="button">Сбросить</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+             </div>
+        </section>
+        <section class="section container">
+            <header class="section__header">
+                <h2 class="section__title section__title--narrow">
+                    Отзывы наших путешественников
+                </h2>
+                <p class="section__description">
+                    Идейные соображения высшего порядка, а также рамки и место обучения кадров
+                </p>
+            </header>
+            <div class="section-body">
+                <div class="reviews">
+                   <ul class="reviews__review-list">
+                        <li class="review">
+                            <div class="review__body">
+                                <p class="review__text">Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому 
+                                    кругу (специалистов) участие в формировании новых предложений. Идейные соображения высшего порядка, а также начало повседневной 
+                                    работы по формированию позиции позволяет оценить значение модели развития.
+                                </p>
+                                <div class="review__author-info">
+                                    <div class="review__inner">
+                                        <div class="review__author-name">Мария</div>
+                                        <div class="review__tour-name">Тур: Вдали от дома</div>
+                                    </div>
+                                    <img src="./images/review-photo-1.png" class="review__author-photo">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="review">
+                            <div class="review__body">
+                                <p class="review__text">
+                                    Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании 
+                                    системы обучения кадров, соответствует насущным потребностям.<br><br>
+                                    Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) 
+                                    участие в формировании новых предложений. Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени 
+                                    обуславливает создание модели развития.
+                                </p>
+                                <div class="review__author-info">
+                                    <div class="review__inner">
+                                        <div class="review__author-name">Павел</div>
+                                        <div class="review__tour-name">Тур: Путешествие в горы</div>
+                                    </div>
+                                    <img src="./images/review-photo-2.png" class="review__author-photo">
+                                </div>
+                            </div>
+                        </li>
+                   </ul>
+                </div>
+            </div>
+        </section>
+        <section class="section container--wide">
+            <header class="section__header">
+                <h2 class="section__title">
+                    Фотографии путешествий
+                </h2>
+                <p class="section__description">
+                    Идейные соображения высшего порядка,
+                    а также рамки и место обучения кадров
+                </p>
+            </header>
+            <div class="section-body">
+                <div class="photos">
+                    <div class="photos__row">
+                        <picture class="photo">
+                            <img src="images/photos-photo-1.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                        <picture class="photo">
+                            <img src="images/photos-photo-2.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                        <picture class="photo">
+                            <img src="images/photos-photo-3.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                        <picture class="photo">
+                            <img src="images/photos-photo-4.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                    </div>
+                    <div class="photos__row">
+                        <picture class="photo">
+                            <img src="images/photos-photo-5.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                        <picture class="photo">
+                            <img src="images/photos-photo-6.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                        <picture class="photo">
+                            <img src="images/photos-photo-7.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                        <picture class="photo">
+                            <img src="images/photos-photo-8.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                        <picture class="photo">
+                            <img src="images/photos-photo-9.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                    </div>
+                    <div class="photos__row">
+                        <picture class="photo">
+                            <img src="images/photos-photo-10.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                        <picture class="photo">
+                            <img src="images/photos-photo-11.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                        <picture class="photo">
+                            <img src="images/photos-photo-12.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                        <picture class="photo">
+                            <img src="images/photos-photo-13.png"
+                                alt="Детальное описание фотографии"
+                                class="photo">
+                        </picture>
+                </div>
+            </div>
+        </section>
+        <section class="section container">
+            <header class="section__header">
+                <h2 class="section__title">
+                    Истории путешествий
+                </h2>
+                <p class="section__description">
+                    Идейные соображения высшего порядка,
+                    а также рамки и место обучения кадров
+                </p>
+            </header>
+            <div class="section-body">
+                <div class="trip-stories trip-stories--padding-top">
+                    <div class="trip-stories__item">
+                        <div class="story" style="--story-bg-desktop: url(../images/story-photo-desktop-1.png);">
+                            <div class="story__inner">
+                                <div class="story__title">Автостопом в Стамбул</div>
+                                <div class="story__text-content">
+                                    <p class="story__description">
+                                        Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает 
+                                        широкому кругу (специалистов) участие в формировании новых предложений:
+                                    </p>
+                                    <ul class="story__description-list">
+                                        <li class="story__description-list-marker">вкусная еда</li> 
+                                        <li class="story__description-list-marker"> дешевый транспорт</li> 
+                                        <li class="story__description-list-marker">красивый город.</li> 
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="story__footer">
+                                <div href="" class="story__link card-link">
+                                    <p class="card-link__text">Подробнее</p>
+                                    <div class="card-link__icon">
+                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="story__footer-links">
+                                    <a href="" class="story__footer-link">telegram</a>
+                                    <a href="" class="story__footer-link">facebook</a>
+                                    <a href="" class="story__footer-link">YouTube</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-stories__item">
+                        <div class="story" style="--story-bg-desktop: url(../images/story-photo-desktop-2.png);">
+                            <div class="story__inner">
+                                <div class="story__title">Автостопом в Стамбул</div>
+                                <div class="story__text-content">
+                                    <p class="story__description">
+                                        Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) 
+                                        участие в формировании новых предложений.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="story__footer">
+                                <div href="" class="story__link card-link">
+                                    <p class="card-link__text">Подробнее</p>
+                                    <div class="card-link__icon">
+                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="story__footer-links">
+                                    <a href="" class="story__footer-link">telegram</a>
+                                    <a href="" class="story__footer-link">facebook</a>
+                                    <a href="" class="story__footer-link">ВКонтакте</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trip-stories__item">
+                        <div class="story" style="--story-bg-desktop: url(../images/story-photo-desktop-3.png);">
+                            <div class="story__inner">
+                                <div class="story__title">Автостопом в Стамбул</div>
+                                <div class="story__text-content">
+                                    <p class="story__description">
+                                        Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) 
+                                        участие в формировании новых предложений.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="story__footer">
+                                <div href="" class="story__link card-link">
+                                    <p class="card-link__text">Подробнее</p>
+                                    <div class="card-link__icon">
+                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="story__footer-links">
+                                    <a href="" class="story__footer-link">telegram</a>
+                                    <a href="" class="story__footer-link">facebook</a>
+                                    <a href="" class="story__footer-link">ВКонтакте</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ending-section">
+            <img src="./images/ending-section-desktop.png" alt="ending section image" class="ending-section__image">
+            <div class="ending-section__text-content">
+                <div class="ending-section__title">
+                    Пора в путешествие вместе с нами!
+                </div>
+                <p class="ending-section__description">
+                    Напиши на почту и узнай подробности на <a href="" class="ending-section__email">yourtour@gmail.com</a>
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__socials">
+            <p class="footer__text">Наши социальные сети</p>
+            <div class="footer__socials-list socials">
+                <div class="social">
+                    <img src="./images/tg-logo.svg" alt="" class="social__logo">
+                    <div class="social__name">
+                        telegram
+                    </div>
+                </div>
+                <div class="social">
+                    <img src="./images/fb-logo.svg" alt="" class="social__logo">
+                    <div class="social__name">
+                        facebook
+                    </div>
+                </div>
+                <div class="social">
+                    <img src="./images/vk-logo.svg" alt="" class="social__logo">
+                    <div class="social__name">
+                        vkontakte
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
