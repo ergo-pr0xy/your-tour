@@ -4,6 +4,10 @@
         padding-inline: 53px;
     }
 
+    @media (max-width: 360px) {
+        padding-inline: 21px;
+    }
+
    &__list {
         display: flex;
         flex-wrap: wrap;
@@ -13,6 +17,15 @@
         
         @media (max-width: 1024px) {
             gap: 18px;
+        }
+   }
+
+   &__item {
+        max-width: 370px;
+        width: 100%;
+
+        @media (max-width: 1024px) {
+             max-width: 450px;
         }
    }
 }
