@@ -1,21 +1,44 @@
 .field {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    row-gap: 8px;
     max-width: 500px;
     width: 100%;
+    align-items: start;
+    row-gap: 8px;
+
+    @media (max-width: 1024px) {
+        max-width: 389px;
+    }
+
+    @media (max-width: 360px) {
+        row-gap: 7px;
+    }
 
     &--wide {
         max-width: 1030px;
     }
 
+    &--date-margin {
+        @media (max-width: 360px) {
+            width: auto;
+            margin-right: -3px;
+        }
+    }
+
     &__label {
         max-height: 28px;
+        height: 100%;
+
         color: var(--color-black);
         font-size: 20px;
         line-height: 142%;
         letter-spacing: 0;
+
+        
+        @media (max-width: 360px) {
+            min-height: 23px;
+            font-size: 16px;
+        }
     }
 
     &__input {
@@ -35,6 +58,13 @@
         line-height: 142%;
         letter-spacing: 0;
 
+        @media (max-width: 360px) {
+            max-height: 43px;
+            padding: 13px 12px 11px 9px;
+            font-size: 16px;
+            
+        }
+
         &:focus {
             border-color: var(--color-gray-300);
             outline: none;
@@ -47,16 +77,22 @@
         &--textarea {
             width: 100%;
             max-height: none;
-            height: 152px;
+            min-height: 152px;
             resize: none;
+            
+            @media (max-width: 360px) {
+                min-height: 132px;
+            }
+            
         }
 
         &--date {
             position: relative;
             text-transform: uppercase;
+
             
             &:invalid {
-                color: var(--color-gray-300); //спросить, насколько жизнеспособен такой вариант плейсхолдера для input date
+                color: var(--color-gray-300); 
             }
             
             &::-webkit-calendar-picker-indicator {
@@ -96,6 +132,13 @@
         font-size: 20px;
         line-height: 142%;
         letter-spacing: 0;
+
+        @media (max-width: 360px) {
+            max-height: 46px;
+            font-size: 16px;
+            padding: 11.5px 9px;
+            background-position: right 13px top 18px;
+        }
 
 
         &:focus {

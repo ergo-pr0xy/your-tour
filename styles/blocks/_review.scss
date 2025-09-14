@@ -1,9 +1,26 @@
 .review {
     max-width: 570px;
-    min-height: 673px;
+    max-height: 673px;
+    
+    width: 100%;
     padding: 40px;
     background-color: var(--color-beige-200);
     border-radius: var(--border-radius-big);
+
+    
+    @media (max-width: 1024px) {
+        max-width: 450px;
+        max-height: 841px;
+    }
+
+    @media (max-width: 360px) {
+        max-width: 318px;
+        min-height: 408px;
+        width: 100%;
+
+        padding: 20px;
+        border-radius: 20px;
+    }
 
     &__body {
         height: 100%;
@@ -18,11 +35,28 @@
         font-size: 23px;
         line-height: 1.22;
         letter-spacing: 0;
+
+        @media (max-width: 360px) {
+            max-width: 278px;
+            padding-right: 3px;
+  
+            font-size: 16px;
+            line-height: 1.42;
+        }
     }
 
     &__author-info {
+        width: 100%;
         display: flex;
         justify-content: space-between;
+        margin-top: 69px;
+
+        @media (max-width: 360px) {
+            max-width: 278px;
+
+            align-items: end;
+            margin-top: 43px;
+        }
     }
 
     &__author-name {
@@ -31,6 +65,13 @@
         font-size: 35px;
         line-height: 1.22;
         letter-spacing: 0;
+
+        @media (max-width: 360px) {
+            font-weight: 700;
+            font-size: 23px;
+            line-height: 1.42;
+            letter-spacing: 0.04em;
+        }
     }
 
     &__tour-name{
@@ -39,6 +80,10 @@
         font-size: 17px;
         line-height: 1.42;
         letter-spacing: -0.01em;
+
+        @media (max-width: 360px) {
+            font-size: 16px;
+        }
     }
 
     &__author-photo {
@@ -49,6 +94,10 @@
     &__inner {
         display: flex;
         flex-direction: column;
-        row-gap: 8px;;
+        row-gap: 8px;
+
+        @media (max-width: 360px) {
+            row-gap: 6px;
+        }
     }
 }

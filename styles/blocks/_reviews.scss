@@ -1,6 +1,19 @@
 .reviews {
     &__review-list {
-         display: flex;
-         column-gap: 30px;
+        display: flex;
+        column-gap: 30px;
+
+        @media (max-width: 1024px) {
+            column-gap: 18px;
+        }
+
+        @media (max-width: 360px) {
+            flex-direction: column;
+            row-gap: 18px;
+        }
+    }
+
+    &--margin-top-360 {
+        margin-top: 9px;
     }
 }

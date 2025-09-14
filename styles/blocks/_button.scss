@@ -1,5 +1,19 @@
 .button {
+    width: 235px;
+    height: 58px;
+
     line-height: 1.42;
     text-align: center;
     border-radius: var(--border-radius-small);
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 142%;
+    letter-spacing: 0;
+
+    @media (max-width: 360px) {
+        width: 134px;
+        height: 47px;
+        font-size: 16px;
+    }
 }

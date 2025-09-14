@@ -1,20 +1,45 @@
 .tour-creation {
-    padding: 70px;
-    background-color: var(--color-white);
-    border-radius: var(--border-radius-big);
-
     &__form {
-        max-width: 1030px;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 70px;
+        row-gap: 33px;
+
+        background-color: var(--color-white);
+        border-radius: var(--border-radius-big);
+    
+        @media (max-width: 1024px) {
+            padding: 60px;
+            max-width: 918px;
+        }
+
+        @media (max-width: 360px) {
+            padding: 21px 20px 40px;
+            max-width: 318px;
+
+            border-radius: var(--border-radius-medium);
+            row-gap: 28px;
+        }
     }
 
     &__fields {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        row-gap: 33px;
         column-gap: 30px;
+        row-gap: 33px;
         justify-content: center;
-        padding-bottom: 33px;
+
+        @media (max-width: 1024px) {
+            column-gap: 20px;
+        }
+
+        @media (max-width: 360px) {
+            flex-direction: column;
+            column-gap: 0;
+            row-gap: 31px;
+        }
     }
 
     &__inner {
@@ -22,25 +47,29 @@
         display: flex;
         flex-direction: column;
         row-gap: 33px;
+
+        @media (max-width: 1024px) {
+            row-gap: 33px;
+        }
+
+        @media (max-width: 360px) {
+            row-gap: 26px;
+        }
     }
 
     &__agreement-confirmation-link {
+        display: inline;
         color: var(--color-black);
     }
     
     &__buttons {
         display: flex;
         column-gap: 30px;
-    }
 
-    &__button {
-        width: 235px;
-        height: 58px;
-
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 142%;
-        letter-spacing: 0;
+        @media (max-width: 360px) {
+            margin-top: 4px;
+            column-gap: 10px;
+        }
     }
 
     &__button--deep-green {

@@ -201,15 +201,15 @@
             </div>
         </section>
         <section class="section container">
-             <header class="section__header">
+            <header class="section__header">
                 <h2 class="section__title">
                     Собери свой тур
                 </h2>
                 <p class="section__description">
                     Идейные соображения высшего порядка, а также рамки и место обучения кадров
                 </p>
-             </header>
-             <div class="section-body">
+            </header>
+            <div class="section-body">
                 <div class="tour-creation">
                     <form action="" class="tour-creation__form">
                         <div class="tour-creation__fields">
@@ -240,7 +240,7 @@
                                     name="phonenumber" 
                                     placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _">
                             </div>
-                            <div class="tour-creation__field field">
+                            <div class="tour-creation__field field field--date-margin">
                                 <label for="date-from" class="field__label">Дата от</label>
                                 <input 
                                     type="date" 
@@ -250,7 +250,7 @@
                                     name="date-from" 
                                     required>
                             </div>
-                            <div class="tour-creation__field field">
+                            <div class="tour-creation__field field field--date-margin">
                                 <label for="date-to" class="field__label">Дата до</label>
                                 <input type="date" onfocus="this.showPicker()" class="field__input field__input--date" id="date-to" name="date-to" required>
                             </div>
@@ -262,16 +262,18 @@
                         <div class="tour-creation__inner">
                             <fieldset class="tour-creaction__age-confirmation radio">
                                 <legend class="radio__title">Вам есть 18 лет?</legend>
-                                <label class="radio__label">
-                                    <input type="radio" class="radio__input visually-hidden" id="age-confirmation-yes" name="age-confirmation" value="yes" checked>
-                                    <span class="radio__emulator"></span>
-                                    <span class="radio__label-emulator">Да</span>
-                                </label>
-                                <label class="radio__label">
-                                    <input type="radio" class="radio__input visually-hidden" id="age-confirmation-no" name="age-confirmation" value="no">
-                                    <span class="radio__emulator"></span>
-                                    <span class="radio__label-emulator">Нет</span>
-                                </label>
+                                <div class="radio__labels">
+                                    <label class="radio__label">
+                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-yes" name="age-confirmation" value="yes" checked>
+                                        <span class="radio__emulator"></span>
+                                        <span class="radio__label-emulator">Да</span>
+                                    </label>
+                                     <label class="radio__label">
+                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-no" name="age-confirmation" value="no">
+                                        <span class="radio__emulator"></span>
+                                        <span class="radio__label-emulator">Нет</span>
+                                    </label>
+                                </div>
                             </fieldset>
                             <div class="tour-creation__agreement-confirmation checkbox">
                                 <label class="checkbox__label">
@@ -288,7 +290,7 @@
                     </form>
                     
                 </div>
-             </div>
+            </div>
         </section>
         <section class="section container">
             <header class="section__header">
@@ -300,7 +302,7 @@
                 </p>
             </header>
             <div class="section-body">
-                <div class="reviews">
+                <div class="reviews reviews--margin-top-360">
                    <ul class="reviews__review-list">
                         <li class="review">
                             <div class="review__body">
@@ -339,7 +341,7 @@
                 </div>
             </div>
         </section>
-     <section class="section container--wide">
+     <!-- <section class="section container--wide">
             <header class="section__header">
                 <h2 class="section__title">
                     Фотографии путешествий
@@ -564,7 +566,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- <div class="test">
         <div class="test__cards-container">
             <div class="test_card">
