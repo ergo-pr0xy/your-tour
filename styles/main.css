@@ -34,8 +34,6 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-family-base);
   font-weight: 400;
   background-color: var(--color-beige-100);
@@ -1171,8 +1169,10 @@ legend {
     row-gap: 18px;
   }
 }
-.reviews--margin-top-360 {
-  margin-top: 9px;
+@media (max-width: 360px) {
+  .reviews--margin-top-360 {
+    margin-top: 10px;
+  }
 }
 
 .review {
@@ -1210,26 +1210,46 @@ legend {
   font-size: 23px;
   line-height: 1.22;
   letter-spacing: 0;
+  margin-bottom: 69px;
 }
 @media (max-width: 360px) {
   .review__text {
     max-width: 278px;
     padding-right: 3px;
+    margin-bottom: 42px;
     font-size: 16px;
     line-height: 1.42;
+  }
+}
+@media (max-width: 360px) {
+  .review__text--second-review-margin {
+    margin-bottom: 44px;
   }
 }
 .review__author-info {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 69px;
 }
 @media (max-width: 360px) {
   .review__author-info {
     max-width: 278px;
     align-items: end;
-    margin-top: 43px;
+  }
+}
+.review__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+@media (max-width: 360px) {
+  .review__inner {
+    row-gap: 9px;
+  }
+}
+@media (max-width: 360px) {
+  .review__inner--second-review-gap {
+    row-gap: 8px;
   }
 }
 .review__author-name {
@@ -1243,7 +1263,7 @@ legend {
   .review__author-name {
     font-weight: 700;
     font-size: 23px;
-    line-height: 1.42;
+    line-height: 1.2;
     letter-spacing: 0.04em;
   }
 }
@@ -1257,21 +1277,12 @@ legend {
 @media (max-width: 360px) {
   .review__tour-name {
     font-size: 16px;
+    margin-bottom: -1px;
   }
 }
 .review__author-photo {
   flex-shrink: 0;
   border-radius: 50%;
-}
-.review__inner {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-}
-@media (max-width: 360px) {
-  .review__inner {
-    row-gap: 6px;
-  }
 }
 
 .photos {
@@ -1281,8 +1292,7 @@ legend {
 }
 .photos__row {
   display: flex;
-  column-gap: 30px;
-  align-items: center;
+  column-gap: 29px;
 }
 
 .photo {
