@@ -1,6 +1,5 @@
 .review {
     max-width: 570px;
-    max-height: 673px;
     
     width: 100%;
     padding: 40px;
@@ -36,6 +35,10 @@
         line-height: 1.22;
         letter-spacing: 0;
         margin-bottom: 69px;
+
+        @media (max-width: 880px) {
+            font-size: 16px;
+        }
 
         @media (max-width: 360px) {
             max-width: 278px;
@@ -109,7 +112,8 @@
     }
 
     &__author-photo {
-        flex-shrink: 0;
+        width: 75px;
+        height: 75px;
         border-radius: 50%;
     }
 }

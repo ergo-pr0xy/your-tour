@@ -1,3 +1,16 @@
 .photo {
     border-radius: var(--border-radius-big);
+
+        
+    @media (max-width: 1024px) {
+        &--hidden-1024 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 360px) {
+        &--hidden-360 {
+            display: none;
+        }
+    }
 }

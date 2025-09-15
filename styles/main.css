@@ -34,6 +34,8 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-family-base);
   font-weight: 400;
   background-color: var(--color-beige-100);
@@ -238,6 +240,11 @@ legend {
 .container--wide {
   max-width: 1860px;
   margin-inline: auto;
+}
+@media (max-width: 1024px) {
+  .container--wide {
+    max-width: 984px;
+  }
 }
 
 .visually-hidden {
@@ -445,7 +452,7 @@ legend {
   align-items: start;
   row-gap: 8px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1170px) {
   .field {
     max-width: 389px;
   }
@@ -1177,7 +1184,6 @@ legend {
 
 .review {
   max-width: 570px;
-  max-height: 673px;
   width: 100%;
   padding: 40px;
   background-color: var(--color-beige-200);
@@ -1211,6 +1217,11 @@ legend {
   line-height: 1.22;
   letter-spacing: 0;
   margin-bottom: 69px;
+}
+@media (max-width: 880px) {
+  .review__text {
+    font-size: 16px;
+  }
 }
 @media (max-width: 360px) {
   .review__text {
@@ -1281,7 +1292,8 @@ legend {
   }
 }
 .review__author-photo {
-  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
 }
 
@@ -1289,14 +1301,26 @@ legend {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+  align-items: center;
 }
 .photos__row {
   display: flex;
   column-gap: 29px;
+  justify-content: space-between;
 }
 
 .photo {
   border-radius: var(--border-radius-big);
+}
+@media (max-width: 1024px) {
+  .photo--hidden-1024 {
+    display: none;
+  }
+}
+@media (max-width: 360px) {
+  .photo--hidden-360 {
+    display: none;
+  }
 }
 
 .trip-stories {
