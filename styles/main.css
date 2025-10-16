@@ -236,10 +236,12 @@ legend {
 .container {
   max-width: 1170px;
   margin-inline: auto;
+  width: 100%;
 }
 .container--wide {
   max-width: 1860px;
   margin-inline: auto;
+  width: 100%;
 }
 @media (max-width: 1024px) {
   .container--wide {
@@ -377,7 +379,7 @@ legend {
 @media (max-width: 360px) {
   .radio__title {
     font-size: 16px;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
 }
 .radio__labels {
@@ -799,6 +801,8 @@ legend {
 
 .content {
   display: flex;
+  width: 100%;
+  align-items: center;
   flex-direction: column;
   row-gap: 135px;
 }
@@ -844,7 +848,7 @@ legend {
 @media (max-width: 360px) {
   .section__title {
     font-size: 34px;
-    line-height: 1.12;
+    line-height: 38px;
     letter-spacing: 0.02em;
   }
 }
@@ -857,8 +861,8 @@ legend {
 @media (max-width: 360px) {
   .section__menu {
     max-width: 300px;
-    margin-bottom: 49px;
-    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-top: 29px;
   }
 }
 .section__menu-list {
@@ -875,7 +879,7 @@ legend {
   .section__menu-list {
     gap: 10px;
     font-size: 16px;
-    line-height: 142%;
+    line-height: 23px;
   }
 }
 .section__menu-button {
@@ -913,11 +917,19 @@ legend {
 }
 @media (max-width: 360px) {
   .section__description {
-    margin-top: 21px;
-    margin-bottom: 39px;
+    margin-top: 20px;
+    margin-bottom: 50px;
     max-width: 318px;
     font-size: 16px;
   }
+  .section__description--margin-40 {
+    margin-bottom: 40px;
+  }
+}
+.section__body {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 @media (max-width: 1024px) {
@@ -989,7 +1001,7 @@ legend {
 @media (max-width: 360px) {
   .tour-card {
     padding: 26px 25px 25px 25px;
-    row-gap: 180px;
+    row-gap: 181px;
     background-image: var(--card-bg-mobile);
     border-radius: 20px;
   }
@@ -1007,7 +1019,7 @@ legend {
 }
 @media (max-width: 360px) {
   .tour-card__inner {
-    row-gap: 14px;
+    row-gap: 12px;
   }
 }
 .tour-card__header {
@@ -1036,7 +1048,7 @@ legend {
 .tour-card__price {
   width: 100%;
   font-size: 17px;
-  line-height: 1.42;
+  line-height: 23px;
   letter-spacing: -0.01em;
 }
 @media (max-width: 360px) {
@@ -1176,11 +1188,6 @@ legend {
     row-gap: 18px;
   }
 }
-@media (max-width: 360px) {
-  .reviews--margin-top-360 {
-    margin-top: 10px;
-  }
-}
 
 .review {
   max-width: 570px;
@@ -1227,14 +1234,9 @@ legend {
   .review__text {
     max-width: 278px;
     padding-right: 3px;
-    margin-bottom: 42px;
+    margin-bottom: 40px;
     font-size: 16px;
-    line-height: 1.42;
-  }
-}
-@media (max-width: 360px) {
-  .review__text--second-review-margin {
-    margin-bottom: 44px;
+    line-height: 23px;
   }
 }
 .review__author-info {
@@ -1299,27 +1301,49 @@ legend {
 
 .photos {
   display: flex;
+  width: 100%;
   flex-direction: column;
   row-gap: 30px;
   align-items: center;
+  margin-top: -1px;
+}
+@media (max-width: 1024px) {
+  .photos {
+    row-gap: 30px;
+  }
+}
+@media (max-width: 360px) {
+  .photos {
+    padding-inline: 21px;
+    row-gap: 18px;
+  }
 }
 .photos__row {
   display: flex;
-  column-gap: 29px;
+  width: 100%;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
-.photo {
-  border-radius: var(--border-radius-big);
-}
 @media (max-width: 1024px) {
   .photo--hidden-1024 {
     display: none;
   }
 }
 @media (max-width: 360px) {
+  .photo {
+    border-radius: 20px;
+  }
   .photo--hidden-360 {
     display: none;
+  }
+}
+.photo__item {
+  border-radius: var(--border-radius-big);
+}
+@media (max-width: 360px) {
+  .photo__item {
+    border-radius: 20px;
   }
 }
 

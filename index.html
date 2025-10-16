@@ -205,11 +205,11 @@
                 <h2 class="section__title">
                     Собери свой тур
                 </h2>
-                <p class="section__description">
+                <p class="section__description section__description--margin-40">
                     Идейные соображения высшего порядка, а также рамки и место обучения кадров
                 </p>
             </header>
-            <div class="section-body">
+            <div class="section__body">
                 <div class="tour-creation">
                     <form action="" class="tour-creation__form">
                         <div class="tour-creation__fields">
@@ -301,7 +301,7 @@
                     Идейные соображения высшего порядка, а также рамки и место обучения кадров
                 </p>
             </header>
-            <div class="section-body">
+            <div class="section__body">
                 <div class="reviews reviews--margin-top-360">
                    <ul class="reviews__review-list">
                         <li class="review">
@@ -341,7 +341,7 @@
                 </div>
             </div>
         </section>
-     <section class="section container--wide">
+        <section class="section container--wide">
             <header class="section__header">
                 <h2 class="section__title">
                     Фотографии путешествий
@@ -351,77 +351,96 @@
                     а также рамки и место обучения кадров
                 </p>
             </header>
-            <div class="section-body">
+            <div class="section__body">
                 <div class="photos">
                     <div class="photos__row">
                         <picture class="photo">
+                            <source srcset="images/photos-photo-1-360.png" media="(max-width: 360px)">
+                            <source srcset="images/photos-photo-1-1024.png" media="(max-width: 1024px)">
                             <img src="images/photos-photo-1.png"
                                 alt="Фото взлетающего самолета"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                         <picture class="photo photo--hidden-1024">
                             <img src="images/photos-photo-2.png"
                                 alt="Фото вида из палатки в каньоне"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                         <picture class="photo photo--hidden-360">
+                            <source srcset="images/photos-photo-3-1024.png" media="(max-width: 1024px)">
                             <img src="images/photos-photo-3.png"
                                 alt="Фото заката на скалах"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                         <picture class="photo">
+                            <source srcset="images/photos-photo-4-360.png" media="(max-width: 360px)">
+                            <source srcset="images/photos-photo-4-1024.png" media="(max-width: 1024px)">
                             <img src="images/photos-photo-4.png"
                                 alt="Фото дороги"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                     </div>
-                    <div class="photos__row">
+                    <div class="photos__row photos__row--gap-10">
                         <picture class="photo">
+                            <source srcset="images/photos-photo-5-360.png" media="(max-width: 360px)">
+                            <source srcset="images/photos-photo-5-1024.png" media="(max-width: 1024px)">
                             <img src="images/photos-photo-5.png"
                                 alt="Фото двух людей на скале"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                         <picture class="photo photo--hidden-360">
+                            <source srcset="images/photos-photo-6-1024.png" media="(max-width: 1024px)">
                             <img src="images/photos-photo-6.png"
                                 alt="Фото карты"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                         <picture class="photo photo--hidden-1024">
                             <img src="images/photos-photo-7.png"
                                 alt="Фото моста в лесу"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                         <picture class="photo">
+                            <source srcset="images/photos-photo-8-360.png" media="(max-width: 360px)">
+                            <source srcset="images/photos-photo-8-1024.png" media="(max-width: 1024px)">
                             <img src="images/photos-photo-8.png"
                                 alt="Фото пары в доме на колесах"
-                                class="photo">
+                                class="photo__item"
+                                style="width: auto !important; height: auto !important;">
                         </picture>
                         <picture class="photo">
+                            <source srcset="images/photos-photo-9-360.png" media="(max-width: 360px)">
+                            <source srcset="images/photos-photo-9-1024.png" media="(max-width: 1024px)">
                             <img src="images/photos-photo-9.png"
                                 alt="Фото старой улицы"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                     </div>
                     <div class="photos__row">
                         <picture class="photo">
+                            <source srcset="images/photos-photo-10-360.png" media="(max-width: 360px)">
+                            <source srcset="images/photos-photo-10-1024.png" media="(max-width: 1024px)">
                             <img src="images/photos-photo-10.png"
                                 alt="Фото старой улицы"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                         <picture class="photo">
+                            <source srcset="images/photos-photo-11-360.png" media="(max-width: 360px)">
+                            <source srcset="images/photos-photo-11-1024.png" media="(max-width: 1024px)">
                             <img src="images/photos-photo-11.png"
                                 alt="Фото озера в горах"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                         <picture class="photo photo photo--hidden-360">
+                            <source srcset="images/photos-photo-12-1024.png" media="(max-width: 1024px)">
                             <img src="images/photos-photo-12.png"
                                 alt="Фото старой улицы с людьми"
-                                class="photo">
+                                class="photo__item">
                         </picture>
                         <picture class="photo photo--hidden-1024">
                             <img src="images/photos-photo-13.png"
                                 alt="Фото девушки на сапборде"
-                                class="photo">
+                                class="photo__item"
+                                >
                         </picture>
                 </div>
             </div>
@@ -436,7 +455,7 @@
                     а также рамки и место обучения кадров
                 </p>
             </header>
-            <div class="section-body">
+            <div class="section__body">
                 <div class="trip-stories trip-stories--padding-top">
                     <div class="trip-stories__item">
                         <div class="story" style="--story-bg-desktop: url(../images/story-photo-desktop-1.png);">
@@ -567,5 +586,6 @@
             </div>
         </div>
     </footer>  -->
+    </main>
 </body>
 </html>

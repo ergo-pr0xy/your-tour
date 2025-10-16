@@ -43,16 +43,10 @@
         @media (max-width: 360px) {
             max-width: 278px;
             padding-right: 3px;
-            margin-bottom: 42px;
+            margin-bottom: 40px;
   
             font-size: 16px;
-            line-height: 1.42;
-        }
-
-        &--second-review-margin {
-            @media (max-width: 360px) {
-                margin-bottom: 44px;
-            }       
+            line-height: 23px;
         }
     }
 

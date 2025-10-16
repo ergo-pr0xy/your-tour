@@ -35,7 +35,7 @@
 
     @media (max-width: 360px) {
         padding: 26px 25px 25px 25px;
-        row-gap: 180px;
+        row-gap: 181px;
 
         background-image: var(--card-bg-mobile);
         border-radius: 20px;
@@ -52,7 +52,7 @@
         }
 
         @media (max-width: 360px) {
-            row-gap: 14px;
+            row-gap: 12px;
         }
     }
 
@@ -83,7 +83,7 @@
     &__price {
         width: 100%;
         font-size: 17px;
-        line-height: 1.42;
+        line-height: 23px;
         letter-spacing: -0.01em;
 
 
