@@ -1,37 +1,82 @@
 .story {
-    display: flex;
-    flex-direction: column;
-    max-height: 567px;
-    max-width: 1170px;
-    width: 100vw;
-    height: 100vw;
-    padding: 60px;
-    flex: 1;
+    position: relative;
 
-    background-image: var(--story-bg-desktop);
-    background-repeat: no-repeat;
+    display: flex;
+    width: 1170px;
+    height: 567px;
+    flex-direction: column;
+    padding: 60px;
+
+    // background-image: var(--story-bg-desktop);
+    // background-repeat: no-repeat;
+    // background-size: cover;
     border-radius: var(--border-radius-big);
-    background-size: 100%;
-    background-position: center;
+    // background-position: center;
     justify-content: space-between;
+    overflow: hidden;
+    z-index: 10;
     
-    transition: background-size 0.3s ease-in-out;
+    // transition: background-size 0.3s ease-in-out;
     cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: var(--story-bg-desktop);
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s ease;
+        z-index: 1;
+
+        @media (max-width: 1024px) {
+            background-image: var(--story-bg-tablet);
+        }
+
+        @media (max-width: 360px) {
+            background-image: var(--story-bg-mobile);
+        }
+    }
+
+    @media (max-width: 1024px) {
+        width: 918px;
+    }
+
+    @media (max-width: 360px) {
+        max-width: 318px;  
+        width: 100%; 
+        height: 455px;
+        padding: 30px;
+        padding-top: 31px;
+        border-radius: 20px;
+    }
 
     @media (hover:hover) {
         &:hover {
-            background-size: 120%;
-
+            &::before {
+                transform: scale(1.2);
+            }
             .story__link::before {
                 opacity: 1;
+                background-color: var(--color-green-400);
             }
         }
     }
 
     &__inner {
+        position: relative;
         display: flex;
         flex-direction: column;
         row-gap: 37px;
+        z-index: 10;
+
+        @media (max-width: 360px) {
+            row-gap: 21px;
+        }
+
     }
 
     &__title {
@@ -39,12 +84,26 @@
         font-weight: 500;
         line-height: 122%;
         letter-spacing: 0;
+
+        @media (max-width: 360px) {
+            max-width: 150px;
+            width: 100%;
+
+            font-size: 23px;
+            font-weight: 700;
+            line-height: 120%;
+            letter-spacing: 0.04em;
+        }
     }
 
     &__text-content {
         display: flex;
         flex-direction: column;
         row-gap: 27px;
+
+        @media (max-width: 360px) {
+            row-gap: 24px;
+        }
     }
 
     &__description {
@@ -54,8 +113,12 @@
 
         font-size: 20px;
         font-weight: 400;
-        line-height: 142%;
+        line-height: 1.427;
         letter-spacing: 0;
+
+        @media (max-width: 360px) {
+            font-size: 16px;
+        }
     }
 
     &__description-list {
@@ -63,13 +126,22 @@
 
         font-size: 20px;
         font-weight: 400;
-        line-height: 142%;
+         line-height: 1.427;
         letter-spacing: 0;
+
+        @media (max-width: 360px) {
+            padding-left: 24px;
+            font-size: 16px;
+        }
     }
 
     &__description-list-marker {
         line-height: 1.4;
         position: relative;
+
+        @media (max-width: 360px) {
+            margin-bottom: 1px;
+        }
 
         &::before {
             content: "";
@@ -81,10 +153,17 @@
             width: 4px;
             height: 4px;
             border-radius: 50%;
+
+            @media (max-width: 360px) {
+                left: -14.5px;
+                top: 8px;
+            }
         }
     }
 
     &__footer {
+        position: relative;
+        z-index: 10;
         display: flex;
         justify-content: space-between;
         margin-bottom: -1px;
@@ -92,8 +171,7 @@
 
     &__footer-links {
         display: flex;
-        padding-right: 1px;
-        column-gap: 35px;
+        column-gap: 36px;
         text-align: center;
     }
 
@@ -109,4 +187,9 @@
         }
     }
 
+    &__link-arrow {
+        @media (max-width: 360px) {
+            margin-bottom: 3px;
+        }
+    }
 }

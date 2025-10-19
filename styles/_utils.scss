@@ -26,3 +26,9 @@
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
+.hidden-360 {
+    @media (max-width: 360px) {
+        display: none;
+    }
+}
