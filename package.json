@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass-watch": "sass --watch ."
+    "sass-watch": "sass --watch .",
+    "dev": "sass --watch styles/main.scss styles/main.css",
+    "build": "sass styles/main.scss styles/main.css"
   },
   "author": "Nikita Kuznetsov",
   "license": "ISC",
