@@ -24,6 +24,12 @@
                 background-color: var(--color-green-400);
             }
         }
+
+        &:active {
+            .tour-card__link::before {
+                background-color: var(--color-orange-200);
+            }
+        }
     }
 
     @media (max-width: 1024px) {
