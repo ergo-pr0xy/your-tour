@@ -3,7 +3,7 @@
     align-items: center;
     column-gap: 30px;
 
-    @media (max-width: 360px) {
+    @media (max-width: 450px) {
         flex-direction: column;
         row-gap: 30px;
     }
@@ -40,7 +40,7 @@
         line-height: 1.23;
         letter-spacing: 0;
 
-        @media (max-width: 360px) {
+        @media (max-width: 450px) {
             max-width: 291px;
             font-weight: 700;
             font-size: 23px;
@@ -57,7 +57,7 @@
         line-height: 1.42;
         letter-spacing: 0;
 
-        @media (max-width: 360px) {
+        @media (max-width: 450px) {
             max-width: 291px;
             width: 100%;
             text-align: center;

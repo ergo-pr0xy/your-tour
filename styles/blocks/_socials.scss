@@ -1,4 +1,8 @@
 .socials {
     display: flex;
-    column-gap: 25px;
+    column-gap: 25.5px;
+
+    @media (max-width: 360px) {
+        column-gap: 15px;
+    }
 }

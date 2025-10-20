@@ -1,22 +1,14 @@
 .story {
     position: relative;
-
     display: flex;
     width: 1170px;
     height: 567px;
     flex-direction: column;
     padding: 60px;
-
-    // background-image: var(--story-bg-desktop);
-    // background-repeat: no-repeat;
-    // background-size: cover;
     border-radius: var(--border-radius-big);
-    // background-position: center;
     justify-content: space-between;
     overflow: hidden;
     z-index: 10;
-    
-    // transition: background-size 0.3s ease-in-out;
     cursor: pointer;
 
     &::before {
@@ -181,10 +173,10 @@
         line-height: 142%;
         letter-spacing: 0;
 
-        &:hover {
-            text-decoration: underline;
-            text-underline-offset: 6px;
-        }
+        // &:hover {
+        //     text-decoration: underline;
+        //     text-underline-offset: 6px;
+        // }
     }
 
     &__link-arrow {

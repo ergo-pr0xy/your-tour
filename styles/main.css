@@ -146,28 +146,11 @@ label {
 /**
   Приводим к единому цвету svg-элементы
   (за исключением тех, у которых уже указан
-  атрибут fill со значением 'none' или начинается с 'url')
- */
-:where([fill]:not([fill=none],
-[fill^=url])) {
-  fill: currentColor;
-}
-
-/**
-  Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
   атрибут stroke со значением 'none')
  */
 :where([stroke]:not([stroke=none],
 [stroke^=url])) {
   stroke: currentColor;
-}
-
-/**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
- */
-svg * {
-  transition-property: fill, stroke;
 }
 
 /**
@@ -261,10 +244,80 @@ legend {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
 @media (max-width: 360px) {
-  .hidden-360 {
-    display: none;
+  .visually-hidden--mobile {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+.link-underline--low {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline--low::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+@media (hover: hover) {
+  .link-underline--low:hover::after {
+    width: 100%;
+  }
+}
+@media (hover: hover) {
+  .link-underline:hover::after {
+    width: 100%;
+  }
+}
+
+.button-underline {
+  position: relative;
+  text-decoration: none;
+}
+.button-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+@media (hover: hover) {
+  .button-underline:hover::after {
+    width: 100%;
   }
 }
 
@@ -650,10 +703,6 @@ legend {
     column-gap: 30px;
   }
 }
-.header__menu-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 6px;
-}
 @media (max-width: 460px) {
   .header__phonenumber {
     margin-top: 1px;
@@ -824,7 +873,7 @@ legend {
 @media (max-width: 360px) {
   .content--margin {
     margin-top: 76px;
-    margin-bottom: 76px;
+    margin-bottom: 74px;
   }
 }
 
@@ -891,13 +940,6 @@ legend {
 .section__menu-button {
   color: var(--color-black);
   background-color: inherit;
-}
-@media (hover: hover) {
-  .section__menu-button:hover {
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-thickness: 2px;
-  }
 }
 .section__menu-button--is-active {
   color: var(--color-orange-200);
@@ -1539,10 +1581,6 @@ legend {
   line-height: 142%;
   letter-spacing: 0;
 }
-.story__footer-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 6px;
-}
 @media (max-width: 360px) {
   .story__link-arrow {
     margin-bottom: 3px;
@@ -1554,7 +1592,7 @@ legend {
   align-items: center;
   column-gap: 30px;
 }
-@media (max-width: 360px) {
+@media (max-width: 450px) {
   .ending-section {
     flex-direction: column;
     row-gap: 30px;
@@ -1591,7 +1629,7 @@ legend {
   line-height: 1.23;
   letter-spacing: 0;
 }
-@media (max-width: 360px) {
+@media (max-width: 450px) {
   .ending-section__title {
     max-width: 291px;
     font-weight: 700;
@@ -1608,7 +1646,7 @@ legend {
   line-height: 1.42;
   letter-spacing: 0;
 }
-@media (max-width: 360px) {
+@media (max-width: 450px) {
   .ending-section__description {
     max-width: 291px;
     width: 100%;
@@ -1622,6 +1660,7 @@ legend {
 
 .footer {
   display: flex;
+  width: 100%;
   padding: 30px 0;
   justify-content: center;
   font-weight: 400;
@@ -1630,9 +1669,31 @@ legend {
   letter-spacing: 0;
   background-color: var(--color-beige-200);
 }
+@media (max-width: 1024px) {
+  .footer {
+    padding-inline: 52px;
+  }
+}
+@media (max-width: 360px) {
+  .footer {
+    padding-inline: 0;
+    padding-block: 22px;
+  }
+}
 .footer__socials {
+  width: 100%;
   display: flex;
-  column-gap: 538px;
+  justify-content: space-between;
+  padding-inline: 1px;
+}
+@media (max-width: 360px) {
+  .footer__socials {
+    padding-inline: 0;
+    flex-direction: column;
+    font-size: 16px;
+    align-items: center;
+    row-gap: 8px;
+  }
 }
 .footer__text {
   color: var(--color-gray-300);
@@ -1640,21 +1701,53 @@ legend {
 
 .socials {
   display: flex;
-  column-gap: 25px;
+  column-gap: 25.5px;
+}
+@media (max-width: 360px) {
+  .socials {
+    column-gap: 15px;
+  }
 }
 
 .social {
   display: flex;
   column-gap: 10px;
+  align-items: center;
   color: var(--color-black);
   font-weight: 400;
-  font-size: 20px;
   line-height: 1.42;
   letter-spacing: 0;
 }
+@media (max-width: 360px) {
+  .social {
+    column-gap: 5px;
+  }
+}
 
-.test {
-  color: black;
+.social-logo {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 360px) {
+  .social-logo--tg-mobile {
+    width: 22px;
+    margin-top: -2px;
+  }
+}
+@media (max-width: 360px) {
+  .social-logo--fb-mobile {
+    width: 26px;
+    margin-top: -2px;
+  }
+}
+@media (max-width: 360px) {
+  .social-logo--vk-mobile {
+    width: 20px;
+    margin-top: -2px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

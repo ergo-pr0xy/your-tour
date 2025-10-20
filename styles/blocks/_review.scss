@@ -1,12 +1,10 @@
 .review {
     max-width: 570px;
-    
     width: 100%;
     padding: 40px;
     background-color: var(--color-beige-200);
     border-radius: var(--border-radius-big);
 
-    
     @media (max-width: 1024px) {
         max-width: 450px;
         max-height: 841px;
@@ -16,7 +14,6 @@
         max-width: 318px;
         min-height: 408px;
         width: 100%;
-
         padding: 20px;
         border-radius: 20px;
     }

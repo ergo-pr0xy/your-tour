@@ -64,14 +64,6 @@
     &__menu-button {
         color: var(--color-black);
         background-color: inherit;
-        
-        @media (hover:hover) {
-            &:hover {
-                text-decoration: underline;
-                text-underline-offset: 10px;
-                text-decoration-thickness: 2px;
-            }
-        }
     }
 
     &__menu-button--is-active {
@@ -114,5 +106,4 @@
         width: 100%;
         justify-content: center;
     }
-
 }

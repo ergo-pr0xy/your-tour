@@ -1,0 +1,29 @@
+.social-logo {
+    width: 26px;
+    height: 26px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--tg-mobile {
+        @media (max-width: 360px) {
+           width: 22px;
+           margin-top: -2px;
+        } 
+    }
+
+    &--fb-mobile {
+        @media (max-width: 360px) {
+            width: 26px;
+            margin-top: -2px;
+        } 
+    }
+
+    &--vk-mobile {
+        @media (max-width: 360px) {
+            width: 20px;
+            margin-top: -2px;
+        } 
+    }
+}

@@ -1,11 +1,14 @@
 .social {
     display: flex;
     column-gap: 10px;
-
+    align-items: center;
 
     color: var(--color-black);
     font-weight: 400;
-    font-size: 20px;
     line-height: 1.42;
-    letter-spacing: 0
+    letter-spacing: 0;
+
+    @media (max-width: 360px) {
+        column-gap: 5px;
+    }
 }
