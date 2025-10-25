@@ -1,4 +1,14 @@
 .reviews {
+    
+    @media (max-width: 1270px) {
+        padding-inline: 30px;
+    }       
+    
+    @media (max-width: 360px) {
+        padding-inline: 0;
+    }
+
+
     &__review-list {
         display: flex;
         column-gap: 30px;
@@ -7,7 +17,7 @@
             column-gap: 18px;
         }
 
-        @media (max-width: 360px) {
+        @media (max-width: 620px) {
             flex-direction: column;
             row-gap: 18px;
         }

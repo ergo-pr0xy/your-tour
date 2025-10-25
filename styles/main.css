@@ -223,8 +223,6 @@ legend {
 }
 .container--wide {
   max-width: 1860px;
-  margin-inline: auto;
-  width: 100%;
 }
 @media (max-width: 1024px) {
   .container--wide {
@@ -244,7 +242,7 @@ legend {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-@media (max-width: 360px) {
+@media (max-width: 620px) {
   .visually-hidden--mobile {
     position: absolute;
     width: 1px;
@@ -542,7 +540,6 @@ legend {
 .field__input {
   width: 100%;
   max-height: 68px;
-  font: var(--font-family-base);
   padding: 20px;
   padding-left: 19px;
   background-color: var(--color-beige-100);
@@ -782,7 +779,7 @@ legend {
   letter-spacing: 0.02em;
   text-align: center;
 }
-@media (max-width: 360px) {
+@media (max-width: 630px) {
   .hero-section__title {
     font-size: 34px;
     line-height: 1.12;
@@ -1217,6 +1214,16 @@ legend {
   }
 }
 
+@media (max-width: 1270px) {
+  .reviews {
+    padding-inline: 30px;
+  }
+}
+@media (max-width: 360px) {
+  .reviews {
+    padding-inline: 0;
+  }
+}
 .reviews__review-list {
   display: flex;
   column-gap: 30px;
@@ -1226,7 +1233,7 @@ legend {
     column-gap: 18px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 620px) {
   .reviews__review-list {
     flex-direction: column;
     row-gap: 18px;
@@ -1243,7 +1250,6 @@ legend {
 @media (max-width: 1024px) {
   .review {
     max-width: 450px;
-    max-height: 841px;
   }
 }
 @media (max-width: 360px) {
@@ -1269,17 +1275,11 @@ legend {
   letter-spacing: 0;
   margin-bottom: 69px;
 }
-@media (max-width: 880px) {
-  .review__text {
-    font-size: 16px;
-  }
-}
 @media (max-width: 360px) {
   .review__text {
     max-width: 278px;
     padding-right: 3px;
     margin-bottom: 40px;
-    font-size: 16px;
     line-height: 23px;
   }
 }
@@ -1316,7 +1316,7 @@ legend {
   line-height: 1.22;
   letter-spacing: 0;
 }
-@media (max-width: 360px) {
+@media (max-width: 560px) {
   .review__author-name {
     font-weight: 700;
     font-size: 23px;
@@ -1331,7 +1331,7 @@ legend {
   line-height: 1.42;
   letter-spacing: -0.01em;
 }
-@media (max-width: 360px) {
+@media (max-width: 560px) {
   .review__tour-name {
     font-size: 16px;
     margin-bottom: -1px;
@@ -1670,7 +1670,7 @@ legend {
     padding-inline: 52px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 460px) {
   .footer {
     padding-inline: 0;
     padding-block: 22px;
@@ -1682,17 +1682,26 @@ legend {
   justify-content: space-between;
   padding-inline: 1px;
 }
-@media (max-width: 360px) {
+@media (max-width: 640px) {
+  .footer__socials {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 460px) {
   .footer__socials {
     padding-inline: 0;
-    flex-direction: column;
     font-size: 16px;
-    align-items: center;
     row-gap: 8px;
   }
 }
 .footer__text {
   color: var(--color-gray-300);
+}
+@media (max-width: 740px) {
+  .footer__text {
+    text-align: center;
+  }
 }
 
 .socials {

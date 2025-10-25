@@ -14,7 +14,7 @@
         padding-inline: 52px;
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 460px) {
         padding-inline: 0;
         padding-block: 22px;;
     }
@@ -25,16 +25,23 @@
         justify-content: space-between;
         padding-inline: 1px;
 
-        @media (max-width: 360px) {
-            padding-inline: 0;
+        @media (max-width: 640px) {
             flex-direction: column;
-            font-size: 16px;
             align-items: center;
+        }
+
+        @media (max-width: 460px) {
+            padding-inline: 0;
+            font-size: 16px;
             row-gap: 8px;
         }
     }
 
     &__text {
         color: var(--color-gray-300);
+
+        @media (max-width: 740px) {
+            text-align: center;
+        }
     }
 }

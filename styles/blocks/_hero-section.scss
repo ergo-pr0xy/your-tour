@@ -51,7 +51,7 @@
         letter-spacing: 0.02em;
         text-align: center;
 
-        @include mobile {
+        @media (max-width: 630px) {
             font-size: 34px;
             line-height: 1.12;
         }
