@@ -66,7 +66,7 @@
         z-index: 10;
 
         @media (max-width: 360px) {
-            row-gap: 21px;
+            row-gap: 19px;
         }
 
     }
@@ -105,10 +105,11 @@
 
         font-size: 20px;
         font-weight: 400;
-        line-height: 1.427;
+        line-height: 28px;
         letter-spacing: 0;
 
         @media (max-width: 360px) {
+            line-height: 23px;
             font-size: 16px;
         }
     }
@@ -118,20 +119,23 @@
 
         font-size: 20px;
         font-weight: 400;
-         line-height: 1.427;
+        line-height: 28px;
         letter-spacing: 0;
 
         @media (max-width: 360px) {
             padding-left: 24px;
             font-size: 16px;
+            line-height: 142%;
         }
     }
 
     &__description-list-marker {
-        line-height: 1.4;
+        line-height: 28px;
         position: relative;
 
+
         @media (max-width: 360px) {
+            line-height: 22px;
             margin-bottom: 1px;
         }
 

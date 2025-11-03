@@ -25,6 +25,7 @@
         height: 26px;
         border-radius: 5px;
         border: 2px solid var(--color-black);
+        flex-shrink: 0;
 
         @media (max-width: 360px) {
             width: 20px;

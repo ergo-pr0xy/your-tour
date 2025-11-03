@@ -1,12 +1,4 @@
 .tours {
-    @media (max-width: 1024px) {
-        padding-inline: 53px;
-    }
-
-    @media (max-width: 360px) {
-        padding-inline: 21px;
-    }
-
    &__list {
         display: flex;
         flex-wrap: wrap;
@@ -22,11 +14,11 @@
         width: 370px;
         height: 531px;
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1170px) {
             width: 450px;
         }
            
-        @media (max-width: 360px) {
+        @media (max-width: 450px) {
             width: 318px;
             height: 318px;
         }

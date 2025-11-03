@@ -29,14 +29,15 @@
         color: var(--color-black);
         font-weight: 700;
         font-size: 23px;
-        line-height: 1.22;
+        line-height: 28px;
         letter-spacing: 0;
-        margin-bottom: 69px;
+        margin-bottom: 70px;
 
         @media (max-width: 360px) {
             max-width: 278px;
             padding-right: 3px;
             margin-bottom: 40px;
+            font-size: 16px;
             line-height: 23px;
         }
     }
@@ -58,13 +59,7 @@
         row-gap: 8px;
 
         @media (max-width: 360px) {
-            row-gap: 9px;
-        }
-
-        &--second-review-gap {
-            @media (max-width: 360px) {
-                row-gap: 8px;
-            }
+            row-gap: 8px;
         }
     }
 
@@ -92,7 +87,6 @@
 
         @media (max-width: 560px) {
             font-size: 16px;
-            margin-bottom: -1px;
         }
     }
 

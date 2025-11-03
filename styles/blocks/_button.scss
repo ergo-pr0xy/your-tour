@@ -11,9 +11,13 @@
     line-height: 142%;
     letter-spacing: 0;
 
-    @media (max-width: 360px) {
+    @media (max-width: 600px) {
         width: 134px;
         height: 47px;
         font-size: 16px;
     }
+
+    @media (max-width: 600px) {
+        // padding-top: 1px;
+    }   
 }

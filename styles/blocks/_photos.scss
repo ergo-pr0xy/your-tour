@@ -17,6 +17,12 @@
         row-gap: 18px;
     }
 
+    &--margin-top-mobile {
+         @media (max-width: 360px) {
+            margin-top: 0;
+        }
+    }
+
     &__row {
         display: flex;
         width: 100%;

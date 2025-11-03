@@ -6,6 +6,10 @@
     align-items: center;
     z-index: 10; 
 
+    @media (max-width: 360px) {
+        padding-bottom: 2px;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -24,12 +28,11 @@
         font-size: 23px;
         line-height: 1.22;
         margin-right: 16px;
-        
 
         @media (max-width: 360px) {
-            margin-right: 17px;
             font-size: 16px;
             line-height: 1.42;
+            margin-right: 17px;
         }
     }
 

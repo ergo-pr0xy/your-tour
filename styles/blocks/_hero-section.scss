@@ -1,40 +1,47 @@
 .hero-section {
+    flex-direction: column;
+    height: 830px;
     width: 100%;
-    max-height: 831px;
     
     background-image: url('../images/hero-section-background-1920.png');
     background-position: center;
     background-repeat: no-repeat;
 
     @include tablet {
+        height: 831px;
         background-image: url('../images/hero-section-background-1024.png');
     }
 
     @include mobile {
-        max-height: 488px;
-        height: 100%;
+        height: 488px;
         background-image: url('../images/hero-section-background-360.png');
     }
 
-    &__header {
-        margin-bottom: 119px;
-
-        @include mobile {
-            margin-bottom: 52px;;
-        }
-    }
+    // &__header {
+    //     @include mobile {
+    //         margin-bottom: 52px;;
+    //     }
+    // }
 
     &__content {
         display: flex;
+        max-height: 742px;
+        height: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         max-width: 768px;
         width: 100%;
-        row-gap: 50px;
+        row-gap: 49px;
 
         @include mobile {
-            row-gap: 38px; 
+            max-height: 743px;
+        }
+
+        @include mobile {
+            margin-top: 1px;
+            max-height: 400px;
+            row-gap: 39px; 
         }
     }
 
@@ -44,24 +51,28 @@
         max-height: 315px;
         width: 100%;
         height: 100%;
-        padding-bottom: 2px;
 
         font-size: 96px;
         line-height: 1.09;
         letter-spacing: 0.02em;
         text-align: center;
 
-        @media (max-width: 630px) {
+        @media (max-width: 1024px) {
+            font-size: clamp(34px, 10vw, 96px);
+        }
+
+        @media (max-width: 360px) {
+            height: auto;
+            transform: translateY(-1px);
+            // line-height: 1.12;
+            line-height: 38px;
             font-size: 34px;
-            line-height: 1.12;
         }
     }
 
     &__description {
         max-width: 562px;
         max-height: 56px;
-        width: 100%;
-        height: 100%;
 
         @include tablet {
            max-width: 400px;
@@ -70,8 +81,6 @@
         @include mobile {
             max-width: 250px;
             max-height: 71px;
-            padding-bottom: 2px;
-
             font-size: 16px;
         }
     }
@@ -79,7 +88,6 @@
     &__button {
         width: 118px;
         height: 34px;
-        margin-bottom: 118px;
 
         font-size: 17px;
         letter-spacing: -0.01em;
@@ -87,14 +95,12 @@
         color: ver(--color-black); 
 
         @include tablet {
-           padding-top: 2px;
-            margin-bottom: 119px;
+            padding-top: 2px;
         }
 
         @include mobile {
             width: 114px;
             height: 33px;
-            margin-bottom: 52px;
             font-size: 16px;
         }
 

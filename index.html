@@ -214,50 +214,59 @@
                 <div class="tour-creation">
                     <form action="" class="tour-creation__form">
                         <div class="tour-creation__fields">
-                            <div class="tour-creation__field field">
-                                <label for="name" class="field__label">Имя</label>
-                                <input type="text" class="field__input" id="name" name="name" placeholder="Введите Ваше имя">
+                            <div class="tour-creation__row">
+                                <div class="tour-creation__field field">
+                                    <label for="name" class="field__label">Имя</label>
+                                    <input type="text" class="field__input" id="name" name="name" placeholder="Введите Ваше имя">
+                                </div>
+                                <div class="tour-creation__field field">
+                                    <label for="direction" class="field__label">Направление</label>
+                                    <select name="direction" id="direction" class="field__select" required>
+                                        <option value="" class="field__select-option" disabled selected hidden>Куда хотите ехать</option>
+                                        <option value="" class="field__select-option">Север</option>
+                                        <option value="" class="field__select-option">Юг</option>
+                                        <option value="" class="field__select-option">Запад</option>
+                                        <option value="" class="field__select-option">Восток</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="tour-creation__field field">
-                                <label for="direction" class="field__label">Направление</label>
-                                <select name="direction" id="direction" class="field__select" required>
-                                    <option value="" class="field__select-option" disabled selected hidden>Куда хотите ехать</option>
-                                    <option value="" class="field__select-option">Север</option>
-                                    <option value="" class="field__select-option">Юг</option>
-                                    <option value="" class="field__select-option">Запад</option>
-                                    <option value="" class="field__select-option">Восток</option>
-                                </select>
+                            <div class="tour-creation__row">
+                                <div class="tour-creation__field field">
+                                    <label for="email" class="field__label">Email</label>
+                                    <input type="text" class="field__input" id="email" name="email" type="email" placeholder="example@mail.com">
+                                </div>
+                                <div class="tour-creation__field field">
+                                    <label for="phonenumber" class="field__label">Телефон</label>
+                                    <input 
+                                        type="tel" 
+                                        class="field__input" 
+                                        id="phonenumber" 
+                                        name="phonenumber" 
+                                        placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _">
+                                </div>
                             </div>
-                            <div class="tour-creation__field field">
-                                <label for="email" class="field__label">Email</label>
-                                <input type="text" class="field__input" id="email" name="email" type="email" placeholder="example@mail.com">
+                            <div class="tour-creation__row">
+                                <div class="tour-creation__field field field--date-margin">
+                                    <label for="date-from" class="field__label">Дата от</label>
+                                    <input 
+                                        type="date" 
+                                        onfocus="this.showPicker()" 
+                                        class="field__input field__input--date" 
+                                        id="date-from" 
+                                        name="date-from" 
+                                        required>
+                                </div>
+                                <div class="tour-creation__field field field--date-margin">
+                                    <label for="date-to" class="field__label">Дата до</label>
+                                    <input type="date" onfocus="this.showPicker()" class="field__input field__input--date" id="date-to" name="date-to" required>
+                                </div>
+                     
                             </div>
-                            <div class="tour-creation__field field">
-                                <label for="phonenumber" class="field__label">Телефон</label>
-                                <input 
-                                    type="tel" 
-                                    class="field__input" 
-                                    id="phonenumber" 
-                                    name="phonenumber" 
-                                    placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _">
-                            </div>
-                            <div class="tour-creation__field field field--date-margin">
-                                <label for="date-from" class="field__label">Дата от</label>
-                                <input 
-                                    type="date" 
-                                    onfocus="this.showPicker()" 
-                                    class="field__input field__input--date" 
-                                    id="date-from" 
-                                    name="date-from" 
-                                    required>
-                            </div>
-                            <div class="tour-creation__field field field--date-margin">
-                                <label for="date-to" class="field__label">Дата до</label>
-                                <input type="date" onfocus="this.showPicker()" class="field__input field__input--date" id="date-to" name="date-to" required>
-                            </div>
-                            <div class="tour-creation__field field field--wide">
-                                <label for="comment" class="field__label">Комментарий</label>
-                                <textarea class="field__input field__input--textarea" id="comment" name="comment"></textarea>
+                            <div class="tour-creation__row">
+                                <div class="tour-creation__field field field--wide">
+                                    <label for="comment" class="field__label">Комментарий</label>
+                                    <textarea class="field__input field__input--textarea" id="comment" name="comment"></textarea>
+                                </div>
                             </div>
                         </div>
                         <div class="tour-creation__inner">
@@ -296,7 +305,6 @@
                             </div>
                         </div>
                     </form>
-                    
                 </div>
             </div>
         </section>
@@ -329,7 +337,7 @@
                         </li>
                         <li class="review">
                             <div class="review__body">
-                                <p class="review__text review__text--second-review-margin">
+                                <p class="review__text">
                                     Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании 
                                     системы обучения кадров, соответствует насущным потребностям.<br><br>
                                     Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) 
@@ -337,7 +345,7 @@
                                     обуславливает создание модели развития.
                                 </p>
                                 <div class="review__author-info">
-                                    <div class="review__inner review__inner--second-review-gap">
+                                    <div class="review__inner">
                                         <div class="review__author-name">Павел</div>
                                         <div class="review__tour-name">Тур: Путешествие в горы</div>
                                     </div>
@@ -360,7 +368,7 @@
                 </p>
             </header>
             <div class="section__body">
-                <div class="photos">
+                <div class="photos photos--margin-top-mobile ">
                     <div class="photos__row">
                         <picture class="photo">
                             <source srcset="images/photos-photo-1-360.png" media="(max-width: 360px)">

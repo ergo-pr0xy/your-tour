@@ -13,14 +13,14 @@
     &__title {
         font-weight: 700;
         font-size: 59px;
-        line-height: 1.24;
-        letter-spacing: 0;
+        // line-height: 1.24;
+        line-height: 73px;
+        letter-spacing: 0%;
         color: var(--color-black);
         text-align: center;
 
-        &--narrow {
-            max-width: 530px;
-            width: 100%;
+        @media (max-width: 1024px) {
+            font-size: clamp(34px, 10vw, 59px);
         }
 
         @media (max-width: 360px) {
@@ -28,12 +28,15 @@
             line-height: 38px;
             letter-spacing: 0.02em; 
         }
+        
+        &--narrow {
+            max-width: 530px;
+        }
     }
 
     &__menu {
         margin-top: 35px;
         margin-bottom: 106px;
-        max-width: 700px;
         width: 100%;
 
          @media (max-width: 360px) {
@@ -46,12 +49,14 @@
     &__menu-list {
         display: flex;
         justify-content: center;
-        gap: 30px;
+        gap: 30.7px;
         flex-wrap: wrap;
+        margin-left: -1px;
 
         font-weight: 700;
         font-size: 23px;
-        line-height: 122%;
+        // line-height: 122%;
+        line-height: 28px;
         letter-spacing: 0;
 
         @media (max-width: 360px) {
@@ -80,20 +85,21 @@
     &__description {
         max-width: 400px;
         margin-top: 30px;
-        margin-bottom: 99px;
+        margin-bottom: 100px;
 
         color: var(--color-gray-300);
         font-weight: 400;
         font-size: 20px;
-        line-height: 142%;
+        line-height: 28px;
         letter-spacing: 0;
         text-align: center;
 
         @media (max-width: 360px) {
-            margin-top: 20px;
+            margin-top: 19px;
             margin-bottom: 50px;
             max-width: 318px;
             font-size: 16px;
+            line-height: 23px;
 
             &--margin-40 {
                 margin-bottom: 40px;

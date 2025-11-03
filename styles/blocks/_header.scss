@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     padding-block: 28px;
+    max-height: 88px;
 
     @media (max-width: 1024px) {
         padding-inline: 57px;
@@ -65,6 +66,7 @@
         @media (max-width: 460px) {
             margin-top: 1px;
             font-size: 16px;
+            transform: translateY(1px);
         } 
     }
 }

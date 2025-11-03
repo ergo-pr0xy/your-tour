@@ -10,17 +10,18 @@
     }
 
     &__title {
-        margin-bottom: 7px;
+        margin-bottom: 8px;
 
         @media (max-width: 360px) {
             font-size: 16px;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
     }
 
     &__labels {
         display: flex;
         column-gap: 31px;
+
         @media (max-width: 360px) {
             column-gap: 30px;
         }
@@ -64,18 +65,21 @@
 
     &__label {
         display: flex;
-        flex-direction: row;
         align-items: center;
         column-gap: 11px;
+
         @media (max-width: 360px) {
-          column-gap: 10px;
+            column-gap: 10px;
         }
     }
 
     &__label-emulator {
         text-align: center;
+        margin-bottom: -1px;
+
         @media (max-width: 360px) {
             font-size: 16px;
+            margin-bottom: -0;
         }
     }
 }
