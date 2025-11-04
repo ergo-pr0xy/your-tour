@@ -1,14 +1,9 @@
 .field {
     display: flex;
     flex-direction: column;
-    // max-width: 500px;
     width: 100%;
     align-items: start;
     row-gap: 8px;
-
-    // @media (max-width: 1170px) {
-    //     max-width: 389px;
-    // }
 
     @media (max-width: 360px) {
         row-gap: 7px;

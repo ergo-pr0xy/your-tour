@@ -1,5 +1,4 @@
 .reviews {
-    
     @media (max-width: 1270px) {
         padding-inline: 30px;
     }       
@@ -7,7 +6,6 @@
     @media (max-width: 360px) {
         padding-inline: 0;
     }
-
 
     &__review-list {
         display: flex;
