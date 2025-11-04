@@ -11,8 +11,14 @@
     &__wrapper {
         border-radius: var(--border-radius-big);
         overflow: hidden;
+        transform: translateX(-0.3px);
+
+        @media (max-width: 1024px) {
+            transform: translateX(-0.5px);
+        }
 
         @media (max-width: 360px) {
+            transform: translateX(0);
             margin-top: -1px;
             border-radius: 20px;
         }

@@ -61,4 +61,9 @@
     &__input:checked + &__emulator::after {
         opacity: 1;
     }
+
+    &__input:focus:not(:checked) + &__emulator {
+        outline: 1px solid var(--color-gray-300);
+        outline-offset: 2px;
+    }
 }

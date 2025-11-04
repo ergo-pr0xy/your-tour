@@ -27,16 +27,16 @@
         }
     }
 
-    &__input:checked + &__emulator::after {
-        opacity: 1;
-    }
-
     &__emulator {
         position: relative;
         width: 26px;
         height: 26px;
         border-radius: 50%;
         border: 2px solid var(--color-black);
+
+        &:focus {
+            border: 1px solid black;
+        }
 
         @media (max-width: 360px) {
             margin-top: -1px;
@@ -61,6 +61,16 @@
                 height: 9px;
             }
         }
+    }
+
+       
+    &__input:focus:not(:checked) + &__emulator {
+        outline: 1px solid var(--color-gray-300);
+        outline-offset: 2px;
+    }
+    
+    &__input:checked + &__emulator::after {
+        opacity: 1; 
     }
 
     &__label {

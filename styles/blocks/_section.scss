@@ -13,7 +13,6 @@
     &__title {
         font-weight: 700;
         font-size: 59px;
-        // line-height: 1.24;
         line-height: 73px;
         letter-spacing: 0%;
         color: var(--color-black);
@@ -37,7 +36,6 @@
     &__menu {
         margin-top: 35px;
         margin-bottom: 106px;
-        width: 100%;
 
          @media (max-width: 360px) {
             max-width: 300px;
@@ -49,36 +47,20 @@
     &__menu-list {
         display: flex;
         justify-content: center;
-        gap: 30.7px;
+        gap: 30.65px;
         flex-wrap: wrap;
         margin-left: -1px;
 
         font-weight: 700;
         font-size: 23px;
-        // line-height: 122%;
-        line-height: 28px;
-        letter-spacing: 0;
+        line-height: 122%;
+        letter-spacing: 0.002em;
 
         @media (max-width: 360px) {
+            margin-left: 0;
             gap: 10px; 
             font-size: 16px;
             line-height: 23px;
-        }
-    }
-
-    &__menu-button {
-        color: var(--color-black);
-        background-color: inherit;
-    }
-
-    &__menu-button--is-active {
-        color: var(--color-orange-200);
-        text-decoration: underline;
-        text-underline-offset: 10px;
-        text-decoration-thickness: 2px;
-
-        @media (max-width: 360px) {
-            text-underline-offset: 4px;
         }
     }
 
