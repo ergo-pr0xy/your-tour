@@ -81,43 +81,15 @@
     }
 
     &__button {
-        width: 118px;
-        height: 34px;
-
-        font-size: 17px;
-        letter-spacing: -0.01em;
-        background-color: var(--color-white);
-        color: ver(--color-black); 
         transform: translateY(0.5px);
 
         @include tablet {
             transform: translateY(1px);
-            padding-top: 2px;
+            padding-top: 1px;
         }
 
         @include mobile {
-            width: 114px;
-            height: 33px;
-            font-size: 16px;
+            padding-top: 2px;
         }
-
-        @media (hover:hover) {
-            &:hover {
-                color: var(--color-white);
-                background-color: var(--color-orange-200);
-            }
-            &:active {
-                color: var(--color-black);
-                background-color: var(--color-orange-100);
-            }
-        }
-
-        @media (hover:none) {
-            &:hover {
-                color: var(--color-black);
-                background-color: var(--color-white);
-            }
-        }
-
     }
 }

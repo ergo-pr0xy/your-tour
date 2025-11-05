@@ -81,35 +81,4 @@
             column-gap: 10px;
         }
     }
-
-    &__button--deep-green {
-        background-color: var(--color-green-400);
-        color: var(--color-white); 
-
-        @media (hover:hover) {
-            &:hover {
-                background-color: var(--color-green-300);
-            }
-
-            &:active {
-                background-color: var(--color-green-200);
-            }
-        }
-    }
-
-    &__button--light-green {
-        background-color: var(--color-green-100);
-        color: var(--color-green-400); 
-
-        @media (hover:hover) {
-            &:hover {
-                background-color: var(--color-gray-100);
-            }
-            
-            &:active {
-                background-color: var(--color-gray-200);
-            }
-        }
-    }
-
 }

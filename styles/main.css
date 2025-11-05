@@ -743,21 +743,79 @@ legend {
 }
 
 .button {
+  border-radius: var(--border-radius-small);
+  line-height: 142%;
+  text-align: center;
+  font-weight: 400;
+}
+.button--small {
+  width: 118px;
+  height: 34px;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 360px) {
+  .button--small {
+    width: 114px;
+    height: 33px;
+    font-size: 16px;
+  }
+}
+.button--medium {
   width: 235px;
   height: 58px;
-  line-height: 1.42;
-  text-align: center;
-  border-radius: var(--border-radius-small);
-  font-weight: 400;
   font-size: 20px;
-  line-height: 142%;
   letter-spacing: 0;
 }
 @media (max-width: 600px) {
-  .button {
+  .button--medium {
     width: 134px;
     height: 47px;
     font-size: 16px;
+  }
+}
+.button--white {
+  background-color: var(--color-white);
+  color: ver(--color-black);
+}
+@media (hover: hover) {
+  .button--white:hover {
+    color: var(--color-white);
+    background-color: var(--color-orange-200);
+  }
+  .button--white:active {
+    color: var(--color-black);
+    background-color: var(--color-orange-100);
+  }
+}
+@media (hover: none) {
+  .button--white:hover {
+    color: var(--color-black);
+    background-color: var(--color-white);
+  }
+}
+.button--deep-green {
+  background-color: var(--color-green-400);
+  color: var(--color-white);
+}
+@media (hover: hover) {
+  .button--deep-green:hover {
+    background-color: var(--color-green-300);
+  }
+  .button--deep-green:active {
+    background-color: var(--color-green-200);
+  }
+}
+.button--light-green {
+  background-color: var(--color-green-100);
+  color: var(--color-green-400);
+}
+@media (hover: hover) {
+  .button--light-green:hover {
+    background-color: var(--color-gray-100);
+  }
+  .button--light-green:active {
+    background-color: var(--color-gray-200);
   }
 }
 
@@ -847,41 +905,17 @@ legend {
   }
 }
 .hero-section__button {
-  width: 118px;
-  height: 34px;
-  font-size: 17px;
-  letter-spacing: -0.01em;
-  background-color: var(--color-white);
-  color: ver(--color-black);
   transform: translateY(0.5px);
 }
 @media (max-width: 1024px) {
   .hero-section__button {
     transform: translateY(1px);
-    padding-top: 2px;
+    padding-top: 1px;
   }
 }
 @media (max-width: 360px) {
   .hero-section__button {
-    width: 114px;
-    height: 33px;
-    font-size: 16px;
-  }
-}
-@media (hover: hover) {
-  .hero-section__button:hover {
-    color: var(--color-white);
-    background-color: var(--color-orange-200);
-  }
-  .hero-section__button:active {
-    color: var(--color-black);
-    background-color: var(--color-orange-100);
-  }
-}
-@media (hover: none) {
-  .hero-section__button:hover {
-    color: var(--color-black);
-    background-color: var(--color-white);
+    padding-top: 2px;
   }
 }
 
@@ -1219,30 +1253,6 @@ legend {
   .tour-creation__buttons {
     margin-top: 4px;
     column-gap: 10px;
-  }
-}
-.tour-creation__button--deep-green {
-  background-color: var(--color-green-400);
-  color: var(--color-white);
-}
-@media (hover: hover) {
-  .tour-creation__button--deep-green:hover {
-    background-color: var(--color-green-300);
-  }
-  .tour-creation__button--deep-green:active {
-    background-color: var(--color-green-200);
-  }
-}
-.tour-creation__button--light-green {
-  background-color: var(--color-green-100);
-  color: var(--color-green-400);
-}
-@media (hover: hover) {
-  .tour-creation__button--light-green:hover {
-    background-color: var(--color-gray-100);
-  }
-  .tour-creation__button--light-green:active {
-    background-color: var(--color-gray-200);
   }
 }
 
