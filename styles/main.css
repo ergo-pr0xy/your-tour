@@ -776,7 +776,7 @@ legend {
 }
 .button--white {
   background-color: var(--color-white);
-  color: ver(--color-black);
+  color: var(--color-black);
 }
 @media (hover: hover) {
   .button--white:hover {
@@ -806,6 +806,12 @@ legend {
     background-color: var(--color-green-200);
   }
 }
+@media (hover: none) {
+  .button--deep-green:hover {
+    background-color: var(--color-green-400);
+    color: var(--color-white);
+  }
+}
 .button--light-green {
   background-color: var(--color-green-100);
   color: var(--color-green-400);
@@ -816,6 +822,12 @@ legend {
   }
   .button--light-green:active {
     background-color: var(--color-gray-200);
+  }
+}
+@media (hover: none) {
+  .button--light-green:hover {
+    background-color: var(--color-green-100);
+    color: var(--color-green-400);
   }
 }
 
