@@ -1759,9 +1759,6 @@ legend {
     row-gap: 9px;
   }
 }
-.footer__socials-list {
-  margin-top: -1px;
-}
 .footer__text {
   color: var(--color-gray-300);
 }
@@ -1782,21 +1779,21 @@ legend {
 }
 
 .social {
-  display: flex;
-  column-gap: 10px;
-  align-items: center;
+  margin-block: auto;
   color: var(--color-black);
   font-weight: 400;
   line-height: 1.42;
   letter-spacing: 0;
 }
+.social__link {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
 @media (max-width: 360px) {
-  .social {
+  .social__link {
     column-gap: 5px;
   }
-}
-.social__name {
-  margin-top: 1px;
 }
 
 .social-logo {
@@ -1807,21 +1804,24 @@ legend {
   align-items: center;
 }
 @media (max-width: 360px) {
+  .social-logo {
+    margin-top: -3px;
+  }
+}
+@media (max-width: 360px) {
   .social-logo--tg-mobile {
     width: 22px;
-    margin-top: -2px;
+    transform: translateX(-0.5px);
   }
 }
 @media (max-width: 360px) {
   .social-logo--fb-mobile {
     width: 26px;
-    margin-top: -2px;
   }
 }
 @media (max-width: 360px) {
   .social-logo--vk-mobile {
     width: 20px;
-    margin-top: -2px;
   }
 }
 

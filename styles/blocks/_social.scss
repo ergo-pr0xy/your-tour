@@ -1,18 +1,17 @@
 .social {
-    display: flex;
-    column-gap: 10px;
-    align-items: center;
-
+    margin-block: auto;
     color: var(--color-black);
     font-weight: 400;
     line-height: 1.42;
     letter-spacing: 0;
 
-    @media (max-width: 360px) {
-        column-gap: 5px;
-    }
+    &__link {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
 
-    &__name {
-        margin-top: 1px;
+        @media (max-width: 360px) {
+            column-gap: 5px;
+        }
     }
 }

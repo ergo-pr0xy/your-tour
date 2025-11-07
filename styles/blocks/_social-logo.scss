@@ -5,25 +5,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    @media (max-width: 360px) {
+        margin-top: -3px;
+    }
 
     &--tg-mobile {
         @media (max-width: 360px) {
            width: 22px;
-           margin-top: -2px;
+           transform: translateX(-0.5px);
         } 
     }
 
     &--fb-mobile {
         @media (max-width: 360px) {
             width: 26px;
-            margin-top: -2px;
         } 
     }
 
     &--vk-mobile {
         @media (max-width: 360px) {
             width: 20px;
-            margin-top: -2px;
         } 
     }
 }
