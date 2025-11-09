@@ -5,4 +5,8 @@
     @media (max-width: 360px) {
         column-gap: 15px;
     }
+
+    & svg {
+        color: var(--color-gray-300);
+    }
 }

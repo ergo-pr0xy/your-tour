@@ -205,6 +205,24 @@ legend {
   padding: 0;
 }
 
+/**
+  Приводим к единому цвету svg-элементы
+ */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
 @font-face {
   font-family: "Roboto";
   src: url("../fonts/Roboto-Regular.woff2") format("woff2");
@@ -343,6 +361,22 @@ legend {
   }
 }
 
+@keyframes appear-header {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disappear-header {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .card-link {
   position: relative;
   padding-bottom: 1px;
@@ -667,6 +701,8 @@ legend {
 }
 
 .header {
+  position: absolute;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -682,6 +718,20 @@ legend {
   .header {
     padding: 33px 20px;
   }
+}
+.header--fixed {
+  position: fixed;
+  color: var(--color-black);
+  background-color: rgba(243, 239, 232, 0.6);
+  backdrop-filter: blur(54px);
+  -webkit-backdrop-filter: blur(54px);
+  z-index: 100;
+}
+.header--show-fixed {
+  animation: appear-header 0.3s forwards;
+}
+.header--hide-fixed {
+  animation: disappear-header 0.3s forwards;
 }
 .header__inner {
   padding-inline: 1px;
@@ -704,11 +754,17 @@ legend {
     height: 100%;
   }
 }
+.header__logo {
+  color: currentColor;
+}
 @media (max-width: 460px) {
   .header__logo {
     max-width: 133px;
     width: 100%;
   }
+}
+.header__logo--black {
+  color: var(--color-black);
 }
 @media (max-width: 920px) {
   .header__menu {
@@ -835,6 +891,7 @@ legend {
   flex-direction: column;
   height: 830px;
   width: 100%;
+  padding-top: 88px;
   background-image: url("../images/hero-section-background-1920.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -1776,6 +1833,9 @@ legend {
   .socials {
     column-gap: 15px;
   }
+}
+.socials svg {
+  color: var(--color-gray-300);
 }
 
 .social {
