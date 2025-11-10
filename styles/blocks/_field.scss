@@ -36,6 +36,7 @@
     }
 
     &__input {
+        position: relative;
         width: 100%;
         max-height: 68px;
 
@@ -67,26 +68,21 @@
         &::placeholder {
             color: var(--color-gray-300);
         }
+    }
 
-        &--textarea {
-            width: 100%;
-            max-height: none;
-            min-height: 152px;
-            resize: none;
-            
-            @media (max-width: 360px) {
-                min-height: 132px;
-            }
+    &__input-textarea {   
+        width: 100%;
+        max-height: none;
+        min-height: 152px;
+        resize: none;
+        
+        @media (max-width: 360px) {
+            min-height: 132px;
         }
+    }
 
-        &--date {
-            position: relative;
-            text-transform: uppercase;
-
-            &:invalid {
-                color: var(--color-gray-300); 
-            }
-        }
+    &__input-date {   
+        text-transform: uppercase;
     }
 
     &__select {

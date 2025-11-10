@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="description" content="Туристические туры по России! Выбери уже готовый тур или создай свой собственный! Незабываемые впечатления от YourTour!">
     <meta name="keywords" content="Туры по России, путевки, активный отдых, горячие туры, походы, сплавы, велопрогулки, активный отдых">
+    <meta http-equiv="Content-Language" content="ru">
     <title>Your Tour - идеальные путешествия существуют!</title>
     <link rel="stylesheet" href="./styles/main.css"/>
       <script type="module" src="./index.js"></script>
@@ -248,45 +249,32 @@
                                 </div>
                                 <div class="tour-creation__field field">
                                     <label for="phonenumber" class="field__label">Телефон</label>
-                                    <input 
-                                        type="tel" 
-                                        class="field__input" 
-                                        id="phonenumber" 
-                                        name="phonenumber" 
-                                        placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _"
-                                    >
+                                    <input type="tel" class="field__input" id="phonenumber" name="phonenumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _">
                                 </div>
                             </div>
                             <div class="tour-creation__row">
                                 <div class="tour-creation__field field field--date-margin">
                                     <label for="date-from" class="field__label">Дата от</label>
-                                    <input 
-                                        type="date" 
-                                        onfocus="this.showPicker()" 
-                                        class="field__input field__input--date" 
-                                        id="date-from" 
-                                        name="date-from" 
-                                        required>
+                                    <input type="text"  class="field__input field__input-date " id="date-from" name="date-from" placeholder="ДД.ММ.ГГГГ" required>
                                 </div>
                                 <div class="tour-creation__field field field--date-margin">
                                     <label for="date-to" class="field__label">Дата до</label>
-                                    <input type="date" onfocus="this.showPicker()" class="field__input field__input--date" id="date-to" name="date-to" required>
+                                    <input type="text" class="field__input field__input-date" id="date-to" name="date-to" placeholder="ДД.ММ.ГГГГ" required>
                                 </div>
-                     
                             </div>
                             <div class="tour-creation__row">
                                 <div class="tour-creation__field field field--wide">
                                     <label for="comment" class="field__label">Комментарий</label>
-                                    <textarea class="field__input field__input--textarea" id="comment" name="comment"></textarea>
+                                    <textarea class="field__input field__input-textarea" id="comment" name="comment"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="tour-creation__inner">
-                            <fieldset class="tour-creaction__age-confirmation radio">
+                            <fieldset class="tour-creaction__age-confirmation radio ">
                                 <legend class="radio__title">Вам есть 18 лет?</legend>
                                 <div class="radio__labels">
                                     <label class="radio__label">
-                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-yes" name="age-confirmation" value="yes">
+                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-yes" name="age-confirmation" value="yes" required>
                                         <span class="radio__emulator"></span>
                                         <span class="radio__label-emulator">Да</span>
                                     </label>
@@ -299,7 +287,7 @@
                             </fieldset>
                             <div class="tour-creation__agreement-confirmation checkbox">
                                 <label class="checkbox__label">
-                                    <input type="checkbox" class="checkbox__input visually-hidden" name="agreement-confirmation">
+                                    <input type="checkbox" class="checkbox__input visually-hidden" name="agreement-confirmation" required>
                                     <span class="checkbox__emulator"></span>
                                     <p class="checkbox__label-emulator">Нажимая кнопку, я принимаю условия <a href=""
                                         class="tour-creation__agreement-confirmation-link

@@ -1,14 +1,33 @@
 const app = () => {
   const header = document.querySelector('.header');
+  const dateInputs = document.querySelectorAll('.field__input-date');
   let lastScrollY = window.scrollY;
 
-  header.addEventListener('animationend', (event) => {
-    if (event.animationName === 'disappear-header') {
-      header.classList.remove('header--fixed');
-    }
-  });
+  const today = new Date().toLocaleDateString('en-CA').slice(0, 10);
 
-  window.addEventListener('scroll', () => {
+  const store = {
+    dateFromValue: '',
+    dateToValue: '',
+  };
+
+  const setMinDate = (input) => input.setAttribute('min', today);
+
+  const handleInputDate = (input) => {
+    input.addEventListener('focus', () => {
+      input.setAttribute('type', 'date');
+      input.showPicker();
+    });
+
+    input.addEventListener('blur', (event) => {
+      if (event.target.value === '') {
+        input.setAttribute('type', 'text');
+      } else {
+        input.setAttribute('type', 'date');
+      }
+    });
+  };
+
+  const handleFixedHeader = () => {
     const currentScrollY = window.scrollY;
 
     if (window.scrollY > 450) {
@@ -28,6 +47,25 @@ const app = () => {
     }
 
     lastScrollY = currentScrollY;
+  };
+
+  const hideFixedHeader = (event) => {
+    if (event.animationName === 'disappear-header') {
+      header.classList.remove('header--fixed');
+    }
+  };
+
+  dateInputs.forEach((input) => {
+    setMinDate(input);
+    handleInputDate(input);
+  });
+
+  window.addEventListener('scroll', () => {
+    handleFixedHeader();
+  });
+
+  header.addEventListener('animationend', (event) => {
+    hideFixedHeader(event);
   });
 };
 
