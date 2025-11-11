@@ -11,7 +11,7 @@
       <script type="module" src="./index.js"></script>
     <link rel="icon" type="image/png" href="./images/icons/favicon.png" sizes="32x32">
 </head>
-<body>
+<body>                        
     <header class="hero-section__header header">
         <div class="header__inner container">
             <a href="" class="header__logo logo">
@@ -234,7 +234,7 @@
                                 <div class="tour-creation__field field">
                                     <label for="direction" class="field__label">Направление</label>
                                     <select name="direction" id="direction" class="field__select" required>
-                                        <option value="" class="field__select-option" disabled selected hidden>Куда хотите ехать</option>
+                                        <option value="" class="field__select-option field__select-option--default" disabled selected>Куда хотите ехать</option>
                                         <option value="north" class="field__select-option">Север</option>
                                         <option value="south" class="field__select-option">Юг</option>
                                         <option value="west" class="field__select-option">Запад</option>
@@ -623,5 +623,12 @@
             </div>
         </div>
     </footer> 
+            <select required>
+                <option value="default" disabled>Куда хотите ехать</option>
+                <option value="north"  >Север</option>
+                <option value="south" >Юг</option>
+                <option value="west" >Запад</option>
+                <option value="east" >Восток</option>
+            </select>
 </body>
 </html>

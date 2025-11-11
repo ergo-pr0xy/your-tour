@@ -1,6 +1,7 @@
 const app = () => {
   const header = document.querySelector('.header');
   const dateInputs = document.querySelectorAll('.field__input-date');
+  const selectInput = document.querySelector('.field__select');
   let lastScrollY = window.scrollY;
 
   const today = new Date().toLocaleDateString('en-CA').slice(0, 10);
@@ -9,6 +10,11 @@ const app = () => {
     dateFromValue: '',
     dateToValue: '',
   };
+
+  // const submitFormButton = document.querySelector('.tour-creation__button');
+  // submitFormButton.addEventListener('click', (e) => {
+  //   selectInput.selectedIndex = 0;
+  // });
 
   const setMinDate = (input) => input.setAttribute('min', today);
 

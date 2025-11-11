@@ -29,12 +29,6 @@
   display: none;
 }
 
-input[type=date]::-webkit-datetime-edit-year-field,
-input[type=date]::-webkit-datetime-edit-month-field,
-input[type=date]::-webkit-datetime-edit-day-field {
-  padding: 0;
-}
-
 input[type=date]::-webkit-calendar-picker-indicator {
   display: none;
 }
@@ -659,7 +653,6 @@ svg * {
   text-transform: uppercase;
 }
 .field__select {
-  position: relative;
   appearance: none;
   outline: none;
   width: 100%;
@@ -695,6 +688,9 @@ svg * {
 }
 .field__select-option {
   color: var(--color-black);
+}
+.field__select-option--default {
+  color: var(--color-gray-300);
 }
 
 .header {

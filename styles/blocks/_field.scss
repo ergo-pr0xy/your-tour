@@ -86,7 +86,6 @@
     }
 
     &__select {
-        position: relative;
         appearance: none;
         outline: none;
 
@@ -124,8 +123,16 @@
             color: var(--color-gray-300);
         }
     }
+    
 
     &__select-option {
         color: var(--color-black);
     }
+
+    &__select-option--default {
+        color: var(--color-gray-300);
+    }
+
+
+
 }
