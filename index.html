@@ -94,7 +94,7 @@
                 </nav>
             </header>
             <div class="section__body">
-                <div class="tours">
+                <div class="tours" id="tours">
                     <ul class="tours__list">
                         <li class="tours__item">
                             <div style="--card-bg-desktop: url(../images/tours-card-1-1920.png);
@@ -225,7 +225,7 @@
             </header>
             <div class="section__body">
                 <div class="tour-creation">
-                    <form action="" class="tour-creation__form">
+                    <form action="" class="tour-creation__form" action="#tours">
                         <div class="tour-creation__fields">
                             <div class="tour-creation__row">
                                 <div class="tour-creation__field field">
@@ -246,11 +246,11 @@
                             <div class="tour-creation__row">
                                 <div class="tour-creation__field field">
                                     <label for="email" class="field__label">Email</label>
-                                    <input type="email" class="field__input" id="email" name="email" type="email" autocomplete="email" placeholder="example@mail.com">
+                                    <input type="email" class="field__input" id="email" name="email" type="email" autocomplete="email" placeholder="example@mail.com" pattern="^\S+@\S+\.\S+$" required>
                                 </div>
                                 <div class="tour-creation__field field">
                                     <label for="phonenumber" class="field__label">Телефон</label>
-                                    <input type="tel" class="field__input" id="phonenumber" name="phonenumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _">
+                                    <input type="tel" class="field__input" id="phonenumber" name="phonenumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" required>
                                 </div>
                             </div>
                             <div class="tour-creation__row">
@@ -301,8 +301,8 @@
                                 </label>
                             </div>
                             <div class="tour-creation__buttons">
-                                <button class="tour-creation__button button button--medium button--deep-green " type="submit">Найти тур</button>
-                                <button class="tour-creation__button button button--medium button--light-green " type="button">Сбросить</button>
+                                <button class="tour-creation__submit-button button button--medium button--deep-green " type="submit">Найти тур</button>
+                                <button class="tour-creation__clear-button button button--medium button--light-green " type="button">Сбросить</button>
                             </div>
                         </div>
                     </form>
