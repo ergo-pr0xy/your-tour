@@ -30,6 +30,28 @@ const app = () => {
     });
   };
 
+  const removeElementsWithError = () => {
+    const formElementsWithError = document.querySelectorAll('[class*="error--"]');
+
+    formElementsWithError.forEach((element) => {
+      element.classList.remove('error--input', 'error--checkbox', 'error--radio');
+    });
+  };
+
+  const removeErrorMessages = () => {
+    const errorMessageElements = document.querySelectorAll('.error');
+
+    errorMessageElements.forEach((element) => {
+      element.remove();
+    });
+  };
+
+  const clearErrors = () => {
+    removeElementsWithError();
+    removeErrorMessages();
+    isAgeErrorShowed = false;
+  };
+
   const handleInputDate = (input) => {
     input.addEventListener('focus', () => {
       input.setAttribute('type', 'date');
@@ -72,53 +94,6 @@ const app = () => {
       header.classList.remove('header--fixed');
     }
   };
-
-  dateInputs.forEach((input) => {
-    setMinDate(input);
-    handleInputDate(input);
-  });
-
-  window.addEventListener('scroll', () => {
-    handleFixedHeader();
-  });
-
-  header.addEventListener('animationend', (event) => {
-    hideFixedHeader(event);
-  });
-
-  const removeErrorMessages = () => {
-    const errorMessageElements = document.querySelectorAll('.error');
-
-    errorMessageElements.forEach((element) => {
-      element.remove();
-    });
-  };
-
-  const removeElementsWithError = () => {
-    const formElementsWithError = document.querySelectorAll('[class*="error--"]');
-
-    formElementsWithError.forEach((element) => {
-      element.classList.remove('error--input', 'error--checkbox', 'error--radio');
-    });
-  };
-
-  const clearErrors = () => {
-    removeElementsWithError();
-    removeErrorMessages();
-    isAgeErrorShowed = false;
-  };
-
-  clearFormButton.addEventListener('click', () => {
-    tourCreationForm.reset();
-    clearDateInputs();
-    clearErrors();
-  });
-
-  telInput.addEventListener('input', ({ target }) => {
-    const cleanedNumbers = target.value.startsWith('+7') ? target.value.replace(/\D/g, '').slice(1) : target.value.replace(/\D/g, '');
-    addPhoneMask(target, cleanedNumbers, lastDateInputLength);
-    lastDateInputLength = cleanedNumbers.length;
-  });
 
   const showError = (element, errorType) => {
     let parentElement = element.parentNode;
@@ -168,15 +143,6 @@ const app = () => {
     }
   };
 
-  //   const errors = {
-  //   emptyInput: 'Заполните данное поле',
-  //   nameLang: 'Имя должно быть состоять из букв русского алфавита',
-  //   emptyAgreement: 'Для продолжения необходимо принять условия договора',
-  //   emptyAge: 'Для продолжения необходимо подтверждение возраста',
-  //   prohibitedAge: 'Вы должны быть старше 18 лет для участия в туре',
-  //   incorrectEmail: 'Введите email согласно шаблону example@mail.com',
-  // };
-
   const isAgeAgreementChecked = () => {
     const radioInputs = document.querySelectorAll('input[type="radio"]');
     const checkedRadioInputs = Array.from(radioInputs).filter((item) => item.checked);
@@ -184,7 +150,7 @@ const app = () => {
     return result;
   };
 
-  const validation = () => {
+  const validate = () => {
     let isValid = true;
     let errorType = '';
     removeElementsWithError();
@@ -247,10 +213,37 @@ const app = () => {
     return isValid;
   };
 
-  tourCreationForm.addEventListener('submit', (event) => {
-    event.preventDefault();
+  dateInputs.forEach((input) => {
+    setMinDate(input);
+    handleInputDate(input);
+  });
 
-    if (validation()) {
+  window.addEventListener('scroll', () => {
+    handleFixedHeader();
+  });
+
+  header.addEventListener('animationend', (event) => {
+    hideFixedHeader(event);
+  });
+
+  clearFormButton.addEventListener('click', () => {
+    tourCreationForm.reset();
+    clearDateInputs();
+    clearErrors();
+  });
+
+  telInput.addEventListener('input', ({ target }) => {
+    const cleanedNumbers = target.value.startsWith('+7') ? target.value.replace(/\D/g, '').slice(1) : target.value.replace(/\D/g, '');
+    addPhoneMask(target, cleanedNumbers, lastDateInputLength);
+    lastDateInputLength = cleanedNumbers.length;
+  });
+
+  tourCreationForm.addEventListener('submit', (event) => {
+    event.preventDefault(event);
+
+    if (validate()) {
+      tourCreationForm.reset();
+      clearDateInputs();
       toursSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });

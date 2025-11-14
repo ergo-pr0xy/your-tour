@@ -1877,9 +1877,6 @@ svg * {
   font-size: 14px;
   font-weight: 400;
 }
-.error .checkbox {
-  padding-top: 5px;
-}
 .error--checkbox, .error--radio {
   padding: 10px;
   border: 1px solid red;
