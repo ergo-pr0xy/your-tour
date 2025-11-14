@@ -567,6 +567,7 @@ svg * {
 }
 
 .field {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -652,7 +653,6 @@ svg * {
   max-height: 68px;
   padding-block: 19px 20px;
   padding-left: 19px;
-  color: var(--color-gray-300);
   background-image: url("../images/icons/dropdown-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 23px top 29px;
@@ -676,6 +676,12 @@ svg * {
 .field__select:focus {
   border-color: var(--color-gray-300);
   outline: none;
+}
+.field__select--color-black {
+  color: var(--color-black);
+}
+.field__select--color-gray {
+  color: var(--color-gray-300);
 }
 .field__select-option:not(:first-child) {
   color: var(--color-black);

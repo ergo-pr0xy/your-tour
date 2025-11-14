@@ -8,6 +8,7 @@ const app = () => {
   const tourCreationForm = document.querySelector('.tour-creation__form');
   const telInput = document.querySelector('#phonenumber');
   const toursSection = document.querySelector('#tours');
+  const select = document.querySelector('select');
 
   let lastScrollY = window.scrollY;
   let lastDateInputLength = 0;
@@ -28,6 +29,11 @@ const app = () => {
     dateInputs.forEach((dateInput) => {
       dateInput.setAttribute('type', 'text');
     });
+  };
+
+  const clearSelect = () => {
+    select.classList.remove('field__select--color-black');
+    select.classList.add('field__select--color-gray');
   };
 
   const removeElementsWithError = () => {
@@ -92,6 +98,16 @@ const app = () => {
   const hideFixedHeader = (event) => {
     if (event.animationName === 'disappear-header') {
       header.classList.remove('header--fixed');
+    }
+  };
+
+  const handleSelect = (event) => {
+    if (event.value === '') {
+      event.target.classList.remove('field__select--color-black');
+      event.target.classList.add('field__select--color-gray');
+    } else {
+      event.target.classList.remove('field__select--color-gray');
+      event.target.classList.add('field__select--color-black');
     }
   };
 
@@ -226,9 +242,14 @@ const app = () => {
     hideFixedHeader(event);
   });
 
+  select.addEventListener('change', (event) => {
+    handleSelect(event);
+  });
+
   clearFormButton.addEventListener('click', () => {
     tourCreationForm.reset();
     clearDateInputs();
+    clearSelect();
     clearErrors();
   });
 
@@ -244,6 +265,7 @@ const app = () => {
     if (validate()) {
       tourCreationForm.reset();
       clearDateInputs();
+      clearSelect();
       toursSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
