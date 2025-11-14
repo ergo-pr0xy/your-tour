@@ -58,6 +58,17 @@
         }
     }
 
+    &__link {
+        @media (hover:hover) {
+            &:active {
+                &.story__link::before {
+                    opacity: 1;
+                    background-color: var(--color-orange-200);
+                }
+            }
+        }
+    }
+
     &__inner {
         position: relative;
         display: flex;
