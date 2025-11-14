@@ -67,6 +67,13 @@
         }
     }
 
+    &__agreement-confirmation {
+        display: flex;
+        flex-direction: column;
+        max-width: 575px;
+        row-gap: 8px;
+    }
+
     &__agreement-confirmation-link {
         display: inline;
         color: var(--color-black);

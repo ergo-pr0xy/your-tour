@@ -500,6 +500,7 @@ svg * {
 .radio__labels {
   display: flex;
   column-gap: 31px;
+  max-width: 185px;
 }
 @media (max-width: 360px) {
   .radio__labels {
@@ -540,10 +541,6 @@ svg * {
     width: 9px;
     height: 9px;
   }
-}
-.radio__input:focus:not(:checked) + .radio__emulator {
-  outline: 1px solid var(--color-gray-300);
-  outline-offset: 2px;
 }
 .radio__input:checked + .radio__emulator::after {
   opacity: 1;
@@ -655,6 +652,7 @@ svg * {
   max-height: 68px;
   padding-block: 19px 20px;
   padding-left: 19px;
+  color: var(--color-gray-300);
   background-image: url("../images/icons/dropdown-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 23px top 29px;
@@ -679,14 +677,8 @@ svg * {
   border-color: var(--color-gray-300);
   outline: none;
 }
-.field__select:invalid {
-  color: var(--color-gray-300);
-}
-.field__select-option {
+.field__select-option:not(:first-child) {
   color: var(--color-black);
-}
-.field__select-option--default {
-  color: var(--color-gray-300);
 }
 
 .header {
@@ -1299,6 +1291,12 @@ svg * {
     row-gap: 26px;
   }
 }
+.tour-creation__agreement-confirmation {
+  display: flex;
+  flex-direction: column;
+  max-width: 575px;
+  row-gap: 8px;
+}
 .tour-creation__agreement-confirmation-link {
   display: inline;
   color: var(--color-black);
@@ -1872,6 +1870,23 @@ svg * {
   .social-logo--vk-mobile {
     width: 20px;
   }
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  font-weight: 400;
+}
+.error .checkbox {
+  padding-top: 5px;
+}
+.error--checkbox, .error--radio {
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: var(--border-radius-small);
+}
+.error--input {
+  border-color: red;
 }
 
 /*# sourceMappingURL=main.css.map */

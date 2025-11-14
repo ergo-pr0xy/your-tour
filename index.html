@@ -8,7 +8,6 @@
     <meta http-equiv="Content-Language" content="ru">
     <title>Your Tour - идеальные путешествия существуют!</title>
     <link rel="stylesheet" href="./styles/main.css"/>
-      <script type="module" src="./index.js"></script>
     <link rel="icon" type="image/png" href="./images/icons/favicon.png" sizes="32x32">
 </head>
 
@@ -94,7 +93,7 @@
                 </nav>
             </header>
             <div class="section__body">
-                <div class="tours" id="tours">
+                <div class="tours">
                     <ul class="tours__list">
                         <li class="tours__item">
                             <div style="--card-bg-desktop: url(../images/tours-card-1-1920.png);
@@ -225,16 +224,16 @@
             </header>
             <div class="section__body">
                 <div class="tour-creation">
-                    <form action="" class="tour-creation__form" action="#tours">
+                    <form class="tour-creation__form" action="#tours" novalidate>
                         <div class="tour-creation__fields">
                             <div class="tour-creation__row">
                                 <div class="tour-creation__field field">
                                     <label for="name" class="field__label">Имя</label>
-                                    <input type="text" class="field__input" id="name" name="name" autocomplete="name" placeholder="Введите Ваше имя" required>
+                                    <input type="text" class="field__input" id="name" name="name" data-required="true" data-name-lang="rus" autocomplete="name" placeholder="Введите Ваше имя">
                                 </div>
                                 <div class="tour-creation__field field">
                                     <label for="direction" class="field__label">Направление</label>
-                                    <select name="direction" id="direction" class="field__select" required>
+                                    <select name="direction" id="direction" class="field__select" data-required="true">
                                         <option value="" class="field__select-option field__select-option--default" disabled selected>Куда хотите ехать</option>
                                         <option value="north" class="field__select-option">Север</option>
                                         <option value="south" class="field__select-option">Юг</option>
@@ -246,21 +245,21 @@
                             <div class="tour-creation__row">
                                 <div class="tour-creation__field field">
                                     <label for="email" class="field__label">Email</label>
-                                    <input type="email" class="field__input" id="email" name="email" type="email" autocomplete="email" placeholder="example@mail.com" pattern="^\S+@\S+\.\S+$" required>
+                                    <input type="email" class="field__input" id="email" name="email"  data-required="true" data-should="true" autocomplete="email" placeholder="example@mail.com">
                                 </div>
                                 <div class="tour-creation__field field">
                                     <label for="phonenumber" class="field__label">Телефон</label>
-                                    <input type="tel" class="field__input" id="phonenumber" name="phonenumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" required>
+                                    <input type="tel" class="field__input" id="phonenumber" data-required="true" name="phonenumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" >
                                 </div>
                             </div>
                             <div class="tour-creation__row">
                                 <div class="tour-creation__field field field--date-margin">
                                     <label for="date-from" class="field__label">Дата от</label>
-                                    <input type="text"  class="field__input field__input-date " id="date-from" name="date-from" placeholder="ДД.ММ.ГГГГ" required>
+                                    <input type="text"  class="field__input field__input-date " id="date-from" name="date-from" data-required="true" placeholder="ДД.ММ.ГГГГ" >
                                 </div>
                                 <div class="tour-creation__field field field--date-margin">
                                     <label for="date-to" class="field__label">Дата до</label>
-                                    <input type="text" class="field__input field__input-date" id="date-to" name="date-to" placeholder="ДД.ММ.ГГГГ" required>
+                                    <input type="text" class="field__input field__input-date" id="date-to" name="date-to" data-required="true" placeholder="ДД.ММ.ГГГГ" >
                                 </div>
                             </div>
                             <div class="tour-creation__row">
@@ -271,24 +270,24 @@
                             </div>
                         </div>
                         <div class="tour-creation__inner">
-                            <fieldset class="tour-creaction__age-confirmation radio ">
+                            <fieldset class="tour-creaction__age-confirmation radio">
                                 <legend class="radio__title">Вам есть 18 лет?</legend>
                                 <div class="radio__labels">
                                     <label class="radio__label">
-                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-yes" name="age-confirmation" value="yes" required>
+                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-yes" name="age-confirmation" value="yes" data-required="true">
                                         <span class="radio__emulator"></span>
                                         <span class="radio__label-emulator">Да</span>
                                     </label>
-                                     <label class="radio__label">
-                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-no" name="age-confirmation" value="no">
+                                    <label class="radio__label">
+                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-no" name="age-confirmation" value="no" data-required="true">
                                         <span class="radio__emulator"></span>
                                         <span class="radio__label-emulator">Нет</span>
                                     </label>
                                 </div>
                             </fieldset>
                             <div class="tour-creation__agreement-confirmation checkbox">
-                                <label class="checkbox__label">
-                                    <input type="checkbox" class="checkbox__input visually-hidden" name="agreement-confirmation" required>
+                                <label class="tour-creation__checkbox checkbox__label checkbox__label--max-width">
+                                    <input type="checkbox" class="checkbox__input visually-hidden" name="agreement-confirmation" data-required="true">
                                     <span class="checkbox__emulator"></span>
                                     <p class="checkbox__label-emulator">Нажимая кнопку, я принимаю условия <a href=""
                                         class="tour-creation__agreement-confirmation-link
@@ -301,8 +300,8 @@
                                 </label>
                             </div>
                             <div class="tour-creation__buttons">
-                                <button class="tour-creation__submit-button button button--medium button--deep-green " type="submit">Найти тур</button>
-                                <button class="tour-creation__clear-button button button--medium button--light-green " type="button">Сбросить</button>
+                                <button class="tour-creation__submit-button button button--medium button--deep-green" type="submit">Найти тур</button>
+                                <button class="tour-creation__clear-button button button--medium button--light-green" type="button">Сбросить</button>
                             </div>
                         </div>
                     </form>
@@ -623,6 +622,7 @@
                 </div>
             </div>
         </div>
-    </footer> 
+    </footer>
+    <script type="module" src="./index.js"></script>
 </body>
 </html>

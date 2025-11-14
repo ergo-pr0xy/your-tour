@@ -68,6 +68,7 @@
         &::placeholder {
             color: var(--color-gray-300);
         }
+
     }
 
     &__input-textarea {   
@@ -93,6 +94,7 @@
         max-height: 68px;
         padding-block: 19px 20px;
         padding-left: 19px;
+        color: var(--color-gray-300);
 
         background-image: url("../images/icons/dropdown-arrow.svg");
         background-repeat: no-repeat;
@@ -118,21 +120,10 @@
             border-color: var(--color-gray-300);
             outline: none;
         }
-
-        &:invalid {
-            color: var(--color-gray-300);
-        }
     }
     
 
-    &__select-option {
+    &__select-option:not(:first-child) {
         color: var(--color-black);
     }
-
-    &__select-option--default {
-        color: var(--color-gray-300);
-    }
-
-
-
 }
