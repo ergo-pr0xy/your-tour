@@ -1,7 +1,6 @@
 import addPhoneMask from './addPhoneMask.js';
 
 const app = () => {
-  const today = new Date().toLocaleDateString('en-CA').slice(0, 10);
   const header = document.querySelector('.header');
   const dateInputs = document.querySelectorAll('.field__input-date');
   const clearFormButton = document.querySelector('.tour-creation__clear-button');
@@ -10,6 +9,10 @@ const app = () => {
   const toursSection = document.querySelector('#tours');
   const select = document.querySelector('select');
 
+  const today = new Date().toLocaleDateString('en-CA').slice(0, 10);
+  const fixedHeaderHeightAppearance = 450;
+  const defaultHeaderHeight = 88;
+  const phonenumberLength = 11;
   let lastScrollY = window.scrollY;
   let lastDateInputLength = 0;
   let isAgeErrorShowed = false;
@@ -21,6 +24,7 @@ const app = () => {
     emptyAge: 'Необходимо подтверждение Вашего возраста',
     prohibitedAge: 'Вы должны быть старше 18 лет для участия в туре',
     incorrectEmail: 'Введите email согласно шаблону example@mail.com',
+    phonenumberLength: 'Номер телефона должен состоять из 11 цифр',
   };
 
   const setMinDate = (input) => input.setAttribute('min', today);
@@ -46,6 +50,7 @@ const app = () => {
 
   const removeErrorMessages = () => {
     const errorMessageElements = document.querySelectorAll('.error');
+    isAgeErrorShowed = false;
 
     errorMessageElements.forEach((element) => {
       element.remove();
@@ -76,18 +81,18 @@ const app = () => {
   const handleFixedHeader = () => {
     const currentScrollY = window.scrollY;
 
-    if (window.scrollY > 450) {
+    if (window.scrollY > fixedHeaderHeightAppearance) {
       header.classList.add('header--fixed');
       header.classList.add('header--show-fixed');
       header.classList.remove('header--hide-fixed');
     }
 
-    if (currentScrollY < lastScrollY && currentScrollY <= 450) {
+    if (currentScrollY < lastScrollY && currentScrollY <= fixedHeaderHeightAppearance) {
       header.classList.remove('header--show-fixed');
       header.classList.add('header--hide-fixed');
     }
 
-    if (currentScrollY < lastScrollY && currentScrollY <= 88) {
+    if (currentScrollY < lastScrollY && currentScrollY <= defaultHeaderHeight) {
       header.classList.remove('header--hide-fixed');
       header.classList.remove('header--fixed');
     }
@@ -136,24 +141,23 @@ const app = () => {
 
     if (errorType === 'emptyAgreement') {
       parentElement = document.querySelector('.tour-creation__agreement-confirmation');
-      const checkboxLabel = document.querySelector('.tour-creation__checkbox');
-      checkboxLabel.classList.add('error--checkbox');
       errorElement.innerText = errors[errorType];
       parentElement.appendChild(errorElement);
     }
 
     if (errorType === 'emptyAge') {
       parentElement = document.querySelector('.tour-creaction__age-confirmation');
-      const radioElement = document.querySelector('.radio__labels');
-      radioElement.classList.add('error--radio');
       errorElement.innerText = errors[errorType];
       parentElement.appendChild(errorElement);
     }
 
     if (errorType === 'prohibitedAge') {
       parentElement = document.querySelector('.tour-creaction__age-confirmation');
-      const radioElement = document.querySelector('.radio__labels');
-      radioElement.classList.add('error--radio');
+      errorElement.innerText = errors[errorType];
+      parentElement.appendChild(errorElement);
+    }
+
+    if (errorType === 'phonenumberLength') {
       errorElement.innerText = errors[errorType];
       parentElement.appendChild(errorElement);
     }
@@ -224,6 +228,14 @@ const app = () => {
           isValid = false;
         }
       }
+
+      if (element.dataset.minLength === 'true') {
+        const normalizedPhonenumber = element.value.replace(/\D/g, '');
+        if (normalizedPhonenumber.length !== phonenumberLength) {
+          errorType = 'phonenumberLength';
+          showError(element, errorType);
+        }
+      }
     });
 
     return isValid;
@@ -260,7 +272,7 @@ const app = () => {
   });
 
   tourCreationForm.addEventListener('submit', (event) => {
-    event.preventDefault(event);
+    event.preventDefault();
 
     if (validate()) {
       tourCreationForm.reset();

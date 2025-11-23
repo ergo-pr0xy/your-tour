@@ -38,8 +38,7 @@
     }
 
     @media (max-width: 360px) {
-        max-width: 318px;  
-        width: 100%; 
+        width: 318px;  
         height: 455px;
         padding: 30px;
         padding-top: 31px;
@@ -51,20 +50,16 @@
             &::before {
                 transform: scale(1.2);
             }
-            .story__link::before {
+            & .story__link::before {
                 opacity: 1;
                 background-color: var(--color-green-400);
             }
         }
-    }
 
-    &__link {
-        @media (hover:hover) {
-            &:active {
-                &.story__link::before {
-                    opacity: 1;
-                    background-color: var(--color-orange-200);
-                }
+        &:active {
+            & .story__link::before {
+                opacity: 1;
+                background-color: var(--color-orange-200);
             }
         }
     }

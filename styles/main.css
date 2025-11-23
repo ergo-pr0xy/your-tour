@@ -1556,8 +1556,7 @@ svg * {
 }
 @media (max-width: 360px) {
   .story {
-    max-width: 318px;
-    width: 100%;
+    width: 318px;
     height: 455px;
     padding: 30px;
     padding-top: 31px;
@@ -1572,9 +1571,7 @@ svg * {
     opacity: 1;
     background-color: var(--color-green-400);
   }
-}
-@media (hover: hover) {
-  .story__link:active.story__link::before {
+  .story:active .story__link::before {
     opacity: 1;
     background-color: var(--color-orange-200);
   }
