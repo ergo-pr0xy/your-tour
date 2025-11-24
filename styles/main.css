@@ -500,7 +500,6 @@ svg * {
 .radio__labels {
   display: flex;
   column-gap: 31px;
-  max-width: 185px;
 }
 @media (max-width: 360px) {
   .radio__labels {
@@ -1300,7 +1299,6 @@ svg * {
 .tour-creation__agreement-confirmation {
   display: flex;
   flex-direction: column;
-  max-width: 575px;
   row-gap: 8px;
 }
 .tour-creation__agreement-confirmation-link {

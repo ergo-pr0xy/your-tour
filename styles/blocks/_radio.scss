@@ -21,7 +21,6 @@
     &__labels {
         display: flex;
         column-gap: 31px;
-        max-width: 185px;
 
         @media (max-width: 360px) {
             column-gap: 30px;
@@ -63,12 +62,6 @@
             }
         }
     }
-
-       
-    // &__input:focus:not(:checked) + &__emulator {
-    //     outline: 1px solid var(--color-gray-300);
-    //     outline-offset: 2px;
-    // }
     
     &__input:checked + &__emulator::after {
         opacity: 1; 

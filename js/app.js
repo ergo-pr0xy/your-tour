@@ -160,6 +160,7 @@ const app = () => {
     if (errorType === 'phonenumberLength') {
       errorElement.innerText = errors[errorType];
       parentElement.appendChild(errorElement);
+      element.classList.add('error--input');
     }
   };
 
