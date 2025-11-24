@@ -369,7 +369,6 @@ svg * {
 }
 .card-link {
   position: relative;
-  padding-bottom: 1px;
   max-width: 159px;
   display: inline-flex;
   align-items: center;
@@ -1123,7 +1122,7 @@ svg * {
   display: flex;
   flex-direction: column;
   padding: 50px;
-  row-gap: 277px;
+  justify-content: space-between;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: var(--border-radius-big);
@@ -1136,10 +1135,10 @@ svg * {
   .tour-card:hover {
     background-size: 120%;
   }
-  .tour-card:hover .tour-card__link::before {
+  .tour-card:hover .tour-card__link-emulator::before {
     background-color: var(--color-green-400);
   }
-  .tour-card:active .tour-card__link::before {
+  .tour-card:active .tour-card__link-emulator::before {
     background-color: var(--color-orange-200);
   }
 }
