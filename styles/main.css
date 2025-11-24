@@ -374,11 +374,6 @@ svg * {
   align-items: center;
   z-index: 10;
 }
-@media (max-width: 360px) {
-  .card-link {
-    padding-bottom: 2px;
-  }
-}
 .card-link::before {
   content: "";
   position: absolute;
@@ -401,11 +396,6 @@ svg * {
     font-size: 16px;
     line-height: 1.42;
     margin-right: 17px;
-  }
-}
-@media (max-width: 360px) {
-  .card-link__icon {
-    margin-bottom: 2px;
   }
 }
 
@@ -1534,7 +1524,8 @@ svg * {
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease;
-  z-index: 1;
+  pointer-events: none;
+  z-index: 2;
 }
 @media (max-width: 1024px) {
   .story::before {
@@ -1564,14 +1555,23 @@ svg * {
   .story:hover::before {
     transform: scale(1.2);
   }
-  .story:hover .story__link::before {
+  .story:hover .story__link-emulator::before {
     opacity: 1;
     background-color: var(--color-green-400);
   }
-  .story:active .story__link::before {
+  .story:active:not(:has(.story__footer-link:active)) .story__link-emulator::before {
     opacity: 1;
     background-color: var(--color-orange-200);
   }
+}
+.story__overlay-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  text-indent: -9999px;
 }
 .story__inner {
   position: relative;
@@ -1579,6 +1579,7 @@ svg * {
   flex-direction: column;
   row-gap: 37px;
   z-index: 10;
+  pointer-events: none;
 }
 @media (max-width: 360px) {
   .story__inner {
@@ -1671,18 +1672,26 @@ svg * {
   z-index: 10;
   display: flex;
   justify-content: space-between;
-  margin-bottom: -1px;
+  pointer-events: none;
+}
+@media (max-width: 360px) {
+  .story__link-emulator {
+    padding-bottom: 1px;
+  }
 }
 .story__footer-links {
   display: flex;
   column-gap: 36px;
   text-align: center;
+  pointer-events: auto;
+  margin-bottom: -1px;
 }
 .story__footer-link {
   font-size: 20px;
   font-weight: 400;
   line-height: 142%;
   letter-spacing: 0;
+  pointer-events: auto;
 }
 @media (max-width: 360px) {
   .story__link-arrow {
