@@ -1856,6 +1856,14 @@ svg * {
     column-gap: 5px;
   }
 }
+@media (hover: hover) {
+  .social__link:hover .social__name::after {
+    width: 100%;
+  }
+  .social__link:active .social__name {
+    color: var(--color-orange-200);
+  }
+}
 
 .social-logo {
   width: 26px;

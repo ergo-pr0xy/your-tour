@@ -13,5 +13,19 @@
         @media (max-width: 360px) {
             column-gap: 5px;
         }
+
+        @media (hover:hover) {
+            &:hover {
+                & .social__name::after {
+                    width: 100%;
+                }
+            }
+
+            &:active {
+                & .social__name {
+                    color: var(--color-orange-200);
+                }
+            }
+        }
     }
 }
