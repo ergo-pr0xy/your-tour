@@ -1,8 +1,8 @@
 ## Your Tour
 
 ## Description
-This is the first test task, the main aim is the layout of a one-page static website using CSS and HTML.  
-Sass preprocessor is used in the project.  
+This is the first test task, the main aim is the layout of a one-page static website using CSS, HTML and JavaScript.  
+Sass preprocessor is also used in the project.  
   
 The application is deployd to Github Pages:
 https://ergo-pr0xy.github.io/your-tour/
