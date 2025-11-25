@@ -309,48 +309,6 @@ svg * {
   bottom: -2px;
 }
 
-.button-underline {
-  position: relative;
-  text-decoration: none;
-}
-.button-underline::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background-color: currentColor;
-  transition: all var(--transition-duration) ease-in-out;
-  transform: translateX(-50%);
-}
-@media (hover: hover) {
-  .button-underline:hover::after {
-    width: 100%;
-  }
-}
-.button-underline--active {
-  position: relative;
-  text-decoration: none;
-  color: var(--color-orange-200);
-}
-.button-underline--active::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  transition: all var(--transition-duration) ease-in-out;
-  transform: translateX(-50%);
-}
-@media (max-width: 360px) {
-  .button-underline--active::after {
-    bottom: 0;
-  }
-}
-
 @keyframes appear-header {
   0% {
     opacity: 0;
@@ -1048,6 +1006,47 @@ svg * {
     gap: 10px;
     font-size: 16px;
     line-height: 23px;
+  }
+}
+.section__menu-button {
+  position: relative;
+  text-decoration: none;
+}
+.section__menu-button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: all var(--transition-duration) ease-in-out;
+  transform: translateX(-50%);
+}
+@media (hover: hover) {
+  .section__menu-button:hover::after {
+    width: 100%;
+  }
+}
+.section__menu-button--active {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-orange-200);
+}
+.section__menu-button--active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transition: all var(--transition-duration) ease-in-out;
+  transform: translateX(-50%);
+}
+@media (max-width: 360px) {
+  .section__menu-button--active::after {
+    bottom: 0;
   }
 }
 .section__description {
