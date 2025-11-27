@@ -1,7 +1,6 @@
 import validateForm from './validateForm.js';
-import addPhoneMask from './addPhoneMask.js';
+import { addPhoneMask, handlePhonenumberCursor, normalizeNumbers } from './phoneMask.js';
 import renderForm from './renderForm.js';
-import handlePhonenumberCursor from './handlePhonenumberCursor.js';
 import renderHeader, { handleFixedHeader } from './header.js';
 
 const app = () => {
@@ -78,16 +77,6 @@ const app = () => {
 
   const handleInput = (field, event) => {
     state.form.fields[field] = event.target.value;
-  };
-
-  const normalizeNumbers = (rawNumbers) => {
-    let numbers = rawNumbers.replace(/\D/g, '');
-
-    if (numbers.startsWith('7') || numbers.startsWith('8')) {
-      numbers = numbers.slice(1);
-    }
-
-    return numbers.slice(0, 10);
   };
 
   const renderPhonenumberInput = () => {
