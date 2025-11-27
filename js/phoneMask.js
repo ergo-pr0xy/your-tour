@@ -74,5 +74,5 @@ export const normalizeNumbers = (rawNumbers) => {
     numbers = numbers.slice(1);
   }
 
-  return numbers.slice(0, 10);
+  return numbers;
 };

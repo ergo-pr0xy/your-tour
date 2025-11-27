@@ -21,6 +21,7 @@ const app = () => {
   const today = new Date().toLocaleDateString('en-CA').slice(0, 10);
   const fixedHeaderHeightAppearance = 450;
   const defaultHeaderHeight = 88;
+  const maxPhonenumberMaskLength = 22;
 
   const state = {
     form: {
@@ -222,7 +223,7 @@ const app = () => {
 
   phonenumberInput.addEventListener('input', (e) => {
     const rawValue = e.target.value;
-    const normalizedNumbers = normalizeNumbers(rawValue);
+    const normalizedNumbers = normalizeNumbers(rawValue.slice(0, maxPhonenumberMaskLength));
     const maskedNumbers = addPhoneMask(normalizedNumbers);
 
     state.form.fields.phonenumber.masked = maskedNumbers;
