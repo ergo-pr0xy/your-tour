@@ -60,7 +60,6 @@ const validateForm = (fields) => {
 
     if (key === 'phonenumber') {
       if (value.masked === '') {
-        console.log(value);
         newErrors.phonenumber = 'emptyInput';
       }
 

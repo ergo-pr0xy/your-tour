@@ -1,11 +1,11 @@
 import validateForm from './validateForm.js';
 import addPhoneMask from './addPhoneMask.js';
+import renderForm from './renderForm.js';
 
 const app = () => {
   const header = document.querySelector('.header');
   const nameInput = document.querySelector('#name');
   const emailInput = document.querySelector('#email');
-  const dateInputs = document.querySelectorAll('.field__input-date');
   const dateFromInput = document.querySelector('#date-from');
   const dateToInput = document.querySelector('#date-to');
   const clearFormButton = document.querySelector('.tour-creation__clear-button');
@@ -13,9 +13,7 @@ const app = () => {
   const phonenumberInput = document.querySelector('#phonenumber');
   const ageConfirmationYesEl = document.querySelector('#age-confirmation-yes');
   const ageConfirmationNoEl = document.querySelector('#age-confirmation-no');
-  const ageConfirmationParentEl = document.querySelector('.tour-creaction__age-confirmation');
   const agreementConfirmationCheckbox = document.querySelector('[name="agreement-confirmation"]');
-  const agreementConfirmationParentEl = document.querySelector('.tour-creation__agreement-confirmation');
   const toursSection = document.querySelector('#tours');
   const directionSelect = document.querySelector('select');
 
@@ -63,38 +61,38 @@ const app = () => {
     },
   };
 
-  const removeElementsWithError = () => {
-    const formElementsWithError = document.querySelectorAll('[class*="error--"]');
+  // const removeElementsWithError = () => {
+  //   const formElementsWithError = document.querySelectorAll('[class*="error--"]');
 
-    formElementsWithError.forEach((element) => {
-      element.classList.remove('error--input', 'error--checkbox', 'error--radio');
-    });
-  };
+  //   formElementsWithError.forEach((element) => {
+  //     element.classList.remove('error--input', 'error--checkbox', 'error--radio');
+  //   });
+  // };
 
-  const removeErrorMessages = () => {
-    const errorMessageElements = document.querySelectorAll('.error');
+  // const removeErrorMessages = () => {
+  //   const errorMessageElements = document.querySelectorAll('.error');
 
-    errorMessageElements.forEach((element) => {
-      element.remove();
-    });
-  };
+  //   errorMessageElements.forEach((element) => {
+  //     element.remove();
+  //   });
+  // };
 
-  const clearDirectionSelect = () => {
-    directionSelect.classList.remove('field__select--color-black');
-    directionSelect.classList.add('field__select--color-gray');
-  };
+  // const clearDirectionSelect = () => {
+  //   directionSelect.classList.remove('field__select--color-black');
+  //   directionSelect.classList.add('field__select--color-gray');
+  // };
 
-  const clearDateInputs = () => {
-    dateInputs.forEach((dateInput) => {
-      dateInput.setAttribute('type', 'text');
-      dateInput.removeAttribute('min');
-    });
-  };
+  // const clearDateInputs = () => {
+  //   dateInputs.forEach((dateInput) => {
+  //     dateInput.setAttribute('type', 'text');
+  //     dateInput.removeAttribute('min');
+  //   });
+  // };
 
-  const removeErrorElements = () => {
-    removeElementsWithError();
-    removeErrorMessages();
-  };
+  // const removeErrorElements = () => {
+  //   removeElementsWithError();
+  //   removeErrorMessages();
+  // };
 
   const clearFormFields = () => {
     state.form.fields.name = '';
@@ -109,79 +107,79 @@ const app = () => {
     state.form.fields.commentary = '';
   };
 
-  const renderForm = () => {
-    removeErrorElements();
+  // const renderForm = () => {
+  //   removeErrorElements();
 
-    nameInput.value = state.form.fields.name;
-    emailInput.value = state.form.fields.email;
-    directionSelect.value = state.form.fields.direction;
-    dateFromInput.value = state.form.fields.dateFrom;
-    dateToInput.value = state.form.fields.dateTo;
-    ageConfirmationYesEl.checked = state.form.fields.ageConfirmation === 'yes';
-    ageConfirmationNoEl.checked = state.form.fields.ageConfirmation === 'no';
-    agreementConfirmationCheckbox.checked = state.form.fields.agreement;
-    phonenumberInput.value = state.form.fields.phonenumber.masked;
+  //   nameInput.value = state.form.fields.name;
+  //   emailInput.value = state.form.fields.email;
+  //   directionSelect.value = state.form.fields.direction;
+  //   dateFromInput.value = state.form.fields.dateFrom;
+  //   dateToInput.value = state.form.fields.dateTo;
+  //   ageConfirmationYesEl.checked = state.form.fields.ageConfirmation === 'yes';
+  //   ageConfirmationNoEl.checked = state.form.fields.ageConfirmation === 'no';
+  //   agreementConfirmationCheckbox.checked = state.form.fields.agreement;
+  //   phonenumberInput.value = state.form.fields.phonenumber.masked;
 
-    if (state.uiState.shouldClearForm === true) {
-      clearDateInputs();
-      clearDirectionSelect();
-      return;
-    }
+  //   if (state.uiState.shouldClearForm === true) {
+  //     clearDateInputs();
+  //     clearDirectionSelect();
+  //     return;
+  //   }
 
-    const errors = Object.entries(state.form.errors);
+  //   const errors = Object.entries(state.form.errors);
 
-    errors.forEach(([key, value]) => {
-      const errorElement = document.createElement('p');
-      errorElement.classList.add('error');
-      errorElement.innerText = state.form.errorMessages[value];
+  //   errors.forEach(([key, value]) => {
+  //     const errorElement = document.createElement('p');
+  //     errorElement.classList.add('error');
+  //     errorElement.innerText = state.form.errorMessages[value];
 
-      if (key === 'name') {
-        const parentElement = nameInput.parentNode;
-        nameInput.classList.add('error--input');
-        parentElement.appendChild(errorElement);
-      }
+  //     if (key === 'name') {
+  //       const parentElement = nameInput.parentNode;
+  //       nameInput.classList.add('error--input');
+  //       parentElement.appendChild(errorElement);
+  //     }
 
-      if (key === 'email') {
-        const parentElement = emailInput.parentNode;
-        emailInput.classList.add('error--input');
-        parentElement.appendChild(errorElement);
-      }
+  //     if (key === 'email') {
+  //       const parentElement = emailInput.parentNode;
+  //       emailInput.classList.add('error--input');
+  //       parentElement.appendChild(errorElement);
+  //     }
 
-      if (key === 'direction') {
-        const parentElement = directionSelect.parentNode;
-        directionSelect.classList.add('error--input');
-        parentElement.appendChild(errorElement);
-      }
+  //     if (key === 'direction') {
+  //       const parentElement = directionSelect.parentNode;
+  //       directionSelect.classList.add('error--input');
+  //       parentElement.appendChild(errorElement);
+  //     }
 
-      if (key === 'dateFrom') {
-        const parentElement = dateFromInput.parentNode;
-        dateFromInput.classList.add('error--input');
-        parentElement.appendChild(errorElement);
-      }
+  //     if (key === 'dateFrom') {
+  //       const parentElement = dateFromInput.parentNode;
+  //       dateFromInput.classList.add('error--input');
+  //       parentElement.appendChild(errorElement);
+  //     }
 
-      if (key === 'dateTo') {
-        const parentElement = dateToInput.parentNode;
-        dateToInput.classList.add('error--input');
-        parentElement.appendChild(errorElement);
-      }
+  //     if (key === 'dateTo') {
+  //       const parentElement = dateToInput.parentNode;
+  //       dateToInput.classList.add('error--input');
+  //       parentElement.appendChild(errorElement);
+  //     }
 
-      if (key === 'ageConfirmation') {
-        const parentElement = ageConfirmationParentEl;
-        parentElement.appendChild(errorElement);
-      }
+  //     if (key === 'ageConfirmation') {
+  //       const parentElement = ageConfirmationParentEl;
+  //       parentElement.appendChild(errorElement);
+  //     }
 
-      if (key === 'agreement') {
-        const parentElement = agreementConfirmationParentEl;
-        parentElement.appendChild(errorElement);
-      }
+  //     if (key === 'agreement') {
+  //       const parentElement = agreementConfirmationParentEl;
+  //       parentElement.appendChild(errorElement);
+  //     }
 
-      if (key === 'phonenumber') {
-        const parentElement = phonenumberInput.parentNode;
-        phonenumberInput.classList.add('error--input');
-        parentElement.appendChild(errorElement);
-      }
-    });
-  };
+  //     if (key === 'phonenumber') {
+  //       const parentElement = phonenumberInput.parentNode;
+  //       phonenumberInput.classList.add('error--input');
+  //       parentElement.appendChild(errorElement);
+  //     }
+  //   });
+  // };
 
   const handleFixedHeader = () => {
     state.uiState.lastScrollY = state.uiState.currentScrollY;
@@ -368,7 +366,7 @@ const app = () => {
     if (state.form.isValid) {
       state.uiState.shouldClearForm = true;
       clearFormFields();
-      renderForm();
+      renderForm(tourCreationForm, state);
       state.form.isValid = false;
       state.form.errors = {};
       state.uiState.shouldClearForm = false;
@@ -376,7 +374,7 @@ const app = () => {
       return;
     }
 
-    renderForm();
+    renderForm(tourCreationForm, state);
   });
 
   window.addEventListener('scroll', () => {
@@ -393,14 +391,14 @@ const app = () => {
     if (e.target.checked) {
       state.form.fields.ageConfirmation = e.target.value;
     }
-    renderForm();
+    renderForm(tourCreationForm, state);
   });
 
   ageConfirmationNoEl.addEventListener('change', (e) => {
     if (e.target.checked) {
       state.form.fields.ageConfirmation = e.target.value;
     }
-    renderForm();
+    renderForm(tourCreationForm, state);
   });
 
   agreementConfirmationCheckbox.addEventListener('change', (e) => {
@@ -409,7 +407,7 @@ const app = () => {
     } else {
       state.form.fields.agreement = false;
     }
-    renderForm();
+    renderForm(tourCreationForm, state);
   });
 
   phonenumberInput.addEventListener('input', (e) => {
@@ -427,7 +425,7 @@ const app = () => {
     state.uiState.shouldClearForm = true;
     state.form.errors = {};
     clearFormFields();
-    renderForm();
+    renderForm(tourCreationForm, state);
     state.uiState.shouldClearForm = false;
   });
 
