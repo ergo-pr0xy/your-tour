@@ -1,6 +1,7 @@
 import validateForm from './validateForm.js';
 import addPhoneMask from './addPhoneMask.js';
 import renderForm from './renderForm.js';
+import handlePhonenumberCursor from './handlePhonenumberCursor.js';
 
 const app = () => {
   const header = document.querySelector('.header');
@@ -61,39 +62,6 @@ const app = () => {
     },
   };
 
-  // const removeElementsWithError = () => {
-  //   const formElementsWithError = document.querySelectorAll('[class*="error--"]');
-
-  //   formElementsWithError.forEach((element) => {
-  //     element.classList.remove('error--input', 'error--checkbox', 'error--radio');
-  //   });
-  // };
-
-  // const removeErrorMessages = () => {
-  //   const errorMessageElements = document.querySelectorAll('.error');
-
-  //   errorMessageElements.forEach((element) => {
-  //     element.remove();
-  //   });
-  // };
-
-  // const clearDirectionSelect = () => {
-  //   directionSelect.classList.remove('field__select--color-black');
-  //   directionSelect.classList.add('field__select--color-gray');
-  // };
-
-  // const clearDateInputs = () => {
-  //   dateInputs.forEach((dateInput) => {
-  //     dateInput.setAttribute('type', 'text');
-  //     dateInput.removeAttribute('min');
-  //   });
-  // };
-
-  // const removeErrorElements = () => {
-  //   removeElementsWithError();
-  //   removeErrorMessages();
-  // };
-
   const clearFormFields = () => {
     state.form.fields.name = '';
     state.form.fields.email = '';
@@ -106,80 +74,6 @@ const app = () => {
     state.form.fields.phonenumber.normalized = '';
     state.form.fields.commentary = '';
   };
-
-  // const renderForm = () => {
-  //   removeErrorElements();
-
-  //   nameInput.value = state.form.fields.name;
-  //   emailInput.value = state.form.fields.email;
-  //   directionSelect.value = state.form.fields.direction;
-  //   dateFromInput.value = state.form.fields.dateFrom;
-  //   dateToInput.value = state.form.fields.dateTo;
-  //   ageConfirmationYesEl.checked = state.form.fields.ageConfirmation === 'yes';
-  //   ageConfirmationNoEl.checked = state.form.fields.ageConfirmation === 'no';
-  //   agreementConfirmationCheckbox.checked = state.form.fields.agreement;
-  //   phonenumberInput.value = state.form.fields.phonenumber.masked;
-
-  //   if (state.uiState.shouldClearForm === true) {
-  //     clearDateInputs();
-  //     clearDirectionSelect();
-  //     return;
-  //   }
-
-  //   const errors = Object.entries(state.form.errors);
-
-  //   errors.forEach(([key, value]) => {
-  //     const errorElement = document.createElement('p');
-  //     errorElement.classList.add('error');
-  //     errorElement.innerText = state.form.errorMessages[value];
-
-  //     if (key === 'name') {
-  //       const parentElement = nameInput.parentNode;
-  //       nameInput.classList.add('error--input');
-  //       parentElement.appendChild(errorElement);
-  //     }
-
-  //     if (key === 'email') {
-  //       const parentElement = emailInput.parentNode;
-  //       emailInput.classList.add('error--input');
-  //       parentElement.appendChild(errorElement);
-  //     }
-
-  //     if (key === 'direction') {
-  //       const parentElement = directionSelect.parentNode;
-  //       directionSelect.classList.add('error--input');
-  //       parentElement.appendChild(errorElement);
-  //     }
-
-  //     if (key === 'dateFrom') {
-  //       const parentElement = dateFromInput.parentNode;
-  //       dateFromInput.classList.add('error--input');
-  //       parentElement.appendChild(errorElement);
-  //     }
-
-  //     if (key === 'dateTo') {
-  //       const parentElement = dateToInput.parentNode;
-  //       dateToInput.classList.add('error--input');
-  //       parentElement.appendChild(errorElement);
-  //     }
-
-  //     if (key === 'ageConfirmation') {
-  //       const parentElement = ageConfirmationParentEl;
-  //       parentElement.appendChild(errorElement);
-  //     }
-
-  //     if (key === 'agreement') {
-  //       const parentElement = agreementConfirmationParentEl;
-  //       parentElement.appendChild(errorElement);
-  //     }
-
-  //     if (key === 'phonenumber') {
-  //       const parentElement = phonenumberInput.parentNode;
-  //       phonenumberInput.classList.add('error--input');
-  //       parentElement.appendChild(errorElement);
-  //     }
-  //   });
-  // };
 
   const handleFixedHeader = () => {
     state.uiState.lastScrollY = state.uiState.currentScrollY;
@@ -224,60 +118,11 @@ const app = () => {
     return numbers.slice(0, 10);
   };
 
-  const handlePhonenumberCursor = (normalizedNumbers, lastPhoneValueLength) => {
-    if (normalizedNumbers.length === 0) {
-      phonenumberInput.setSelectionRange(4, 4);
-    }
-
-    if (normalizedNumbers.length === 1) {
-      phonenumberInput.setSelectionRange(5, 5);
-    }
-
-    if (normalizedNumbers.length === 2) {
-      phonenumberInput.setSelectionRange(6, 6);
-    }
-
-    if (normalizedNumbers.length === 3) {
-      const cursorPosition = lastPhoneValueLength < normalizedNumbers.length ? 9 : 7;
-      phonenumberInput.setSelectionRange(cursorPosition, cursorPosition);
-    }
-
-    if (normalizedNumbers.length === 4) {
-      phonenumberInput.setSelectionRange(10, 10);
-    }
-
-    if (normalizedNumbers.length === 5) {
-      phonenumberInput.setSelectionRange(11, 11);
-    }
-
-    if (normalizedNumbers.length === 6) {
-      const cursorPosition = lastPhoneValueLength < normalizedNumbers.length ? 15 : 12;
-      phonenumberInput.setSelectionRange(cursorPosition, cursorPosition);
-    }
-
-    if (normalizedNumbers.length === 7) {
-      phonenumberInput.setSelectionRange(16, 16);
-    }
-
-    if (normalizedNumbers.length === 8) {
-      const cursorPosition = lastPhoneValueLength < normalizedNumbers.length ? 20 : 17;
-      phonenumberInput.setSelectionRange(cursorPosition, cursorPosition);
-    }
-
-    if (normalizedNumbers.length === 9) {
-      phonenumberInput.setSelectionRange(21, 21);
-    }
-
-    if (normalizedNumbers.length === 10) {
-      phonenumberInput.setSelectionRange(22, 22);
-    }
-  };
-
   const renderPhonenumberInput = () => {
     phonenumberInput.value = state.form.fields.phonenumber.masked;
     const normalizedNumbers = state.form.fields.phonenumber.normalized;
     const { phonenumberLastInputLength } = state.uiState;
-    handlePhonenumberCursor(normalizedNumbers, phonenumberLastInputLength);
+    handlePhonenumberCursor(normalizedNumbers, phonenumberLastInputLength, phonenumberInput);
   };
 
   const renderDateInput = (e) => {
