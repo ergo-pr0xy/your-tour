@@ -2,6 +2,7 @@ import validateForm from './validateForm.js';
 import addPhoneMask from './addPhoneMask.js';
 import renderForm from './renderForm.js';
 import handlePhonenumberCursor from './handlePhonenumberCursor.js';
+import renderHeader, { handleFixedHeader } from './header.js';
 
 const app = () => {
   const header = document.querySelector('.header');
@@ -73,35 +74,6 @@ const app = () => {
     state.form.fields.phonenumber.masked = '';
     state.form.fields.phonenumber.normalized = '';
     state.form.fields.commentary = '';
-  };
-
-  const handleFixedHeader = () => {
-    state.uiState.lastScrollY = state.uiState.currentScrollY;
-    state.uiState.currentScrollY = window.scrollY;
-  };
-
-  const renderHeader = (e) => {
-    const { currentScrollY, lastScrollY } = state.uiState;
-
-    if (currentScrollY > fixedHeaderHeightAppearance) {
-      header.classList.add('header--fixed');
-      header.classList.add('header--show-fixed');
-      header.classList.remove('header--hide-fixed');
-    }
-
-    if (currentScrollY < lastScrollY && currentScrollY <= fixedHeaderHeightAppearance) {
-      header.classList.remove('header--show-fixed');
-      header.classList.add('header--hide-fixed');
-    }
-
-    if (currentScrollY < lastScrollY && currentScrollY <= defaultHeaderHeight) {
-      header.classList.remove('header--hide-fixed');
-      header.classList.remove('header--fixed');
-    }
-
-    if (e && e.animationName === 'disappear-header') {
-      header.classList.remove('header--fixed');
-    }
   };
 
   const handleInput = (field, event) => {
@@ -222,14 +194,18 @@ const app = () => {
     renderForm(tourCreationForm, state);
   });
 
-  window.addEventListener('scroll', () => {
-    handleFixedHeader();
-    renderHeader();
+  window.addEventListener('scroll', (e) => {
+    const { lastScrollY, currentScrollY } = handleFixedHeader(state);
+    state.uiState.lastScrollY = lastScrollY;
+    state.uiState.currentScrollY = currentScrollY;
+    renderHeader(state, header, fixedHeaderHeightAppearance, defaultHeaderHeight, e);
   });
 
   header.addEventListener('animationend', (e) => {
-    handleFixedHeader();
-    renderHeader(e);
+    const { lastScrollY, currentScrollY } = handleFixedHeader(state);
+    state.uiState.lastScrollY = lastScrollY;
+    state.uiState.currentScrollY = currentScrollY;
+    renderHeader(state, header, fixedHeaderHeightAppearance, defaultHeaderHeight, e);
   });
 
   ageConfirmationYesEl.addEventListener('change', (e) => {
@@ -274,7 +250,7 @@ const app = () => {
     state.uiState.shouldClearForm = false;
   });
 
-  renderHeader();
+  renderHeader(state, header, fixedHeaderHeightAppearance, defaultHeaderHeight);
 };
 
 export default app;
