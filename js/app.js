@@ -216,137 +216,6 @@ const app = () => {
     state.form.fields[field] = event.target.value;
   };
 
-  nameInput.addEventListener('input', (e) => {
-    handleInput('name', e);
-  });
-
-  emailInput.addEventListener('input', (e) => {
-    handleInput('email', e);
-  });
-
-  const renderDateInput = (e) => {
-    if (e.target.name === 'date-from') {
-      if (state.uiState.isDateFromInputFocused) {
-        dateFromInput.type = 'date';
-        dateFromInput.min = today;
-        dateFromInput.showPicker();
-      } else if (e.target.value === '') {
-        dateFromInput.type = 'text';
-      } else {
-        dateFromInput.type = 'date';
-      }
-    }
-
-    if (e.target.name === 'date-to') {
-      if (state.uiState.isDateToInputFocused) {
-        dateToInput.type = 'date';
-        dateToInput.min = today;
-        dateToInput.showPicker();
-      } else if (e.target.value === '') {
-        dateToInput.type = 'text';
-      } else {
-        dateToInput.type = 'date';
-      }
-    }
-  };
-
-  dateFromInput.addEventListener('focus', (e) => {
-    state.uiState.isDateFromInputFocused = true;
-    renderDateInput(e);
-  });
-
-  dateFromInput.addEventListener('blur', (e) => {
-    state.uiState.isDateFromInputFocused = false;
-    renderDateInput(e);
-  });
-
-  dateToInput.addEventListener('focus', (e) => {
-    state.uiState.isDateToInputFocused = true;
-    renderDateInput(e);
-  });
-
-  dateToInput.addEventListener('blur', (e) => {
-    state.uiState.isDateToInputFocused = false;
-    renderDateInput(e);
-  });
-
-  dateFromInput.addEventListener('input', (e) => {
-    handleInput('dateFrom', e);
-  });
-
-  dateToInput.addEventListener('input', (e) => {
-    handleInput('dateTo', e);
-  });
-
-  const renderSelect = (event) => {
-    if (state.form.fields.direction === '') {
-      event.classList.remove('field__select--color-black');
-      event.target.classList.add('field__select--color-gray');
-    } else {
-      event.target.classList.remove('field__select--color-gray');
-      event.target.classList.add('field__select--color-black');
-    }
-  };
-
-  directionSelect.addEventListener('change', (e) => {
-    handleInput('direction', e);
-    renderSelect(e);
-  });
-
-  tourCreationForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const updatedErrors = validateForm(state.form.fields);
-    console.log(updatedErrors);
-    state.form.errors = { ...updatedErrors };
-    state.form.isValid = Object.keys(updatedErrors).length === 0;
-
-    if (state.form.isValid) {
-      state.uiState.shouldClearForm = true;
-      clearFormFields();
-      renderForm();
-      state.form.isValid = false;
-      state.form.errors = {};
-      state.uiState.shouldClearForm = false;
-      toursSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return;
-    }
-
-    renderForm();
-  });
-
-  window.addEventListener('scroll', () => {
-    handleFixedHeader();
-    renderHeader();
-  });
-
-  header.addEventListener('animationend', (e) => {
-    handleFixedHeader();
-    renderHeader(e);
-  });
-
-  ageConfirmationYesEl.addEventListener('change', (e) => {
-    if (e.target.checked) {
-      state.form.fields.ageConfirmation = e.target.value;
-    }
-    renderForm();
-  });
-
-  ageConfirmationNoEl.addEventListener('change', (e) => {
-    if (e.target.checked) {
-      state.form.fields.ageConfirmation = e.target.value;
-    }
-    renderForm();
-  });
-
-  agreementConfirmationCheckbox.addEventListener('change', (e) => {
-    if (e.target.checked) {
-      state.form.fields.agreement = true;
-    } else {
-      state.form.fields.agreement = false;
-    }
-    renderForm();
-  });
-
   const normalizeNumbers = (rawNumbers) => {
     let numbers = rawNumbers.replace(/\D/g, '');
 
@@ -412,6 +281,136 @@ const app = () => {
     const { phonenumberLastInputLength } = state.uiState;
     handlePhonenumberCursor(normalizedNumbers, phonenumberLastInputLength);
   };
+
+  const renderDateInput = (e) => {
+    if (e.target.name === 'date-from') {
+      if (state.uiState.isDateFromInputFocused) {
+        dateFromInput.type = 'date';
+        dateFromInput.min = today;
+        dateFromInput.showPicker();
+      } else if (e.target.value === '') {
+        dateFromInput.type = 'text';
+      } else {
+        dateFromInput.type = 'date';
+      }
+    }
+
+    if (e.target.name === 'date-to') {
+      if (state.uiState.isDateToInputFocused) {
+        dateToInput.type = 'date';
+        dateToInput.min = today;
+        dateToInput.showPicker();
+      } else if (e.target.value === '') {
+        dateToInput.type = 'text';
+      } else {
+        dateToInput.type = 'date';
+      }
+    }
+  };
+
+  const renderSelect = (event) => {
+    if (state.form.fields.direction === '') {
+      event.classList.remove('field__select--color-black');
+      event.target.classList.add('field__select--color-gray');
+    } else {
+      event.target.classList.remove('field__select--color-gray');
+      event.target.classList.add('field__select--color-black');
+    }
+  };
+
+  nameInput.addEventListener('input', (e) => {
+    handleInput('name', e);
+  });
+
+  emailInput.addEventListener('input', (e) => {
+    handleInput('email', e);
+  });
+
+  dateFromInput.addEventListener('focus', (e) => {
+    state.uiState.isDateFromInputFocused = true;
+    renderDateInput(e);
+  });
+
+  dateFromInput.addEventListener('blur', (e) => {
+    state.uiState.isDateFromInputFocused = false;
+    renderDateInput(e);
+  });
+
+  dateToInput.addEventListener('focus', (e) => {
+    state.uiState.isDateToInputFocused = true;
+    renderDateInput(e);
+  });
+
+  dateToInput.addEventListener('blur', (e) => {
+    state.uiState.isDateToInputFocused = false;
+    renderDateInput(e);
+  });
+
+  dateFromInput.addEventListener('input', (e) => {
+    handleInput('dateFrom', e);
+  });
+
+  dateToInput.addEventListener('input', (e) => {
+    handleInput('dateTo', e);
+  });
+
+  directionSelect.addEventListener('change', (e) => {
+    handleInput('direction', e);
+    renderSelect(e);
+  });
+
+  tourCreationForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const updatedErrors = validateForm(state.form.fields);
+    state.form.errors = { ...updatedErrors };
+    state.form.isValid = Object.keys(updatedErrors).length === 0;
+
+    if (state.form.isValid) {
+      state.uiState.shouldClearForm = true;
+      clearFormFields();
+      renderForm();
+      state.form.isValid = false;
+      state.form.errors = {};
+      state.uiState.shouldClearForm = false;
+      toursSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    renderForm();
+  });
+
+  window.addEventListener('scroll', () => {
+    handleFixedHeader();
+    renderHeader();
+  });
+
+  header.addEventListener('animationend', (e) => {
+    handleFixedHeader();
+    renderHeader(e);
+  });
+
+  ageConfirmationYesEl.addEventListener('change', (e) => {
+    if (e.target.checked) {
+      state.form.fields.ageConfirmation = e.target.value;
+    }
+    renderForm();
+  });
+
+  ageConfirmationNoEl.addEventListener('change', (e) => {
+    if (e.target.checked) {
+      state.form.fields.ageConfirmation = e.target.value;
+    }
+    renderForm();
+  });
+
+  agreementConfirmationCheckbox.addEventListener('change', (e) => {
+    if (e.target.checked) {
+      state.form.fields.agreement = true;
+    } else {
+      state.form.fields.agreement = false;
+    }
+    renderForm();
+  });
 
   phonenumberInput.addEventListener('input', (e) => {
     const rawValue = e.target.value;

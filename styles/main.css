@@ -1210,8 +1210,8 @@ svg * {
   }
 }
 @media (max-width: 450px) {
-  .tour-card__icon {
-    margin-bottom: 2px;
+  .tour-card__arrow {
+    margin-bottom: 3px;
   }
 }
 
