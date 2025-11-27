@@ -229,11 +229,11 @@
                             <div class="tour-creation__row">
                                 <div class="tour-creation__field field">
                                     <label for="name" class="field__label">Имя</label>
-                                    <input type="text" class="field__input" id="name" name="name" data-required="true" data-name-lang="rus" autocomplete="name" placeholder="Введите Ваше имя">
+                                    <input type="text" class="field__input" id="name" name="name" autocomplete="name" placeholder="Введите Ваше имя">
                                 </div>
                                 <div class="tour-creation__field field">
                                     <label for="direction" class="field__label">Направление</label>
-                                    <select name="direction" id="direction" class="field__select field__select--color-gray" data-required="true">
+                                    <select name="direction" id="direction" class="field__select field__select--color-gray">
                                         <option value="" class="field__select-option field__select--default" disabled selected>Куда хотите ехать</option>
                                         <option value="north" class="field__select-option">Север</option>
                                         <option value="south" class="field__select-option">Юг</option>
@@ -245,21 +245,21 @@
                             <div class="tour-creation__row">
                                 <div class="tour-creation__field field">
                                     <label for="email" class="field__label">Email</label>
-                                    <input type="email" class="field__input" id="email" name="email"  data-required="true" data-should="true" autocomplete="email" placeholder="example@mail.com">
+                                    <input type="email" class="field__input" id="email" name="email"  autocomplete="email" placeholder="example@mail.com">
                                 </div>
                                 <div class="tour-creation__field field">
                                     <label for="phonenumber" class="field__label">Телефон</label>
-                                    <input type="tel" class="field__input" id="phonenumber" data-required="true" data-min-length="true" name="phonenumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" >
+                                    <input type="tel" class="field__input" id="phonenumber" name="phonenumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" >
                                 </div>
                             </div>
                             <div class="tour-creation__row">
                                 <div class="tour-creation__field field field--date-margin">
                                     <label for="date-from" class="field__label">Дата от</label>
-                                    <input type="text"  class="field__input field__input-date " id="date-from" name="date-from" data-required="true" placeholder="ДД.ММ.ГГГГ" >
+                                    <input type="text"  class="field__input field__input-date " id="date-from" name="date-from" placeholder="ДД.ММ.ГГГГ" >
                                 </div>
                                 <div class="tour-creation__field field field--date-margin">
                                     <label for="date-to" class="field__label">Дата до</label>
-                                    <input type="text" class="field__input field__input-date" id="date-to" name="date-to" data-required="true" placeholder="ДД.ММ.ГГГГ" >
+                                    <input type="text" class="field__input field__input-date" id="date-to" name="date-to" placeholder="ДД.ММ.ГГГГ" >
                                 </div>
                             </div>
                             <div class="tour-creation__row">
@@ -274,12 +274,12 @@
                                 <legend class="radio__title">Вам есть 18 лет?</legend>
                                 <div class="radio__labels">
                                     <label class="radio__label">
-                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-yes" name="age-confirmation" value="yes" data-required="true">
+                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-yes" name="age-confirmation" value="yes">
                                         <span class="radio__emulator"></span>
                                         <span class="radio__label-emulator">Да</span>
                                     </label>
                                     <label class="radio__label">
-                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-no" name="age-confirmation" value="no" data-required="true">
+                                        <input type="radio" class="radio__input visually-hidden" id="age-confirmation-no" name="age-confirmation" value="no">
                                         <span class="radio__emulator"></span>
                                         <span class="radio__label-emulator">Нет</span>
                                     </label>
@@ -287,7 +287,7 @@
                             </fieldset>
                             <div class="tour-creation__agreement-confirmation checkbox">
                                 <label class="tour-creation__checkbox checkbox__label checkbox__label--max-width">
-                                    <input type="checkbox" class="checkbox__input visually-hidden" name="agreement-confirmation" data-required="true">
+                                    <input type="checkbox" class="checkbox__input visually-hidden" name="agreement-confirmation">
                                     <span class="checkbox__emulator"></span>
                                     <p class="checkbox__label-emulator">Нажимая кнопку, я принимаю условия <a href=""
                                         class="tour-creation__agreement-confirmation-link

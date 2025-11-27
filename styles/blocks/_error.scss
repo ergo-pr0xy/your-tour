@@ -11,5 +11,9 @@
 
     &--input {
         border-color: red;
+
+        &:focus {
+           border-color: red; 
+        }
     }
 }
