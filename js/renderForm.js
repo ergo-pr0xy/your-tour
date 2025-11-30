@@ -1,93 +1,78 @@
-import {
-  clearDirectionSelect,
-  clearDateInputs,
-  removeErrorElements,
-} from './utils.js';
+import renderFormFullState from './renderFormFullState.js';
+import { handlePhonenumberCursor } from './phoneMask.js';
 
-const renderForm = (formEl, state) => {
-  removeErrorElements(formEl);
+const today = new Date().toLocaleDateString('en-CA').slice(0, 10);
 
-  const nameInput = formEl.querySelector('#name');
-  const emailInput = formEl.querySelector('#email');
-  const dateFromInput = formEl.querySelector('#date-from');
-  const dateToInput = formEl.querySelector('#date-to');
-  const phonenumberInput = formEl.querySelector('#phonenumber');
-  const ageConfirmationYesEl = formEl.querySelector('#age-confirmation-yes');
-  const ageConfirmationNoEl = formEl.querySelector('#age-confirmation-no');
-  const ageConfirmationParentEl = formEl.querySelector('.tour-creaction__age-confirmation');
-  const agreementConfirmationCheckbox = formEl.querySelector('[name="agreement-confirmation"]');
-  const agreementConfirmationParentEl = formEl.querySelector('.tour-creation__agreement-confirmation');
-  const directionSelect = formEl.querySelector('select');
+const renderDateInput = (e, elements, state) => {
+  const { dateFromInput, dateToInput } = elements;
 
-  nameInput.value = state.form.fields.name;
-  emailInput.value = state.form.fields.email;
-  directionSelect.value = state.form.fields.direction;
-  dateFromInput.value = state.form.fields.dateFrom;
-  dateToInput.value = state.form.fields.dateTo;
-  ageConfirmationYesEl.checked = state.form.fields.ageConfirmation === 'yes';
-  ageConfirmationNoEl.checked = state.form.fields.ageConfirmation === 'no';
-  agreementConfirmationCheckbox.checked = state.form.fields.agreement;
-  phonenumberInput.value = state.form.fields.phonenumber.masked;
-
-  if (state.uiState.shouldClearForm === true) {
-    clearDateInputs(formEl);
-    clearDirectionSelect(directionSelect);
-    return;
+  if (e.target.name === 'date-from') {
+    if (state.uiState.isDateFromInputFocused) {
+      dateFromInput.type = 'date';
+      dateFromInput.min = today;
+      dateFromInput.showPicker();
+    } else if (e.target.value === '') {
+      dateFromInput.type = 'text';
+    } else {
+      dateFromInput.type = 'date';
+    }
   }
 
-  const errors = Object.entries(state.form.errors);
-
-  errors.forEach(([key, value]) => {
-    const errorElement = document.createElement('p');
-    errorElement.classList.add('error');
-    errorElement.innerText = state.form.errorMessages[value];
-
-    if (key === 'name') {
-      const parentElement = nameInput.parentNode;
-      nameInput.classList.add('error--input');
-      parentElement.appendChild(errorElement);
+  if (e.target.name === 'date-to') {
+    if (state.uiState.isDateToInputFocused) {
+      dateToInput.type = 'date';
+      dateToInput.min = today;
+      dateToInput.showPicker();
+    } else if (e.target.value === '') {
+      dateToInput.type = 'text';
+    } else {
+      dateToInput.type = 'date';
     }
+  }
+};
 
-    if (key === 'email') {
-      const parentElement = emailInput.parentNode;
-      emailInput.classList.add('error--input');
-      parentElement.appendChild(errorElement);
-    }
+const renderSelect = (e, state) => {
+  if (state.form.fields.direction === '') {
+    e.target.classList.remove('field__select--color-black');
+    e.target.classList.add('field__select--color-gray');
+  } else {
+    e.target.classList.remove('field__select--color-gray');
+    e.target.classList.add('field__select--color-black');
+  }
+};
 
-    if (key === 'direction') {
-      const parentElement = directionSelect.parentNode;
-      directionSelect.classList.add('error--input');
-      parentElement.appendChild(errorElement);
-    }
+const renderPhonenumberInput = (elements, state) => {
+  const { phonenumberInput } = elements;
+  phonenumberInput.value = state.form.fields.phonenumber.masked;
+  const normalizedNumbers = state.form.fields.phonenumber.normalized;
+  const { phonenumberLastInputLength } = state.uiState;
+  handlePhonenumberCursor(
+    normalizedNumbers,
+    phonenumberLastInputLength,
+    phonenumberInput,
+  );
+};
 
-    if (key === 'dateFrom') {
-      const parentElement = dateFromInput.parentNode;
-      dateFromInput.classList.add('error--input');
-      parentElement.appendChild(errorElement);
+const renderForm = (e, elements, state) => {
+  switch (e.target.name) {
+    case ('date-from'): {
+      renderDateInput(e, elements, state);
+      return;
     }
-
-    if (key === 'dateTo') {
-      const parentElement = dateToInput.parentNode;
-      dateToInput.classList.add('error--input');
-      parentElement.appendChild(errorElement);
+    case ('date-to'): {
+      renderDateInput(e, elements, state);
+      return;
     }
-
-    if (key === 'ageConfirmation') {
-      const parentElement = ageConfirmationParentEl;
-      parentElement.appendChild(errorElement);
+    case ('direction'): {
+      renderSelect(e, state);
+      return;
     }
-
-    if (key === 'agreement') {
-      const parentElement = agreementConfirmationParentEl;
-      parentElement.appendChild(errorElement);
+    case ('phonenumber'): {
+      renderPhonenumberInput(elements, state);
+      return;
     }
-
-    if (key === 'phonenumber') {
-      const parentElement = phonenumberInput.parentNode;
-      phonenumberInput.classList.add('error--input');
-      parentElement.appendChild(errorElement);
-    }
-  });
+    default: renderFormFullState(elements, state);
+  }
 };
 
 export default renderForm;

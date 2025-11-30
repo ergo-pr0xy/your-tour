@@ -1,27 +1,31 @@
 import validateForm from './validateForm.js';
-import { addPhoneMask, handlePhonenumberCursor, normalizeNumbers } from './phoneMask.js';
-import renderForm from './renderForm.js';
+import { addPhoneMask, normalizeNumbers } from './phoneMask.js';
 import renderHeader, { handleFixedHeader } from './header.js';
+import renderForm from './renderForm.js';
 
 const app = () => {
-  const header = document.querySelector('.header');
-  const nameInput = document.querySelector('#name');
-  const emailInput = document.querySelector('#email');
-  const dateFromInput = document.querySelector('#date-from');
-  const dateToInput = document.querySelector('#date-to');
-  const clearFormButton = document.querySelector('.tour-creation__clear-button');
-  const tourCreationForm = document.querySelector('.tour-creation__form');
-  const phonenumberInput = document.querySelector('#phonenumber');
-  const ageConfirmationYesEl = document.querySelector('#age-confirmation-yes');
-  const ageConfirmationNoEl = document.querySelector('#age-confirmation-no');
-  const agreementConfirmationCheckbox = document.querySelector('[name="agreement-confirmation"]');
-  const toursSection = document.querySelector('#tours');
-  const directionSelect = document.querySelector('select');
-
-  const today = new Date().toLocaleDateString('en-CA').slice(0, 10);
   const fixedHeaderHeightAppearance = 450;
   const defaultHeaderHeight = 88;
   const maxPhonenumberMaskLength = 22;
+
+  const elements = {
+    header: document.querySelector('.header'),
+    nameInput: document.querySelector('#name'),
+    emailInput: document.querySelector('#email'),
+    dateFromInput: document.querySelector('#date-from'),
+    dateToInput: document.querySelector('#date-to'),
+    clearFormButton: document.querySelector('.tour-creation__clear-button'),
+    tourCreationForm: document.querySelector('.tour-creation__form'),
+    phonenumberInput: document.querySelector('#phonenumber'),
+    ageConfirmationYesEl: document.querySelector('#age-confirmation-yes'),
+    ageConfirmationNoEl: document.querySelector('#age-confirmation-no'),
+    ageConfirmationParentEl: document.querySelector('.tour-creaction__age-confirmation'),
+    agreementConfirmationCheckbox: document.querySelector('[name="agreement-confirmation"]'),
+    agreementConfirmationParentEl: document.querySelector('.tour-creation__agreement-confirmation'),
+    toursSection: document.querySelector('#tours'),
+    directionSelect: document.querySelector('select'),
+    commentaryInput: document.querySelector('#comment'),
+  };
 
   const state = {
     form: {
@@ -80,91 +84,52 @@ const app = () => {
     state.form.fields[field] = event.target.value;
   };
 
-  const renderPhonenumberInput = () => {
-    phonenumberInput.value = state.form.fields.phonenumber.masked;
-    const normalizedNumbers = state.form.fields.phonenumber.normalized;
-    const { phonenumberLastInputLength } = state.uiState;
-    handlePhonenumberCursor(normalizedNumbers, phonenumberLastInputLength, phonenumberInput);
-  };
-
-  const renderDateInput = (e) => {
-    if (e.target.name === 'date-from') {
-      if (state.uiState.isDateFromInputFocused) {
-        dateFromInput.type = 'date';
-        dateFromInput.min = today;
-        dateFromInput.showPicker();
-      } else if (e.target.value === '') {
-        dateFromInput.type = 'text';
-      } else {
-        dateFromInput.type = 'date';
-      }
-    }
-
-    if (e.target.name === 'date-to') {
-      if (state.uiState.isDateToInputFocused) {
-        dateToInput.type = 'date';
-        dateToInput.min = today;
-        dateToInput.showPicker();
-      } else if (e.target.value === '') {
-        dateToInput.type = 'text';
-      } else {
-        dateToInput.type = 'date';
-      }
-    }
-  };
-
-  const renderSelect = (event) => {
-    if (state.form.fields.direction === '') {
-      event.target.classList.remove('field__select--color-black');
-      event.target.classList.add('field__select--color-gray');
-    } else {
-      event.target.classList.remove('field__select--color-gray');
-      event.target.classList.add('field__select--color-black');
-    }
-  };
-
-  nameInput.addEventListener('input', (e) => {
+  elements.nameInput.addEventListener('input', (e) => {
     handleInput('name', e);
   });
 
-  emailInput.addEventListener('input', (e) => {
+  elements.emailInput.addEventListener('input', (e) => {
     handleInput('email', e);
   });
 
-  dateFromInput.addEventListener('focus', (e) => {
+  elements.dateFromInput.addEventListener('focus', (e) => {
     state.uiState.isDateFromInputFocused = true;
-    renderDateInput(e);
+    renderForm(e, elements, state);
   });
 
-  dateFromInput.addEventListener('blur', (e) => {
+  elements.dateFromInput.addEventListener('blur', (e) => {
     state.uiState.isDateFromInputFocused = false;
-    renderDateInput(e);
+    renderForm(e, elements, state);
   });
 
-  dateToInput.addEventListener('focus', (e) => {
+  elements.dateToInput.addEventListener('focus', (e) => {
     state.uiState.isDateToInputFocused = true;
-    renderDateInput(e);
+    renderForm(e, elements, state);
   });
 
-  dateToInput.addEventListener('blur', (e) => {
+  elements.dateToInput.addEventListener('blur', (e) => {
     state.uiState.isDateToInputFocused = false;
-    renderDateInput(e);
+    renderForm(e, elements, state);
   });
 
-  dateFromInput.addEventListener('input', (e) => {
+  elements.dateFromInput.addEventListener('input', (e) => {
     handleInput('dateFrom', e);
   });
 
-  dateToInput.addEventListener('input', (e) => {
+  elements.dateToInput.addEventListener('input', (e) => {
     handleInput('dateTo', e);
   });
 
-  directionSelect.addEventListener('change', (e) => {
+  elements.directionSelect.addEventListener('change', (e) => {
     handleInput('direction', e);
-    renderSelect(e);
+    renderForm(e, elements, state);
   });
 
-  tourCreationForm.addEventListener('submit', (e) => {
+  elements.commentaryInput.addEventListener('input', (e) => {
+    handleInput('commantary', e);
+  });
+
+  elements.tourCreationForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const updatedErrors = validateForm(state.form.fields);
     state.form.errors = { ...updatedErrors };
@@ -173,74 +138,66 @@ const app = () => {
     if (state.form.isValid) {
       state.uiState.shouldClearForm = true;
       clearFormFields();
-      renderForm(tourCreationForm, state);
+      renderForm(e, elements, state);
+      elements.toursSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       state.form.isValid = false;
       state.form.errors = {};
       state.uiState.shouldClearForm = false;
-      toursSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
-
-    renderForm(tourCreationForm, state);
+    renderForm(e, elements, state);
   });
 
   window.addEventListener('scroll', (e) => {
     const { lastScrollY, currentScrollY } = handleFixedHeader(state);
     state.uiState.lastScrollY = lastScrollY;
     state.uiState.currentScrollY = currentScrollY;
-    renderHeader(state, header, fixedHeaderHeightAppearance, defaultHeaderHeight, e);
+    renderHeader(state, elements.header, fixedHeaderHeightAppearance, defaultHeaderHeight, e);
   });
 
-  header.addEventListener('animationend', (e) => {
+  elements.header.addEventListener('animationend', (e) => {
     const { lastScrollY, currentScrollY } = handleFixedHeader(state);
     state.uiState.lastScrollY = lastScrollY;
     state.uiState.currentScrollY = currentScrollY;
-    renderHeader(state, header, fixedHeaderHeightAppearance, defaultHeaderHeight, e);
+    renderHeader(state, elements.header, fixedHeaderHeightAppearance, defaultHeaderHeight, e);
   });
 
-  ageConfirmationYesEl.addEventListener('change', (e) => {
+  elements.ageConfirmationYesEl.addEventListener('change', (e) => {
     if (e.target.checked) {
       state.form.fields.ageConfirmation = e.target.value;
     }
-    renderForm(tourCreationForm, state);
   });
 
-  ageConfirmationNoEl.addEventListener('change', (e) => {
+  elements.ageConfirmationNoEl.addEventListener('change', (e) => {
     if (e.target.checked) {
       state.form.fields.ageConfirmation = e.target.value;
     }
-    renderForm(tourCreationForm, state);
   });
 
-  agreementConfirmationCheckbox.addEventListener('change', (e) => {
-    if (e.target.checked) {
-      state.form.fields.agreement = true;
-    } else {
-      state.form.fields.agreement = false;
-    }
-    renderForm(tourCreationForm, state);
+  elements.agreementConfirmationCheckbox.addEventListener('change', (e) => {
+    state.form.fields.agreement = e.target.checked;
   });
 
-  phonenumberInput.addEventListener('input', (e) => {
+  elements.phonenumberInput.addEventListener('input', (e) => {
     const rawValue = e.target.value;
     const normalizedNumbers = normalizeNumbers(rawValue.slice(0, maxPhonenumberMaskLength));
     const maskedNumbers = addPhoneMask(normalizedNumbers);
 
     state.form.fields.phonenumber.masked = maskedNumbers;
     state.form.fields.phonenumber.normalized = normalizedNumbers;
-    renderPhonenumberInput();
+    renderForm(e, elements, state);
     state.uiState.phonenumberLastInputLength = normalizedNumbers.length;
   });
 
-  clearFormButton.addEventListener('click', () => {
+  elements.clearFormButton.addEventListener('click', (e) => {
     state.uiState.shouldClearForm = true;
     state.form.errors = {};
     clearFormFields();
-    renderForm(tourCreationForm, state);
+    renderForm(e, elements, state);
     state.uiState.shouldClearForm = false;
   });
 
-  renderHeader(state, header, fixedHeaderHeightAppearance, defaultHeaderHeight);
+  renderHeader(state, elements.header, fixedHeaderHeightAppearance, defaultHeaderHeight);
 };
 
 export default app;
