@@ -115,7 +115,7 @@ const app = () => {
 
   const renderSelect = (event) => {
     if (state.form.fields.direction === '') {
-      event.classList.remove('field__select--color-black');
+      event.target.classList.remove('field__select--color-black');
       event.target.classList.add('field__select--color-gray');
     } else {
       event.target.classList.remove('field__select--color-gray');
