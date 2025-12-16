@@ -278,6 +278,7 @@ svg * {
 .link-underline {
   position: relative;
   text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 .link-underline::after {
   content: "";
@@ -341,6 +342,7 @@ svg * {
   bottom: -7px;
   background-color: transparent;
   border-radius: var(--border-radius-big);
+  transition: background-color 0.3s ease-in-out;
   z-index: -1;
 }
 .card-link__text {
@@ -736,6 +738,7 @@ svg * {
   line-height: 142%;
   text-align: center;
   font-weight: 400;
+  transition: background-color 0.3s ease-in-out;
 }
 .button--small {
   width: 118px;

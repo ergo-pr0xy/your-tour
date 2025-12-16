@@ -43,6 +43,7 @@
 .link-underline {
     position: relative;
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
 
     &::after {   
         content: '';
