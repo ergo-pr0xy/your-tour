@@ -7,26 +7,28 @@
     align-items: center;
 
     @media (max-width: 1024px) {
-        row-gap: 30px;
+        row-gap: 30.5px;
     }
 
     @media (max-width: 360px) {
-        margin-top: -1px;
         padding-inline: 21px;
-
         row-gap: 18px;
-    }
-
-    &--margin-top-mobile {
-         @media (max-width: 360px) {
-            margin-top: 0;
-        }
     }
 
     &__row {
         display: flex;
+        column-gap: 29.5px;
         width: 100%;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
+
+        @media (max-width: 1024px) {
+            column-gap: 20px;
+            align-items: auto;
+        }
+
+        @media (max-width: 360px) {
+            column-gap: 10px;
+        }
     }
 }
