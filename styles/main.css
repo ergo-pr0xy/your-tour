@@ -1100,8 +1100,10 @@ svg * {
   }
 }
 .tours__item {
-  width: 370px;
-  height: 531px;
+  max-width: 370px;
+  min-height: 531px;
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 1170px) {
   .tours__item {
