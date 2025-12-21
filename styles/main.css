@@ -235,7 +235,7 @@ svg * {
   font-display: swap;
 }
 .container {
-  max-width: 1170px;
+  max-width: 1276px;
   margin-inline: auto;
   width: 100%;
 }
@@ -753,7 +753,7 @@ svg * {
   font-size: 17px;
   letter-spacing: -0.01em;
 }
-@media (max-width: 360px) {
+@media (max-width: 768px) {
   .button--small {
     width: 114px;
     height: 33px;
@@ -845,7 +845,7 @@ svg * {
     background-image: url("../images/hero-section-background-1024.png");
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 768px) {
   .hero-section {
     height: 488px;
     background-image: url("../images/hero-section-background-360.png");
@@ -868,7 +868,7 @@ svg * {
     max-height: 743px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 768px) {
   .hero-section__content {
     margin-top: 0;
     max-height: 400px;
@@ -909,7 +909,7 @@ svg * {
     max-width: 400px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 768px) {
   .hero-section__description {
     max-width: 250px;
     max-height: 71px;
@@ -925,7 +925,7 @@ svg * {
     padding-top: 1px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 768px) {
   .hero-section__button {
     padding-top: 2px;
   }
@@ -959,6 +959,7 @@ svg * {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding-inline: 53px;
 }
 .section__header {
   display: flex;
@@ -970,7 +971,6 @@ svg * {
   font-size: 59px;
   line-height: 73px;
   letter-spacing: 0%;
-  color: var(--color-black);
   text-align: center;
 }
 @media (max-width: 1024px) {
@@ -1100,10 +1100,8 @@ svg * {
   }
 }
 .tours__item {
-  max-width: 370px;
-  min-height: 531px;
-  width: 100%;
-  height: 100%;
+  width: 370px;
+  height: 531px;
 }
 @media (max-width: 1170px) {
   .tours__item {
@@ -1316,16 +1314,6 @@ svg * {
   }
 }
 
-@media (max-width: 1270px) {
-  .reviews {
-    padding-inline: 30px;
-  }
-}
-@media (max-width: 360px) {
-  .reviews {
-    padding-inline: 0;
-  }
-}
 .reviews__review-list {
   display: flex;
   column-gap: 30px;
