@@ -240,7 +240,7 @@ svg * {
   width: 100%;
 }
 .container--wide {
-  max-width: 1860px;
+  max-width: 1920px;
 }
 @media (max-width: 1024px) {
   .container--wide {
@@ -959,7 +959,12 @@ svg * {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 53px;
+  padding-inline: 30px;
+}
+@media (max-width: 1024px) {
+  .section {
+    padding-inline: 53px;
+  }
 }
 .section__header {
   display: flex;
@@ -971,6 +976,7 @@ svg * {
   font-size: 59px;
   line-height: 73px;
   letter-spacing: 0%;
+  color: var(--color-black);
   text-align: center;
 }
 @media (max-width: 1024px) {
