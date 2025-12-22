@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./styles/main.css"/>
     <link rel="icon" type="image/png" href="./public/icons/favicon.png" sizes="32x32">
 </head>
-
 <body>                      
     <header class="hero-section__header header">
         <div class="header__inner container">
@@ -53,7 +52,7 @@
             <p class="hero-section__description description">
                 Идейные соображения высшего порядка, а также рамки и место обучения кадров
             </p>
-            <button class="hero-section__button button button--small button--white" type="button">Найти тур</button>
+            <button class="hero-section__button button button--small button--white" type="button" onclick="scrollToTourCreation()">Найти тур</button>
         </div>
     </section>
     <main class="content content--margin">
@@ -627,5 +626,11 @@
         </div>
     </footer>
     <script type="module" src="./index.js"></script>
+    <script>
+        const scrollToTourCreation = () => {
+            const tourCreationSection = document.querySelector("#tours-creation");
+            tourCreationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
 </body>
 </html>
