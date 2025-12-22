@@ -4,18 +4,18 @@
     width: 100%;
     padding-top: 88px;
     
-    background-image: url('../images/hero-section-background-1920.png');
+    background-image: url('../public/images/hero-section-background-1920.png');
     background-position: center;
     background-repeat: no-repeat;
 
     @include tablet {
         height: 831px;
-        background-image: url('../images/hero-section-background-1024.png');
+        background-image: url('../public/images/hero-section-background-1024.png');
     }
 
     @include mobile {
         height: 488px;
-        background-image: url('../images/hero-section-background-360.png');
+        background-image: url('../public/images/hero-section-background-360.png');
     }
 
     &__content {
