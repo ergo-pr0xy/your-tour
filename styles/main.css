@@ -215,21 +215,21 @@ svg * {
 
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+  src: url("../public/fonts/Roboto-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Medium.woff2") format("woff2");
+  src: url("../public/fonts/Roboto-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
-  src: url("../fonts/Roboto-Bold.woff2") format("woff2");
+  src: url("../public/fonts/Roboto-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -407,7 +407,7 @@ svg * {
   position: absolute;
   width: 13px;
   height: 10px;
-  background: url("../images/icons/check.svg") no-repeat;
+  background: url("../public/icons/check.svg") no-repeat;
   background-size: 13px 10px;
   top: 50%;
   left: 50%;
@@ -608,7 +608,7 @@ svg * {
   max-height: 68px;
   padding-block: 19px 20px;
   padding-left: 19px;
-  background-image: url("../images/icons/dropdown-arrow.svg");
+  background-image: url("../public/icons/dropdown-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 23px top 29px;
   background-color: var(--color-beige-100);
@@ -835,20 +835,20 @@ svg * {
   height: 830px;
   width: 100%;
   padding-top: 88px;
-  background-image: url("../images/hero-section-background-1920.png");
+  background-image: url("../public/images/hero-section-background-1920.png");
   background-position: center;
   background-repeat: no-repeat;
 }
 @media (max-width: 1024px) {
   .hero-section {
     height: 831px;
-    background-image: url("../images/hero-section-background-1024.png");
+    background-image: url("../public/images/hero-section-background-1024.png");
   }
 }
 @media (max-width: 768px) {
   .hero-section {
     height: 488px;
-    background-image: url("../images/hero-section-background-360.png");
+    background-image: url("../public/images/hero-section-background-360.png");
   }
 }
 .hero-section__content {
