@@ -966,6 +966,11 @@ svg * {
     padding-inline: 53px;
   }
 }
+@media (max-width: 768px) {
+  .section {
+    padding-inline: 21px;
+  }
+}
 .section__header {
   display: flex;
   flex-direction: column;

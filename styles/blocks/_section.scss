@@ -8,6 +8,10 @@
     @include tablet {
         padding-inline: 53px;
     }
+    
+    @include mobile {
+        padding-inline: 21px; 
+    }
 
     &__header {
         display: flex;
