@@ -7,6 +7,7 @@
     background-image: url('../public/images/hero-section-background-1920.png');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 
     @include tablet {
         height: 831px;
@@ -20,19 +21,14 @@
 
     &__content {
         display: flex;
+        max-width: 768px;
         max-height: 742px;
         height: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 768px;
-        width: 100%;
+       
         row-gap: 50px;
-
-        @include tablet {
-            margin-top: -1px;
-            max-height: 743px;
-        }
 
         @include mobile {
             margin-top: 0;
@@ -42,26 +38,14 @@
     }
 
     &__title {
-        font-weight: 700;
-        max-width: 768px;
-        width: 100%;
-        transform: translateX(1px);
-
-        font-size: 96px;
-        line-height: 1.09;
-        letter-spacing: 0.02em;
+        padding-left: 1px;
         text-align: center;
 
-        @media (max-width: 1024px) {
-            line-height: 105px;
-            margin-left: -2px;
-            font-size: clamp(34px, 10vw, 96px);
-        }
+        @include font("h1");
 
-        @media (max-width: 360px) {
-            height: auto;
-            line-height: 38px;
-            font-size: 34px;
+        @include mobile {
+            max-width: 500px;
+            @include font("h1-mobile")
         }
     }
 
