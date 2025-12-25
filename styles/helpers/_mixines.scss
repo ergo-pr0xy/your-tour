@@ -34,3 +34,89 @@
         @content;
     }
 }
+
+@mixin font($type) {
+    @if $type == "h1" {
+        font-weight: 900;
+        font-size: 96px;
+        line-height: 109%;
+        letter-spacing: 0.02em;
+    }
+
+    @if $type == "h1-mobile" {
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 112%;
+        letter-spacing: 0.02em;
+    }
+
+    @if $type == "h2" {
+        font-weight: 700;
+        font-size: 59px;
+        line-height: 124%;
+        letter-spacing: 0;
+    }
+
+    @if $type == "h2-mobile" {
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 112%;
+        letter-spacing: 0.02em;
+    }
+
+    @if $type == "h3" {
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 122%;
+        letter-spacing: 0;
+    }
+
+    @if $type == "h3-mobile" {
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 120%;
+        letter-spacing: 0.04em;
+    }
+
+    @if $type == "p-big" {
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 122%;
+        letter-spacing: 0;
+    }
+
+    @if $type == "p-big-mobile" {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 142%;
+        letter-spacing: 0;
+    }
+
+    @if $type == "p-normal" {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 142%;
+        letter-spacing: 0;
+    }
+
+    @if $type == "p-normal-mobile" {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 142%;
+        letter-spacing: 0;
+    }
+
+    @if $type == "p-small" {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 142%;
+        letter-spacing: -0.01em;
+    }
+
+    @if $type == "p-small-mobile" {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 142%;
+        letter-spacing: -0.01em;
+    }
+}

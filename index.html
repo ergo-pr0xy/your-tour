@@ -12,7 +12,7 @@
 </head>
 <body>                      
     <header class="hero-section__header header">
-        <div class="header__inner container">
+        <div class="header__inner container--header">
             <a href="#" class="header__logo logo">
                 <svg width="182" height="32" viewBox="0 0 182 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.476 0.879883L13.902 14.0679L20.412 0.879883H27.93L17.304 20.5359V30.6999H10.458V20.4519L0 0.879883H7.476Z" fill="white"/>
@@ -56,160 +56,163 @@
         </div>
     </section>
     <main class="content content--margin">
-        <section id="tours" class="section container">
-            <header class="section__header">
-                <h2 class="section__title">
-                    Выбери свой тур
-                </h2>
-                <nav class="section__menu">
-                    <ul class="section__menu-list">
-                        <li class="section__menu-item">
-                            <button class="section__menu-button section__menu-button--active">
-                                Популярные
-                            </button>
-                        </li>
-                        <li class="section__menu-item">
-                            <button class="section__menu-button">
-                                Авторские
-                            </button>
-                        </li>
-                        <li class="section__menu-item">
-                            <button class="section__menu-button">
-                                Походы
-                            </button>
-                        </li>
-                        <li class="section__menu-item">
-                            <button class="section__menu-button">
-                                Сплавы
-                            </button>
-                        </li>
-                        <li class="section__menu-item">
-                            <button class="section__menu-button">
-                                Велопрогулки
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-            <div class="section__body">
-                <div class="tours">
-                    <ul class="tours__list">
-                        <li class="tours__item">
-                            <a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-1-1920.png);
-                                        --card-bg-tablet: url(../public/images/tours-card-1-1024.png);
-                                        --card-bg-mobile: url(../public/images/tours-card-1-360.png);"  
-                                        class="tour-card">
-                                <div class="tour-card__inner">
-                                    <h3 class="tour-card__header">Путешествие в горы</h3>
-                                    <p class="tour-card__price">от 80 000 руб</p>
-                                </div>
-                                <div class="tour-card__link-emulator card-link">
-                                    <p class="card-link__text">Подробнее</p>
-                                    <div class="tour-card__arrow card-link__icon">
-                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
-                                        </svg>
+        <section id="tours" class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="section__title">
+                        Выбери свой тур
+                    </h2>
+                    <nav class="section__menu">
+                        <ul class="section__menu-list">
+                            <li class="section__menu-item">
+                                <button class="section__menu-button section__menu-button--active">
+                                    Популярные
+                                </button>
+                            </li>
+                            <li class="section__menu-item">
+                                <button class="section__menu-button">
+                                    Авторские
+                                </button>
+                            </li>
+                            <li class="section__menu-item">
+                                <button class="section__menu-button">
+                                    Походы
+                                </button>
+                            </li>
+                            <li class="section__menu-item">
+                                <button class="section__menu-button">
+                                    Сплавы
+                                </button>
+                            </li>
+                            <li class="section__menu-item">
+                                <button class="section__menu-button">
+                                    Велопрогулки
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                <div class="section__body">
+                    <div class="tours">
+                        <ul class="tours__list">
+                            <li class="tours__item">
+                                <a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-1-1920.png);
+                                            --card-bg-tablet: url(../public/images/tours-card-1-1024.png);
+                                            --card-bg-mobile: url(../public/images/tours-card-1-360.png);"  
+                                            class="tour-card">
+                                    <div class="tour-card__inner">
+                                        <h3 class="tour-card__header">Путешествие в горы</h3>
+                                        <p class="tour-card__price">от 80 000 руб</p>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="tours__item">
-                            <a a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-2-1920.png);
-                                        --card-bg-tablet: url(../public/images/tours-card-2-1024.png);
-                                        --card-bg-mobile: url(../public/images/tours-card-2-360.png);"  
-                                        class="tour-card">
-                                <div class="tour-card__inner">
-                                    <h3 class="tour-card__header">Путешествие в горы</h3>
-                                    <p class="tour-card__price">от 80 000 руб</p>
-                                </div>
-                                <div class="tour-card__link-emulator card-link">
-                                    <p class="card-link__text">Подробнее</p>
-                                    <div class="tour-card__arrow card-link__icon">
-                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
-                                        </svg>
+                                    <div class="tour-card__link-emulator card-link">
+                                        <p class="card-link__text">Подробнее</p>
+                                        <div class="tour-card__arrow card-link__icon">
+                                            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                            </svg>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="tours__item">
-                            <a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-3-1920.png);
-                                        --card-bg-tablet: url(../public/images/tours-card-3-1024.png);
-                                        --card-bg-mobile: url(../public/images/tours-card-3-360.png);"  
-                                        class="tour-card">
-                                <div class="tour-card__inner">
-                                    <h3 class="tour-card__header">Путешествие в горы</h3>
-                                    <p class="tour-card__price">от 80 000 руб</p>
-                                </div>
-                                <div class="tour-card__link-emulator card-link">
-                                    <p class="card-link__text">Подробнее</p>
-                                    <div class="tour-card__arrow card-link__icon">
-                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
-                                        </svg>
+                                </a>
+                            </li>
+                            <li class="tours__item">
+                                <a a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-2-1920.png);
+                                            --card-bg-tablet: url(../public/images/tours-card-2-1024.png);
+                                            --card-bg-mobile: url(../public/images/tours-card-2-360.png);"  
+                                            class="tour-card">
+                                    <div class="tour-card__inner">
+                                        <h3 class="tour-card__header">Путешествие в горы</h3>
+                                        <p class="tour-card__price">от 80 000 руб</p>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="tours__item">
-                            <a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-4-1920.png);
-                                        --card-bg-tablet: url(../public/images/tours-card-4-1024.png);
-                                        --card-bg-mobile: url(../public/images/tours-card-4-360.png);"  
-                                        class="tour-card">
-                                <div class="tour-card__inner">
-                                    <h3 class="tour-card__header">Путешествие в горы</h3>
-                                    <p class="tour-card__price">от 80 000 руб</p>
-                                </div>
-                                <div class="tour-card__link-emulator card-link">
-                                    <p class="card-link__text">Подробнее</p>
-                                    <div class="tour-card__arrow card-link__icon">
-                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
-                                        </svg>
+                                    <div class="tour-card__link-emulator card-link">
+                                        <p class="card-link__text">Подробнее</p>
+                                        <div class="tour-card__arrow card-link__icon">
+                                            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                            </svg>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="tours__item">
-                            <a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-5-1920.png);
-                                        --card-bg-tablet: url(../public/images/tours-card-5-1024.png);
-                                        --card-bg-mobile: url(../public/images/tours-card-5-360.png);"  
-                                        class="tour-card">
-                                <div class="tour-card__inner">
-                                    <h3 class="tour-card__header">Путешествие в горы</h3>
-                                    <p class="tour-card__price">от 80 000 руб</p>
-                                </div>
-                                <div class="tour-card__link-emulator card-link">
-                                    <p class="card-link__text">Подробнее</p>
-                                    <div class="tour-card__arrow card-link__icon">
-                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
-                                        </svg>
+                                </a>
+                            </li>
+                            <li class="tours__item">
+                                <a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-3-1920.png);
+                                            --card-bg-tablet: url(../public/images/tours-card-3-1024.png);
+                                            --card-bg-mobile: url(../public/images/tours-card-3-360.png);"  
+                                            class="tour-card">
+                                    <div class="tour-card__inner">
+                                        <h3 class="tour-card__header">Путешествие в горы</h3>
+                                        <p class="tour-card__price">от 80 000 руб</p>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="tours__item">
-                            <a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-6-1920.png);
-                                        --card-bg-tablet: url(../public/images/tours-card-6-1024.png);
-                                        --card-bg-mobile: url(../public/images/tours-card-6-360.png);"  
-                                        class="tour-card">
-                                <div class="tour-card__inner">
-                                    <h3 class="tour-card__header">Путешествие в горы</h3>
-                                    <p class="tour-card__price">от 80 000 руб</p>
-                                </div>
-                                <div class="tour-card__link-emulator card-link">
-                                    <p class="card-link__text">Подробнее</p>
-                                    <div class="tour-card__arrow card-link__icon">
-                                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
-                                        </svg>
+                                    <div class="tour-card__link-emulator card-link">
+                                        <p class="card-link__text">Подробнее</p>
+                                        <div class="tour-card__arrow card-link__icon">
+                                            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                            </svg>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                                </a>
+                            </li>
+                            <li class="tours__item">
+                                <a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-4-1920.png);
+                                            --card-bg-tablet: url(../public/images/tours-card-4-1024.png);
+                                            --card-bg-mobile: url(../public/images/tours-card-4-360.png);"  
+                                            class="tour-card">
+                                    <div class="tour-card__inner">
+                                        <h3 class="tour-card__header">Путешествие в горы</h3>
+                                        <p class="tour-card__price">от 80 000 руб</p>
+                                    </div>
+                                    <div class="tour-card__link-emulator card-link">
+                                        <p class="card-link__text">Подробнее</p>
+                                        <div class="tour-card__arrow card-link__icon">
+                                            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tours__item">
+                                <a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-5-1920.png);
+                                            --card-bg-tablet: url(../public/images/tours-card-5-1024.png);
+                                            --card-bg-mobile: url(../public/images/tours-card-5-360.png);"  
+                                            class="tour-card">
+                                    <div class="tour-card__inner">
+                                        <h3 class="tour-card__header">Путешествие в горы</h3>
+                                        <p class="tour-card__price">от 80 000 руб</p>
+                                    </div>
+                                    <div class="tour-card__link-emulator card-link">
+                                        <p class="card-link__text">Подробнее</p>
+                                        <div class="tour-card__arrow card-link__icon">
+                                            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="tours__item">
+                                <a href="#!" style="--card-bg-desktop: url(../public/images/tours-card-6-1920.png);
+                                            --card-bg-tablet: url(../public/images/tours-card-6-1024.png);
+                                            --card-bg-mobile: url(../public/images/tours-card-6-360.png);"  
+                                            class="tour-card">
+                                    <div class="tour-card__inner">
+                                        <h3 class="tour-card__header">Путешествие в горы</h3>
+                                        <p class="tour-card__price">от 80 000 руб</p>
+                                    </div>
+                                    <div class="tour-card__link-emulator card-link">
+                                        <p class="card-link__text">Подробнее</p>
+                                        <div class="tour-card__arrow card-link__icon">
+                                            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21.7004 7.28331L15.1535 0.796818C14.7541 0.401061 14.1063 0.401061 13.7068 0.796818C13.3073 1.19266 13.3073 1.83433 13.7068 2.23017L18.5074 6.98647H1.02294C0.458032 6.98647 0 7.44029 0 7.99999C0 8.55961 0.458032 9.0135 1.02294 9.0135H18.5074L13.707 13.7698C13.3075 14.1656 13.3075 14.8073 13.707 15.2032C13.9067 15.4009 14.1686 15.5 14.4304 15.5C14.6921 15.5 14.9539 15.4009 15.1537 15.2032L21.7004 8.71667C22.0999 8.32083 22.0999 7.67915 21.7004 7.28331Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
             </div>
         </section>
         <section id="tours-creation"class="section container">

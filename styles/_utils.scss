@@ -1,13 +1,31 @@
 .container {
-    max-width: 1276px;
+    max-width: 1230px;
     margin-inline: auto;
-    width: 100%;
+    padding-inline: 30px;
+
+    @include tablet {
+        padding-inline: 53px;
+    }
+    
+    @include mobile {
+        padding-inline: 21px; 
+    }
+
+    &--header {
+        max-width: 1282px;
+        padding-inline: 57px;
+        margin-inline: auto;
+        
+        @include mobile {
+            padding-inline: 20px; 
+        }
+    }
 
     &--wide {
         max-width: 1920px;
 
-        @media (max-width: 1024px) {
-            max-width: 984px;
+        @include tablet {
+            padding-inline: 20px;
         }
     }
 }
