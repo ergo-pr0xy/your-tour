@@ -9,15 +9,17 @@
     align-items: center;
 }
 
-@mixin hover {
+@mixin pc-hover {
     @media (hover:hover) {
         &:hover {
             @content;
         }
     }
+}
 
-    @media (hover:none) {
-         &:active {
+@mixin pc-active {
+    @media (hover:hover) {
+        &:active {
             @content;
         }
     }

@@ -1,34 +1,30 @@
 .button {
     border-radius: var(--border-radius-small);
-    line-height: 142%;
     text-align: center;
-    font-weight: 400;
     transition: background-color 0.3s ease-in-out;
 
     &--small {
         width: 118px;
         height: 34px;
-        font-size: 17px;
-        letter-spacing: -0.01em;
+        @include font("p-small");
 
         @include mobile {
             width: 114px;
             height: 33px;
-            font-size: 16px;
+            @include font("p-small-mobile");
         }
     }
 
     &--medium {
         width: 235px;
         height: 58px;
-   
-        font-size: 20px;
-        letter-spacing: 0;
 
-        @media (max-width: 600px) {
+        @include font("p-normal");
+
+        @include mobile {
             width: 134px;
             height: 47px;
-            font-size: 16px;
+            @include font("p-normal-mobile");
         }
     }
 
@@ -36,22 +32,14 @@
         background-color: var(--color-white);
         color: var(--color-black); 
 
-        @media (hover:hover) {
-            &:hover {
-                color: var(--color-white);
-                background-color: var(--color-orange-200);
-            }
-            &:active {
-                color: var(--color-black);
-                background-color: var(--color-orange-100);
-            }
+        @include pc-hover {
+            color: var(--color-white);
+            background-color: var(--color-orange-200);
         }
 
-        @media (hover:none) {
-            &:hover {
-                color: var(--color-black);
-                background-color: var(--color-white);
-            }
+        @include pc-active {
+            color: var(--color-black);
+            background-color: var(--color-orange-100);
         }
     }
 
@@ -59,21 +47,12 @@
         background-color: var(--color-green-400);
         color: var(--color-white); 
 
-        @media (hover:hover) {
-            &:hover {
-                background-color: var(--color-green-300);
-            }
-
-            &:active {
-                background-color: var(--color-green-200);
-            }
+        @include pc-hover {
+            background-color: var(--color-green-300);
         }
 
-        @media (hover:none) {
-            &:hover {
-                background-color: var(--color-green-400);
-                color: var(--color-white); 
-            }
+        @include pc-active {
+            background-color: var(--color-green-200);
         }
     }
 
@@ -81,21 +60,12 @@
         background-color: var(--color-green-100);
         color: var(--color-green-400); 
 
-        @media (hover:hover) {
-            &:hover {
-                background-color: var(--color-gray-100);
-            }
-            
-            &:active {
-                background-color: var(--color-gray-200);
-            }
+        @include pc-hover {
+            background-color: var(--color-gray-100);
         }
 
-        @media (hover:none) {
-            &:hover {
-                background-color: var(--color-green-100);
-                color: var(--color-green-400); 
-            }
+         @include pc-active {
+            background-color: var(--color-gray-200);
         }
     }
 }
