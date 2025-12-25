@@ -95,7 +95,8 @@
     @if $type == "p-normal" {
         font-weight: 400;
         font-size: 20px;
-        line-height: 142%;
+        line-height: 28px;
+        // line-height: 142%;
         letter-spacing: 0;
     }
 

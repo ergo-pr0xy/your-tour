@@ -698,7 +698,7 @@ svg * {
   width: 100%;
   font-weight: 400;
   font-size: 20px;
-  line-height: 142%;
+  line-height: 28px;
   letter-spacing: 0;
 }
 @media (max-width: 1024px) {
@@ -1007,7 +1007,7 @@ svg * {
 @media (max-width: 768px) {
   .section__menu-list {
     margin-left: 0;
-    gap: 10px;
+    gap: 10.5px;
     font-weight: 700;
     font-size: 16px;
     line-height: 142%;
@@ -1057,19 +1057,21 @@ svg * {
   margin-top: 30px;
   margin-bottom: 100px;
   color: var(--color-gray-300);
+  text-align: center;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
   letter-spacing: 0;
-  text-align: center;
 }
-@media (max-width: 360px) {
+@media (max-width: 768px) {
   .section__description {
     margin-top: 19px;
     margin-bottom: 50px;
     max-width: 318px;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 23px;
+    line-height: 142%;
+    letter-spacing: 0;
   }
   .section__description--margin-40 {
     margin-bottom: 40px;
