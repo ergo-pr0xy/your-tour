@@ -87,7 +87,6 @@
         flex-shrink: 0;
 
         @include mobile {
-            padding-top: 2px;
             @include font("p-normal-mobile");
         }
     }
