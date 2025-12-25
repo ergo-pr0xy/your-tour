@@ -3,15 +3,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-inline: 30px;
-
-    @include tablet {
-        padding-inline: 53px;
-    }
-    
-    @include mobile {
-        padding-inline: 21px; 
-    }
 
     &__header {
         display: flex;
@@ -24,17 +15,15 @@
         font-size: 59px;
         line-height: 73px;
         letter-spacing: 0%;
+
+
         color: var(--color-black);
         text-align: center;
 
-        @media (max-width: 1024px) {
-            font-size: clamp(34px, 10vw, 59px);
-        }
+        @include font("h2");
 
-        @media (max-width: 360px) {
-            font-size: 34px;
-            line-height: 38px;
-            letter-spacing: 0.02em; 
+        @include mobile {
+            @include font("h2-mobile");
         }
         
         &--narrow {
