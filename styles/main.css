@@ -710,7 +710,7 @@ svg * {
   .header__inner {
     font-weight: 400;
     font-size: 16px;
-    line-height: 142%;
+    line-height: 23px;
     letter-spacing: 0;
   }
 }
@@ -753,10 +753,9 @@ svg * {
 }
 @media (max-width: 768px) {
   .header__phonenumber {
-    padding-top: 2px;
     font-weight: 400;
     font-size: 16px;
-    line-height: 142%;
+    line-height: 23px;
     letter-spacing: 0;
   }
 }
@@ -897,7 +896,7 @@ svg * {
   padding-bottom: 51px;
   font-weight: 900;
   font-size: 96px;
-  line-height: 109%;
+  line-height: 105px;
   letter-spacing: 0.02em;
 }
 @media (max-width: 768px) {
@@ -906,7 +905,7 @@ svg * {
     max-width: 500px;
     font-weight: 700;
     font-size: 34px;
-    line-height: 112%;
+    line-height: 38px;
     letter-spacing: 0.02em;
   }
 }
@@ -925,7 +924,7 @@ svg * {
     max-width: 250px;
     font-weight: 400;
     font-size: 16px;
-    line-height: 142%;
+    line-height: 23px;
     letter-spacing: 0;
   }
 }
@@ -1070,7 +1069,7 @@ svg * {
     max-width: 318px;
     font-weight: 400;
     font-size: 16px;
-    line-height: 142%;
+    line-height: 23px;
     letter-spacing: 0;
   }
   .section__description--margin-40 {
