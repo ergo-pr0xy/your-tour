@@ -22,28 +22,24 @@
     &__content {
         display: flex;
         max-width: 768px;
-        max-height: 742px;
-        height: 100%;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-       
-        row-gap: 50px;
+
+        padding-top: 119px;
 
         @include mobile {
-            margin-top: 0;
-            max-height: 400px;
-            row-gap: 39px; 
+            padding-top: 53px;
         }
     }
 
     &__title {
-        padding-left: 1px;
         text-align: center;
+        padding-bottom: 51px;
 
         @include font("h1");
 
         @include mobile {
+            padding-bottom: 40px;
             max-width: 500px;
             @include font("h1-mobile")
         }
@@ -51,30 +47,16 @@
 
     &__description {
         max-width: 562px;
-        max-height: 56px;
-        transform: translateY(1px);
+        padding-bottom: 49px;
 
         @include tablet {
            max-width: 400px;
         }
 
         @include mobile {
+            padding-bottom: 40px;
             max-width: 250px;
-            max-height: 71px;
-            font-size: 16px;
-        }
-    }
-
-    &__button {
-        transform: translateY(0.5px);
-
-        @include tablet {
-            transform: translateY(1px);
-            padding-top: 1px;
-        }
-
-        @include mobile {
-            padding-top: 2px;
+            @include font("p-normal-mobile");
         }
     }
 }
