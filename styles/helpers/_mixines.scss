@@ -55,42 +55,42 @@
     @if $type == "h2" {
         font-weight: 700;
         font-size: 59px;
-        line-height: 124%;
+        line-height: 73px;
         letter-spacing: 0;
     }
 
     @if $type == "h2-mobile" {
         font-weight: 700;
         font-size: 34px;
-        line-height: 112%;
+        line-height: 38px;
         letter-spacing: 0.02em;
     }
 
     @if $type == "h3" {
         font-weight: 500;
         font-size: 35px;
-        line-height: 122%;
+        line-height: 43px;
         letter-spacing: 0;
     }
 
     @if $type == "h3-mobile" {
         font-weight: 700;
         font-size: 23px;
-        line-height: 120%;
+        line-height: 28px;
         letter-spacing: 0.04em;
     }
 
     @if $type == "p-big" {
         font-weight: 700;
         font-size: 23px;
-        line-height: 122%;
+        line-height: 28px;
         letter-spacing: 0;
     }
 
     @if $type == "p-big-mobile" {
         font-weight: 700;
         font-size: 16px;
-        line-height: 142%;
+        line-height: 23px;
         letter-spacing: 0;
     }
 

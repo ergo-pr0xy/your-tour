@@ -374,16 +374,19 @@ svg * {
   z-index: -1;
 }
 .card-link__text {
+  margin-right: 16px;
   font-weight: 700;
   font-size: 23px;
-  line-height: 1.22;
-  margin-right: 16px;
+  line-height: 28px;
+  letter-spacing: 0;
 }
-@media (max-width: 360px) {
+@media (max-width: 768px) {
   .card-link__text {
-    font-size: 16px;
-    line-height: 1.42;
     margin-right: 17px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0;
   }
 }
 
@@ -964,14 +967,14 @@ svg * {
   text-align: center;
   font-weight: 700;
   font-size: 59px;
-  line-height: 124%;
+  line-height: 73px;
   letter-spacing: 0;
 }
 @media (max-width: 768px) {
   .section__title {
     font-weight: 700;
     font-size: 34px;
-    line-height: 112%;
+    line-height: 38px;
     letter-spacing: 0.02em;
   }
 }
@@ -996,7 +999,7 @@ svg * {
   margin-left: -1px;
   font-weight: 700;
   font-size: 23px;
-  line-height: 122%;
+  line-height: 28px;
   letter-spacing: 0;
 }
 @media (max-width: 768px) {
@@ -1005,7 +1008,7 @@ svg * {
     gap: 10.5px;
     font-weight: 700;
     font-size: 16px;
-    line-height: 142%;
+    line-height: 23px;
     letter-spacing: 0;
   }
 }
@@ -1090,18 +1093,13 @@ svg * {
   }
 }
 .tours__item {
-  width: 370px;
-  height: 531px;
+  flex: 1 1;
+  min-height: 531px;
 }
-@media (max-width: 1170px) {
+@media (max-width: 768px) {
   .tours__item {
-    width: 450px;
-  }
-}
-@media (max-width: 450px) {
-  .tours__item {
-    width: 318px;
-    height: 318px;
+    flex: 1 1 100%;
+    min-height: 318px;
   }
 }
 
@@ -1116,13 +1114,13 @@ svg * {
   background-repeat: no-repeat;
   border-radius: var(--border-radius-big);
   background-image: var(--card-bg-desktop);
-  background-size: 100%;
+  background-size: 100% 100%;
   transition: background-size 0.3s ease-in-out;
   cursor: pointer;
 }
 @media (hover: hover) {
   .tour-card:hover {
-    background-size: 120%;
+    background-size: 120% 120%;
   }
   .tour-card:hover .tour-card__link-emulator::before {
     background-color: var(--color-green-400);
@@ -1131,16 +1129,14 @@ svg * {
     background-color: var(--color-orange-200);
   }
 }
-@media (max-width: 1170px) {
+@media (max-width: 1024px) {
   .tour-card {
     background-image: var(--card-bg-tablet);
-    row-gap: 320px;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   .tour-card {
     padding: 26px 25px 25px 25px;
-    row-gap: 181px;
     background-image: var(--card-bg-mobile);
     border-radius: 20px;
   }
@@ -1149,15 +1145,9 @@ svg * {
   display: flex;
   flex-direction: column;
   width: 100%;
-  row-gap: 18px;
+  row-gap: 16px;
 }
-@media (max-width: 1170px) {
-  .tour-card__inner {
-    max-width: 350px;
-    row-gap: 17px;
-  }
-}
-@media (max-width: 360px) {
+@media (max-width: 768px) {
   .tour-card__inner {
     row-gap: 12px;
   }
@@ -1171,50 +1161,49 @@ svg * {
   font-size: 35px;
   line-height: 122%;
 }
-@media (max-width: 1170px) {
+@media (max-width: 1024px) {
   .tour-card__header {
-    max-width: 350px;
+    max-width: none;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   .tour-card__header {
-    max-width: 268px;
-    font-size: 23px;
     font-weight: 700;
-    line-height: 120%;
+    font-size: 23px;
+    line-height: 28px;
     letter-spacing: 0.04em;
   }
 }
 .tour-card__price {
-  width: 100%;
+  font-weight: 400;
   font-size: 17px;
-  line-height: 23px;
+  line-height: 24px;
   letter-spacing: -0.01em;
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   .tour-card__price {
+    font-weight: 400;
     font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.01em;
   }
 }
 .tour-card__link-text {
+  margin-right: 16px;
   font-weight: 700;
   font-size: 23px;
-  line-height: 1.22;
-  margin-right: 16px;
+  line-height: 28px;
+  letter-spacing: 0;
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   .tour-card__link-text {
     margin-right: 17px;
+    font-weight: 700;
     font-size: 16px;
-    line-height: 1.42;
+    line-height: 23px;
+    letter-spacing: 0;
   }
 }
-@media (max-width: 450px) {
-  .tour-card__arrow {
-    margin-bottom: 3px;
-  }
-}
-
 .tour-creation__form {
   display: flex;
   flex-direction: column;
