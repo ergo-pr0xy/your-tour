@@ -1,6 +1,7 @@
 :root {
     --color-white: #FFFFFF;
     --color-black: #1B1F2B;
+    --color-red: red;
 
     --color-orange-100: #F8E6BE;
     --color-orange-200: #EFA501;
@@ -21,18 +22,11 @@
 
     --font-family-base: 'Roboto', sans-serif;
     
-    --input-border: 1px solid var(var(--color-beige-200))
-
-    --container-width: 1170px;
-    --container-padding-x: 21px;
+    --input-border: 1px solid var(--color-beige-200);
 
     --border-radius-big: 50px;
     --border-radius-medium: 30px;
     --border-radius-small: 10px;
-
-    --section-padding-y: 67.5px;
-
-    --input-height: 68px;
 
     --transition-duration: 0.3s;
 }
