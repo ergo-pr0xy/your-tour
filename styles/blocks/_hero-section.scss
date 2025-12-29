@@ -1,5 +1,4 @@
 .hero-section {
-    flex-direction: column;
     height: 830px;
     width: 100%;
     padding-top: 88px;
@@ -24,7 +23,6 @@
         max-width: 768px;
         flex-direction: column;
         align-items: center;
-
         padding-top: 118px;
 
         @include mobile {
@@ -33,14 +31,15 @@
     }
 
     &__title {
-        text-align: center;
         padding-bottom: 51px;
+        text-align: center;
 
         @include font("h1");
 
         @include mobile {
-            padding-bottom: 39px;
             max-width: 500px;
+            padding-bottom: 39px;
+
             @include font("h1-mobile")
         }
     }
@@ -54,8 +53,9 @@
         }
 
         @include mobile {
-            padding-bottom: 40px;
             max-width: 250px;
+            padding-bottom: 40px;
+            
             @include font("p-normal-mobile");
         }
     }
