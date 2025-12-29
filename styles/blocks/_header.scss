@@ -1,23 +1,26 @@
 .header {
     position: absolute;
-    width: 100%;
+
     display: flex;
+    max-height: 88px;
+    width: 100%;
+    padding-block: 28px;
     justify-content: center;
     align-items: center;
-    padding-block: 28px;
-    max-height: 88px;
-
+    
     @include mobile {
         padding-block: 33px;
     }
 
     &--fixed {
         position: fixed;
+        z-index: 100;
+
         color: var(--color-black);
         background-color: var(--color-header-fixed);
+        
         backdrop-filter: blur(54px);
         -webkit-backdrop-filter: blur(54px);
-        z-index: 100;
     }
 
     &--show-fixed {
@@ -31,10 +34,10 @@
 
     &__inner {
         display: flex;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
-
+    
         @include font("p-normal");
 
         @include tablet {
@@ -47,8 +50,6 @@
     }
 
     &__logo {
-        color: currentColor;
-
         @include mobile {
             max-width: 133px;
             width: 100%;
@@ -75,9 +76,8 @@
     }
 
     &__menu-list {
-        width: 100%;
-
         display: flex;
+        width: 100%;
         flex-direction: row;
         justify-content: space-between;
     }
