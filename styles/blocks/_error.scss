@@ -1,19 +1,19 @@
 .error {
-    color: red;
+    color: var(--color-red);
     font-size: 14px;
     font-weight: 400;
 
     &--checkbox, &--radio {
         padding: 10px;
-        border: 1px solid red;
+        border: 1px solid var(--color-red);
         border-radius: var(--border-radius-small);
     }
 
     &--input {
-        border-color: red;
+        border-color: var(--color-red);
 
         &:focus {
-           border-color: red; 
+           border-color: var(--color-red); 
         }
     }
 }
