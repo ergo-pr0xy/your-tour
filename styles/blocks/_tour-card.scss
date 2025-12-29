@@ -12,34 +12,30 @@
 
     border-radius: var(--border-radius-big);
     background-image: var(--card-bg-desktop);
-    background-size: 100%;
+    background-size: 100% 100%;
     transition: background-size 0.3s ease-in-out;
     cursor: pointer;
 
-    @media (hover:hover) {
-        &:hover {
-            background-size: 120%;
+    @include pc-hover {
+        background-size: 120% 120%;
 
-            .tour-card__link-emulator::before {
-                background-color: var(--color-green-400);
-            }
+        .tour-card__link-emulator::before {
+            background-color: var(--color-green-400);
         }
+    }
 
-        &:active {
-            .tour-card__link-emulator::before {
+    @include pc-active {
+        .tour-card__link-emulator::before {
                 background-color: var(--color-orange-200);
-            }
         }
     }
 
-    @media (max-width: 1170px) {
+    @include tablet {
         background-image: var(--card-bg-tablet);
-        row-gap: 320px;
     }
 
-    @media (max-width: 450px) {
-        padding: 26px 25px 25px 25px;
-        row-gap: 181px;
+    @include mobile {
+        padding: 25px 25px;
 
         background-image: var(--card-bg-mobile);
         border-radius: 20px;
@@ -51,13 +47,13 @@
         width: 100%;
         row-gap: 18px;
 
-        @media (max-width: 1170px) {
+        @include tablet {
             max-width: 350px; 
             row-gap: 17px;
         }
 
-        @media (max-width: 360px) {
-            row-gap: 12px;
+        @include mobile {
+            row-gap: 13px;
         }
     }
 
@@ -67,20 +63,14 @@
         max-width: 220px;
         row-gap: 30px;
 
-        font-weight: 500;
-        font-size: 35px;
-        line-height: 122%;
+        @include font("h3");
 
-        @media (max-width: 1170px) {
-            max-width: 350px; 
+        @include tablet {
+            max-width: 100%; 
         }
 
-        @media (max-width: 450px) {
-            max-width: 268px; 
-            font-size: 23px;
-            font-weight: 700;
-            line-height: 120%;
-            letter-spacing: 0.04em;
+        @include mobile {
+            @include font("h3-mobile");
         }
     }
 
@@ -97,21 +87,16 @@
     }
 
     &__link-text {
-        font-weight: 700;
-        font-size: 23px;
-        line-height: 1.22;
-        margin-right: 16px;
+        @include font("p-small");
         
-        @media (max-width: 450px) {
-            margin-right: 17px;
-            font-size: 16px;
-            line-height: 1.42;
+        @include mobile {
+            @include font("p-small-mobile");
         }
     }
 
-    &__arrow {
-         @media (max-width: 450px) {
-           margin-bottom: 3px;
+    &__link-emulator {
+        @include mobile {
+            padding-bottom: 1px;
         }
     }
 }

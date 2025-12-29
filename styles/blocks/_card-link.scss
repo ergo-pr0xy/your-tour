@@ -1,10 +1,10 @@
 .card-link {
-    position: relative;
-    max-width: 159px;
     display: inline-flex;
-    align-items: center;
+    position: relative;
     z-index: 10; 
 
+    max-width: 159px;
+  
     &::before {
         content: '';
         position: absolute;
@@ -12,23 +12,37 @@
         left: -20px;
         right: -21px;
         bottom: -7px;
+        z-index: -1; 
 
+        transition: background-color 0.3s ease-in-out;
         background-color: transparent;
         border-radius: var(--border-radius-big);
-        transition: background-color 0.3s ease-in-out;
-        z-index: -1; 
     }
 
     &__text {
-        font-weight: 700;
-        font-size: 23px;
-        line-height: 1.22;
+        display: inline-block;
         margin-right: 16px;
+        margin-top: -1px;
 
-        @media (max-width: 360px) {
-            font-size: 16px;
-            line-height: 1.42;
+        @include font("p-big");
+
+        @include mobile {
             margin-right: 17px;
+
+            @include font("p-big-mobile");
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 22px;
+        height: 15px;
+        margin-top: 5px;
+
+        background-image: url("../../public/icons/arrow-right.svg");
+
+        @include mobile {
+            margin-top: 2px;
         }
     }
 }

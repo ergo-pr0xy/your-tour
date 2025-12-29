@@ -11,16 +11,12 @@
    }
 
    &__item {
-        width: 370px;
-        height: 531px;
+        flex: 1 1;
+        min-height: 531px;
 
-        @media (max-width: 1170px) {
-            width: 450px;
-        }
-           
-        @media (max-width: 450px) {
-            width: 318px;
-            height: 318px;
+        @include mobile {
+            flex: 1 1 100%;
+            min-height: 318px;
         }
    }
 }
