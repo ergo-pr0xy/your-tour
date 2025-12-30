@@ -21,6 +21,10 @@
         
         backdrop-filter: blur(54px);
         -webkit-backdrop-filter: blur(54px);
+
+        .header__logo {
+            filter: invert(1);
+        }
     }
 
     &--show-fixed {
@@ -55,9 +59,9 @@
             width: 100%;
         }
 
-        &--black {
-            color: var(--color-black);
-        }
+        // &--black {
+        //     color: var(--color-black);
+        // }
     }
 
     &__menu {
