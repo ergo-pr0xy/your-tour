@@ -193,24 +193,6 @@ legend {
   padding: 0;
 }
 
-/**
-  Приводим к единому цвету svg-элементы
- */
-svg *[fill] {
-  fill: currentColor;
-}
-
-svg *[stroke] {
-  stroke: currentColor;
-}
-
-/**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
- */
-svg * {
-  transition-property: fill, stroke;
-}
-
 @font-face {
   font-family: "Roboto";
   src: url("../public/fonts/Roboto-Regular.woff2") format("woff2");
@@ -698,6 +680,9 @@ svg * {
   backdrop-filter: blur(54px);
   -webkit-backdrop-filter: blur(54px);
 }
+.header--fixed .header__logo {
+  filter: invert(1);
+}
 .header--show-fixed {
   animation: appear-header 0.3s forwards;
 }
@@ -732,9 +717,6 @@ svg * {
     max-width: 133px;
     width: 100%;
   }
-}
-.header__logo--black {
-  color: var(--color-black);
 }
 .header__menu {
   max-width: 468px;
