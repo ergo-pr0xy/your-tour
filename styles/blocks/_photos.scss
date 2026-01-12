@@ -1,34 +1,36 @@
 .photos {
     display: flex;
     width: 100%;
-
     flex-direction: column;
     row-gap: 30px;
     align-items: center;
 
-    @media (max-width: 1024px) {
-        row-gap: 30.5px;
+    @include tablet {
+        row-gap: 30px;
     }
 
-    @media (max-width: 360px) {
-        padding-inline: 21px;
+    @include mobile {
         row-gap: 18px;
     }
 
     &__row {
         display: flex;
-        column-gap: 29.5px;
         width: 100%;
-        justify-content: space-between;
+        column-gap: 30px;
         align-items: center;
 
-        @media (max-width: 1024px) {
+        @include tablet {
             column-gap: 20px;
-            align-items: auto;
         }
 
-        @media (max-width: 360px) {
+        @include mobile {
             column-gap: 10px;
+        }
+
+        &--gap-mobile-big {
+            @include mobile {
+                column-gap: 18px;
+            }
         }
     }
 }
