@@ -48,8 +48,13 @@
         max-width: 562px;
         padding-bottom: 49px;
 
+        text-align: center;
+
+        @include font("p-normal");
+
         @include tablet {
            max-width: 400px;
+           padding-bottom: 50px;
         }
 
         @include mobile {
