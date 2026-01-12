@@ -54,14 +54,12 @@
     }
 
     &__logo {
+        padding-top: 1px;
+        
         @include mobile {
             max-width: 133px;
             width: 100%;
         }
-
-        // &--black {
-        //     color: var(--color-black);
-        // }
     }
 
     &__menu {
