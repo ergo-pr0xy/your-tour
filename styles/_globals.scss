@@ -8,18 +8,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 body {
     display: flex;
+    height: 100%;
     flex-direction: column;
     align-items: center;
-    
-    height: 100%;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 
     font-family: var(--font-family-base);
     font-weight: 400;
-    background-color: var(--color-beige-100);
     color: white;
+    
+    background-color: var(--color-beige-100);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
