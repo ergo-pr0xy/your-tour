@@ -1,9 +1,9 @@
 .card-link {
-    display: inline-flex;
     position: relative;
     z-index: 10; 
 
-    max-width: 159px;
+    display: inline-flex;
+    align-self: flex-start;
   
     &::before {
         content: '';
@@ -28,7 +28,6 @@
 
         @include mobile {
             margin-right: 17px;
-
             @include font("p-big-mobile");
         }
     }
