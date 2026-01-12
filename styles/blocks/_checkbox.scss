@@ -4,45 +4,48 @@
         align-items: center;
         column-gap: 19px;
 
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 142%;
-        letter-spacing: -0.01em;
+        @include font("p-small");
 
-        @media (max-width: 1024px) {
+        @include tablet {
             column-gap: 11px;
         }
 
-        @media (max-width: 360px) {
+        @include mobile {
             align-items: flex-start;
             column-gap: 10px;
+
+            @include font("p-normal-mobile")
         }
     }
 
     &__emulator {
         position: relative;
+
         width: 26px;
         height: 26px;
-        border-radius: 5px;
-        border: 2px solid var(--color-black);
         flex-shrink: 0;
 
-        @media (max-width: 360px) {
+        border-radius: 5px;
+        border: 2px solid var(--color-black);
+
+        @include mobile {
             width: 20px;
             height: 20px;
-            flex-shrink: 0;
         }
 
         &::after {
             content: "";
-            opacity: 0;
             position: absolute;
-            width:  13px;
-            height: 10px;
-            background: url("../public/icons/check.svg") no-repeat;
-            background-size: 13px 10px;
             top: 50%;
             left: 50%;
+            
+            width:  13px;
+            height: 10px;
+
+            background: url("../public/icons/check.svg") no-repeat;
+            background-size: 13px 10px;
+            opacity: 0;
+
             transform: translate(-50%, -50%);
         }
     }
@@ -50,12 +53,6 @@
     &__label-emulator {
         color: var(--color-gray-300);
         text-align: left;
-        
-        @media (max-width: 360px) {
-            font-size: 16px;
-            letter-spacing: 0;
-            line-height: 145%;
-        }
     }
 
     &__input:checked + &__emulator::after {
