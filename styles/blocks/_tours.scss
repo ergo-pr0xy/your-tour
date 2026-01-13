@@ -4,8 +4,8 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 30px;
-        
-        @media (max-width: 1024px) {
+
+        @include tablet {
             gap: 18px;
         }
    }
