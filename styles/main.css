@@ -1515,20 +1515,6 @@ legend {
   transition: background-size 0.3s ease;
   cursor: pointer;
 }
-@media (hover: hover) {
-  .story:hover {
-    background-size: 120% 120%;
-  }
-  .story:hover .story__link-emulator::before {
-    opacity: 1;
-    background-color: var(--color-green-400);
-  }
-}
-@media (hover: hover) {
-  .story:active .story__link-emulator::before {
-    background-color: var(--color-orange-200);
-  }
-}
 @media (max-width: 1024px) {
   .story {
     background-image: var(--story-bg-tablet);
@@ -1539,6 +1525,15 @@ legend {
     padding: 30px;
     border-radius: 20px;
     background-image: var(--story-bg-mobile);
+  }
+}
+@media (hover: hover) {
+  .story:hover {
+    background-size: 120% 120%;
+  }
+  .story:hover .story__link-emulator::before {
+    opacity: 1;
+    background-color: var(--color-green-400);
   }
 }
 .story__overlay-link {

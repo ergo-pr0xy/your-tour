@@ -16,21 +16,6 @@
     transition: background-size 0.3s ease;
     cursor: pointer;
 
-    @include pc-hover {
-        background-size: 120% 120%;
-
-        .story__link-emulator::before {
-            opacity: 1;
-            background-color: var(--color-green-400);
-        }
-    }
-
-    @media (hover:hover) {
-        &:active .story__link-emulator::before {
-            background-color: var(--color-orange-200);
-        }
-    }
-
     @include tablet {
         background-image: var(--story-bg-tablet);
     }
@@ -40,6 +25,16 @@
         border-radius: 20px;
         background-image: var(--story-bg-mobile);
     }
+
+    @include pc-hover {
+        background-size: 120% 120%;
+
+        .story__link-emulator::before {
+            opacity: 1;
+            background-color: var(--color-green-400);
+        }
+    }
+
 
     &__overlay-link {
         position: absolute;
