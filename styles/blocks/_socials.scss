@@ -1,12 +1,7 @@
 .socials {
     display: flex;
-    column-gap: 25.5px;
-
-    @media (max-width: 360px) {
+    column-gap: 25px;
+    @include mobile {
         column-gap: 15px;
-    }
-
-    & svg {
-        color: var(--color-gray-300);
     }
 }
