@@ -1,31 +1,29 @@
 .social-logo {
+    display: block;
     width: 26px;
     height: 26px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     
-    @media (max-width: 360px) {
-        margin-top: -3px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--tg {
+        background-image: url('../../public/icons/tg-logo.svg');
+        @include mobile {
+            width: 22px;
+        }
     }
 
-    &--tg-mobile {
-        @media (max-width: 360px) {
-           width: 22px;
-           transform: translateX(-0.5px);
-        } 
-    }
-
-    &--fb-mobile {
-        @media (max-width: 360px) {
-            width: 26px;
-        } 
-    }
-
-    &--vk-mobile {
-        @media (max-width: 360px) {
+    &--vk {
+        background-image: url('../../public/icons/vk-logo.svg');
+        @include mobile {
             width: 20px;
-        } 
+        }
+    }
+
+    &--fb {
+        background-image: url('../../public/icons/fb-logo.svg');
+        @include mobile {
+            width: 26px;
+        }
     }
 }
