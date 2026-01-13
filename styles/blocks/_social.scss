@@ -1,31 +1,22 @@
 .social {
-    margin-block: auto;
     color: var(--color-black);
-    font-weight: 400;
-    line-height: 1.42;
-    letter-spacing: 0;
+    @include font("p-normal");
+
+    @include mobile {
+        @include font("p-normal-mobile");
+    }
+
+    &--fb {
+        margin-right: 1px;
+    }
 
     &__link {
         display: flex;
         column-gap: 10px;
         align-items: center;
 
-        @media (max-width: 360px) {
+        @include mobile {
             column-gap: 5px;
-        }
-
-        @media (hover:hover) {
-            &:hover {
-                & .social__name::after {
-                    width: 100%;
-                }
-            }
-
-            &:active {
-                & .social__name {
-                    color: var(--color-orange-200);
-                }
-            }
         }
     }
 }
