@@ -26,7 +26,7 @@
 
     @include pc-active {
         .tour-card__link-emulator::before {
-                background-color: var(--color-orange-200);
+            background-color: var(--color-orange-200);
         }
     }
 
@@ -36,7 +36,6 @@
 
     @include mobile {
         padding: 25px 25px;
-
         background-image: var(--card-bg-mobile);
         border-radius: 20px;
     }
@@ -44,13 +43,7 @@
     &__inner {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        row-gap: 18px;
-
-        @include tablet {
-            max-width: 350px; 
-            row-gap: 17px;
-        }
+        row-gap: 16px;
 
         @include mobile {
             row-gap: 13px;
@@ -59,8 +52,8 @@
 
     &__header {
         display: flex;
-        flex-direction: column;
         max-width: 220px;
+        flex-direction: column;
         row-gap: 30px;
 
         @include font("h3");
@@ -75,14 +68,10 @@
     }
 
     &__price {
-        width: 100%;
-        font-size: 17px;
-        line-height: 23px;
-        letter-spacing: -0.01em;
+        @include font("p-small");
 
-
-        @media (max-width: 450px) {
-            font-size: 16px;
+        @include mobile {
+            @include font("p-small-mobile");
         }
     }
 
