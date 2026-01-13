@@ -24,10 +24,18 @@
         }
     }
 
+    // @include pc-active {
+    //    .story__link-emulator::before {
+    //         background-color: var(--color-orange-200);
+    //    }
+    // }
+
     @include pc-active {
-       .story__link-emulator::before {
-            background-color: var(--color-orange-200);
-       }
+        &:not(:has(.story__footer-link:active)){
+            .story__link-emulator::before {
+                background-color: var(--color-orange-200);
+            }
+        }
     }
 
     @include tablet {

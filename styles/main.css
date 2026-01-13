@@ -1524,7 +1524,7 @@ legend {
   }
 }
 @media (hover: hover) {
-  .story:active .story__link-emulator::before {
+  .story:active:not(:has(.story__footer-link:active)) .story__link-emulator::before {
     background-color: var(--color-orange-200);
   }
 }
