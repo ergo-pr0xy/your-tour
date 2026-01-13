@@ -31,13 +31,12 @@
             @include font("p-big-mobile");
         }
     }
-
-    &__icon {
+    
+    &__arrow-icon {
         display: inline-block;
         width: 22px;
-        height: 15px;
+        height: 16px;
         margin-top: 5px;
-
         background-image: url("../../public/icons/arrow-right.svg");
 
         @include mobile {
