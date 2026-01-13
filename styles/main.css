@@ -390,15 +390,15 @@ legend {
     letter-spacing: 0;
   }
 }
-.card-link__icon {
+.card-link__arrow-icon {
   display: inline-block;
   width: 22px;
-  height: 15px;
+  height: 16px;
   margin-top: 5px;
   background-image: url("../../public/icons/arrow-right.svg");
 }
 @media (max-width: 768px) {
-  .card-link__icon {
+  .card-link__arrow-icon {
     margin-top: 2px;
   }
 }
