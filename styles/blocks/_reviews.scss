@@ -3,11 +3,11 @@
         display: flex;
         column-gap: 30px;
 
-        @media (max-width: 1024px) {
+        @include tablet {
             column-gap: 18px;
         }
-
-        @media (max-width: 620px) {
+        
+        @include mobile {
             flex-direction: column;
             row-gap: 18px;
         }
