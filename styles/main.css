@@ -862,7 +862,7 @@ legend {
   height: 830px;
   width: 100%;
   padding-top: 88px;
-  background-image: url("../public/images/hero-section-background-1920.png");
+  background-image: url("../public/images/hero-section-background-desktop.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -870,13 +870,13 @@ legend {
 @media (max-width: 1024px) {
   .hero-section {
     height: 831px;
-    background-image: url("../public/images/hero-section-background-1024.png");
+    background-image: url("../public/images/hero-section-background-tablet.png");
   }
 }
 @media (max-width: 768px) {
   .hero-section {
     height: 488px;
-    background-image: url("../public/images/hero-section-background-360.png");
+    background-image: url("../public/images/hero-section-background-mobile.png");
   }
 }
 .hero-section__content {
@@ -1456,12 +1456,12 @@ legend {
   }
 }
 @media (max-width: 1024px) {
-  .photo--hidden-1024 {
+  .photo--hidden-tablet {
     display: none;
   }
 }
 @media (max-width: 768px) {
-  .photo--hidden-360 {
+  .photo--hidden-mobile {
     display: none;
   }
 }
