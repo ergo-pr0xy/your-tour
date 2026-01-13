@@ -35,6 +35,11 @@
         }
     }
 
+    &:active {
+        .story__link-emulator::before {
+            background-color: var(--color-orange-200);
+        }
+    }
 
     &__overlay-link {
         position: absolute;
