@@ -1840,7 +1840,7 @@ legend {
   background-position: center;
 }
 .social-logo--tg {
-  background-image: url("../../public/icons/tg-logo.svg");
+  background-image: url("../public/icons/tg-logo.svg");
 }
 @media (max-width: 768px) {
   .social-logo--tg {
@@ -1848,7 +1848,7 @@ legend {
   }
 }
 .social-logo--vk {
-  background-image: url("../../public/icons/vk-logo.svg");
+  background-image: url("../public/icons/vk-logo.svg");
 }
 @media (max-width: 768px) {
   .social-logo--vk {
@@ -1856,7 +1856,7 @@ legend {
   }
 }
 .social-logo--fb {
-  background-image: url("../../public/icons/fb-logo.svg");
+  background-image: url("../public/icons/fb-logo.svg");
 }
 @media (max-width: 768px) {
   .social-logo--fb {
