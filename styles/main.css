@@ -1516,6 +1516,14 @@ legend {
   cursor: pointer;
 }
 @media (hover: hover) {
+  .story:hover {
+    background-size: 120% 120%;
+  }
+  .story:hover .story__link-emulator::before {
+    background-color: var(--color-green-400);
+  }
+}
+@media (hover: hover) {
   .story:active .story__link-emulator::before {
     background-color: var(--color-orange-200);
   }
