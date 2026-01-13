@@ -1536,6 +1536,11 @@ legend {
     background-color: var(--color-green-400);
   }
 }
+@media (hover: hover) {
+  .story:active .story__link-emulator::before {
+    background-color: var(--color-orange-200);
+  }
+}
 .story__overlay-link {
   position: absolute;
   top: 0;
