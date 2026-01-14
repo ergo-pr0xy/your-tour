@@ -6,7 +6,6 @@
     &--small {
         width: 118px;
         height: 34px;
-
         @include font("p-small");
 
         @include mobile {
@@ -20,7 +19,6 @@
         max-width: 235px;
         width: 100%;
         height: 58px;
-        
         @include font("p-normal");
 
         @include mobile {

@@ -2,7 +2,6 @@
     height: 830px;
     width: 100%;
     padding-top: 88px;
-    
     background-image: url('../public/images/hero-section-background-desktop.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -33,7 +32,6 @@
     &__title {
         padding-bottom: 51px;
         text-align: center;
-
         @include font("h1");
 
         @include mobile {
@@ -47,9 +45,7 @@
     &__description {
         max-width: 562px;
         padding-bottom: 49px;
-
         text-align: center;
-
         @include font("p-normal");
 
         @include tablet {
@@ -60,7 +56,6 @@
         @include mobile {
             max-width: 250px;
             padding-bottom: 40px;
-            
             @include font("p-normal-mobile");
         }
     }

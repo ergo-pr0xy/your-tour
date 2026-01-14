@@ -48,6 +48,7 @@
     &__author-name {
         color: var(--color-black);
         @include font("h3");
+
         @include mobile {
             @include font("h3-mobile");
         }
@@ -56,6 +57,7 @@
     &__tour-name{
         color: var(--color-gray-300);
         @include font("p-small");
+        
         @include mobile {
             @include font("p-small-mobile");
         }

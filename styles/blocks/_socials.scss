@@ -1,6 +1,7 @@
 .socials {
     display: flex;
     column-gap: 25px;
+    
     @include mobile {
         column-gap: 15px;
     }

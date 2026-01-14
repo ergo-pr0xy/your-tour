@@ -56,7 +56,6 @@
         @include mobile {
             max-width: 291px;
             text-align: center;
-
             @include font("h3-mobile");
         }
     }
@@ -68,7 +67,6 @@
         @include mobile {
             max-width: 291px;
             width: 100%;
-
             text-align: center;
             @include font("p-normal-mobile");
         }
