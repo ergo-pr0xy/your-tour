@@ -1611,11 +1611,11 @@ legend {
 @media (max-width: 768px) {
   .story__description-list {
     padding-left: 24px;
+    line-height: 22px;
     font-weight: 400;
     font-size: 16px;
     line-height: 23px;
     letter-spacing: 0;
-    line-height: 22px;
   }
 }
 .story__description-list-item {

@@ -27,6 +27,7 @@
 
         @include mobile {
             margin-right: 17px;
+            
             @include font("p-big-mobile");
         }
     }

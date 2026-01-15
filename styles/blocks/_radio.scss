@@ -1,5 +1,6 @@
 .radio {
     color: var(--color-black);
+    
     @include font("p-normal");
 
     @include mobile {

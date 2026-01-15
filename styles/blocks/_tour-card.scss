@@ -52,6 +52,7 @@
         max-width: 220px;
         flex-direction: column;
         row-gap: 30px;
+        
         @include font("h3");
 
         @include tablet {

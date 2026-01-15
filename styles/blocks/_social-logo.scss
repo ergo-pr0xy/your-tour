@@ -7,6 +7,7 @@
 
     &--tg {
         background-image: url('../public/icons/tg-logo.svg');
+
         @include mobile {
             width: 22px;
         }
@@ -14,6 +15,7 @@
 
     &--vk {
         background-image: url('../public/icons/vk-logo.svg');
+
         @include mobile {
             width: 20px;
         }
@@ -21,6 +23,7 @@
 
     &--fb {
         background-image: url('../public/icons/fb-logo.svg');
+        
         @include mobile {
             width: 26px;
         }

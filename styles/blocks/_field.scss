@@ -15,10 +15,12 @@
     &__label {
         display: block;
         color: var(--color-black);
+
         @include font("p-normal");
 
         @include mobile {
             min-height: 23px;
+            
             @include font("p-normal-mobile");
         }
     }
@@ -31,7 +33,9 @@
         padding:  20px 20px 20px 19px;
         font-family: var(--font-family-base);
         color: var(--color-black);
+
         @include font("p-normal");
+
         background-color: var(--color-beige-100);
         border: 1px solid var(--color-beige-200);
         border-radius: var(--border-radius-small);
@@ -41,6 +45,7 @@
             max-height: 43px;
             margin-top: 8px;
             padding: 12px 12px 12px 9px;
+
             @include font("p-normal-mobile");
         }
 
@@ -76,7 +81,9 @@
         margin-top: 8px;
         padding:19px 20px 19px 19px;
         font-family: var(--font-family-base);
+
         @include font("p-normal");
+
         background-image: url("../public/icons/dropdown-arrow.svg");
         background-repeat: no-repeat;
         background-position: right 23px top 29px;
@@ -91,7 +98,9 @@
             max-height: 46px;
             margin-top: 8px;
             padding: 11px 9px;
+
             @include font("p-normal-mobile");
+            
             background-position: right 13px top 18px;
         }
 

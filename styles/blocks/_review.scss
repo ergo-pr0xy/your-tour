@@ -20,11 +20,13 @@
     &__text {
         margin-bottom: 70px;
         color: var(--color-black);
+
         @include font("p-big");
 
         @include mobile {
             padding-right: 3px;
             margin-bottom: 40px;
+
             @include font("p-big-mobile");
         }
     }
@@ -47,6 +49,7 @@
 
     &__author-name {
         color: var(--color-black);
+
         @include font("h3");
 
         @include mobile {
@@ -56,6 +59,7 @@
 
     &__tour-name{
         color: var(--color-gray-300);
+        
         @include font("p-small");
         
         @include mobile {

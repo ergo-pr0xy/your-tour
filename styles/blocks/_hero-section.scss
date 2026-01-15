@@ -32,6 +32,7 @@
     &__title {
         padding-bottom: 51px;
         text-align: center;
+
         @include font("h1");
 
         @include mobile {
@@ -46,6 +47,7 @@
         max-width: 562px;
         padding-bottom: 49px;
         text-align: center;
+
         @include font("p-normal");
 
         @include tablet {
@@ -56,6 +58,7 @@
         @include mobile {
             max-width: 250px;
             padding-bottom: 40px;
+            
             @include font("p-normal-mobile");
         }
     }
